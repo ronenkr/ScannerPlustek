@@ -1,0 +1,5 @@
+2026-10-15 14:15:55,767 INFO saved volatile 8 KiB M1 backup to gt6816_m1_pre_srom.bin
+2026-10-15 14:15:55,785 INFO requested stage boot; FF80.3 will request external SROM reload
+2026-10-15 14:15:58,886 WARNING post-reload M1 probe unavailable ([Errno 110] Operation timed out); attempting EP1 stream
+2026-10-15 14:15:58,954 ERROR FAILED: [Errno 5] Input/Output Error
+2026-10-15 14:15:58,954 ERROR Recovery: unplug/replug to restore the ROM USB bootstrap; use the saved M1 backup only for a separately verified RAM restore

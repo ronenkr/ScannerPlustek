@@ -1,0 +1,8 @@
+2026-10-15 14:26:04,005 INFO LIVE EXECUTION
+2026-10-15 14:26:04,005 INFO parsed firmware/srom_zero_probe.ihx: 247 bytes, 256 transferred
+2026-10-15 14:26:04,020 INFO image=247 bytes transfer_size=256 sha256=8a9cd509789a27c8cb14be14c403ddce5dcda11a68ee794e1c32f716a7ba0e1f
+2026-10-15 14:26:04,154 INFO saved volatile 8 KiB M1 RAM backup to gt6816_m1_pre_zero_reload_repeat.bin
+2026-10-15 14:26:04,154 INFO recovery path: unplug/replug the scanner to restore the ROM USB bootstrap; the saved RAM image is available for a separate restore operation
+2026-10-15 14:26:07,156 WARNING boot response unavailable ([Errno 110] Operation timed out); continuing to EP1
+2026-10-15 14:26:07,994 ERROR FAILED: [Errno 75] Overflow
+2026-10-15 14:26:07,994 ERROR Recovery path: unplug/replug the scanner to return to the ROM USB bootstrap; restore saved RAM only through a separately verified RAM upload

@@ -1,0 +1,4 @@
+2026-10-15 14:15:11,437 INFO dry-run: image=396 bytes, transfer=448, backup=8192, sentinel=2048, EP1 capture=2048
+2026-10-15 14:15:11,437 INFO would request FF80.3 only; no EEPROM write is planned
+2026-10-15 14:19:56,204 INFO dry-run: image=461 bytes, transfer=512, backup=8192, sentinel=2048, EP1 capture=2048
+2026-10-15 14:19:56,204 INFO would request FF80.3 only; no EEPROM write is planned

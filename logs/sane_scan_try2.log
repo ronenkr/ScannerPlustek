@@ -1,0 +1,1413 @@
+[17:22:50.984668] [sanei_debug] Setting debug level of gt68xx to 5.
+[17:22:50.984699] [gt68xx] sane_init: debug options are enabled, handle with care
+[17:22:50.984706] [gt68xx] SANE GT68xx backend version 1.0 build 84 from sane-backends 1.1.1-debian
+[17:22:50.984710] [gt68xx] sane_init: authorize != null
+[17:22:51.083681] [gt68xx] sane_init: little endian machine
+[17:22:51.083703] [gt68xx] sane_init: reading config file `gt68xx.conf'
+[17:22:51.083762] [gt68xx] sane_init: config file line 3: trying to attach `usb 0x07b3 0x0465'
+[17:22:51.083769] [gt68xx] attach: start: devp != NULL, may_wait = 0
+[17:22:51.083774] [gt68xx] attach: trying to open device `libusb:001:116'
+[17:22:51.083811] [gt68xx] gt68xx_device_identify: unknown USB device (vendor 0x07b3, product 0x0465)
+[17:22:51.083820] [gt68xx] attach: device `libusb:001:116' successfully opened
+[17:22:51.083824] [gt68xx] attach: Warning: device `libusb:001:116' is not listed in device table
+[17:22:51.083827] [gt68xx] attach: If you have manually added it, use override in gt68xx.conf
+[17:22:51.083832] [gt68xx] attach: found unknown manufacturer flatbed scanner unknown device -- use override to select at libusb:001:116
+[17:22:51.083868] [gt68xx] attach: exit
+[17:22:51.083876] [gt68xx] sane_init: new model set to plustek-opticslim-m12
+[17:22:51.083881] [gt68xx] sane_init: device plustek-opticslim-m12: firmware will be loaded from /media/user/data/ScannerPlustek/vendor/windows_s400/extracted/Data/74RU/cism603.fw
+[17:22:51.083903] [gt68xx] sane_init: exit
+[17:22:51.083909] [gt68xx] sane_open: start (devicename = `libusb:001:116')
+[17:22:51.083914] [gt68xx] sane_open: found `plustek-opticslim-m12' in devlist
+[17:22:51.083942] [gt68xx] WARNING: You have manually added the ids of your scanner 
+[17:22:51.083969] [gt68xx]          to gt68xx.conf. Please use an appropriate override 
+[17:22:51.083987] [gt68xx]          for your scanner. Use extreme care and switch off 
+[17:22:51.083992] [gt68xx]          the scanner immediately if you hear unusual noise. 
+[17:22:51.084014] [gt68xx]          Please report any success to 
+[17:22:51.084019] [gt68xx]          sane-devel@alioth-lists.debian.net. Please provide as many
+[17:22:51.084037] [gt68xx]          details as possible, e.g. the exact name of your
+[17:22:51.084042] [gt68xx]          scanner, ids, settings etc.
+[17:22:51.084047] [gt68xx] download_firmware: trying /media/user/data/ScannerPlustek/vendor/windows_s400/extracted/Data/74RU/cism603.fw
+[17:22:51.084071] [gt68xx] firmware size: 8192
+[17:22:51.129956] [gt68xx] get_id: vendor id=0x0412, product id=0x07B3, DID=0x04000005, FID=0x0000
+[17:22:51.130330] [gt68xx] sane_open: power ok
+[17:22:51.130679] [gt68xx] init_options: start
+[17:22:51.131050] [gt68xx] calc_parameters: start
+[17:22:51.131059] [gt68xx] calc_parameters: exit
+[17:22:51.131063] [gt68xx] init_options: exit
+[17:22:51.131070] [gt68xx] gt68xx_calibration_file: using >/home/user/.sane/gt68xx-plustek-opticslim-m12.cal< for calibration file name
+[17:22:51.131081] [gt68xx] gt68xx_read_calibration: failed to open calibration file for reading No such file or directory
+[17:22:51.131087] [gt68xx] sane_open: exit
+[17:22:51.131093] [gt68xx] sane_get_option_descriptor: option =  (0)
+[17:22:51.131098] [gt68xx] sane_control_option: start: action = get, option =  (0)
+[17:22:51.131103] [gt68xx] sane_control_option: exit
+[17:22:51.131108] [gt68xx] sane_get_option_descriptor: option =  (0)
+[17:22:51.131113] [gt68xx] sane_control_option: start: action = get, option =  (0)
+[17:22:51.131117] [gt68xx] sane_control_option: exit
+[17:22:51.131122] [gt68xx] sane_get_option_descriptor: option = (null) (1)
+[17:22:51.131126] [gt68xx] sane_get_option_descriptor: option = mode (2)
+[17:22:51.131130] [gt68xx] sane_get_option_descriptor: option = gray-mode-color (3)
+[17:22:51.131135] [gt68xx] sane_get_option_descriptor: option = source (4)
+[17:22:51.131139] [gt68xx] sane_get_option_descriptor: option = preview (5)
+[17:22:51.131144] [gt68xx] sane_get_option_descriptor: option = depth (6)
+[17:22:51.131148] [gt68xx] sane_get_option_descriptor: option = resolution (7)
+[17:22:51.131161] [gt68xx] sane_get_option_descriptor: option = lamp-off-at-exit (8)
+[17:22:51.131166] [gt68xx] sane_get_option_descriptor: option = backtrack (9)
+[17:22:51.131170] [gt68xx] sane_get_option_descriptor: option = (null) (10)
+[17:22:51.131175] [gt68xx] sane_get_option_descriptor: option = auto-warmup (11)
+[17:22:51.131179] [gt68xx] sane_get_option_descriptor: option = full-scan (12)
+[17:22:51.131183] [gt68xx] sane_get_option_descriptor: option = coarse-calibration (13)
+[17:22:51.131188] [gt68xx] sane_get_option_descriptor: option = coarse-calibration-once (14)
+[17:22:51.131192] [gt68xx] sane_get_option_descriptor: option = quality-cal (15)
+[17:22:51.131196] [gt68xx] sane_get_option_descriptor: option = backtrack-lines (16)
+[17:22:51.131201] [gt68xx] sane_get_option_descriptor: option = (null) (17)
+[17:22:51.131205] [gt68xx] sane_get_option_descriptor: option = gamma-value (18)
+[17:22:51.131210] [gt68xx] sane_get_option_descriptor: option = threshold (19)
+[17:22:51.131214] [gt68xx] sane_get_option_descriptor: option = (null) (20)
+[17:22:51.131218] [gt68xx] sane_get_option_descriptor: option = tl-x (21)
+[17:22:51.131223] [gt68xx] sane_get_option_descriptor: option = tl-y (22)
+[17:22:51.131227] [gt68xx] sane_get_option_descriptor: option = br-x (23)
+[17:22:51.131232] [gt68xx] sane_get_option_descriptor: option = br-y (24)
+[17:22:51.131236] [gt68xx] sane_get_option_descriptor: option = sensors (25)
+[17:22:51.131240] [gt68xx] sane_get_option_descriptor: option = need-calibration (26)
+[17:22:51.131245] [gt68xx] sane_get_option_descriptor: option = page-loaded (27)
+[17:22:51.131249] [gt68xx] sane_get_option_descriptor: option = Buttons (28)
+[17:22:51.131253] [gt68xx] sane_get_option_descriptor: option = calibrate (29)
+[17:22:51.131265] [gt68xx] sane_get_option_descriptor: option = clear (30)
+[17:22:51.131274] [gt68xx] sane_control_option: start: action = get, option = br-x (23)
+[17:22:51.131279] [gt68xx] sane_control_option: exit
+[17:22:51.131283] [gt68xx] sane_control_option: start: action = get, option = tl-x (21)
+[17:22:51.131288] [gt68xx] sane_control_option: exit
+[17:22:51.131292] [gt68xx] sane_control_option: start: action = get, option = br-y (24)
+[17:22:51.131296] [gt68xx] sane_control_option: exit
+[17:22:51.131301] [gt68xx] sane_control_option: start: action = get, option = tl-y (22)
+[17:22:51.131305] [gt68xx] sane_control_option: exit
+[17:22:51.131311] [gt68xx] sane_get_option_descriptor: option = mode (2)
+[17:22:51.131316] [gt68xx] sane_get_option_descriptor: option = mode (2)
+[17:22:51.131320] [gt68xx] sane_control_option: start: action = set, option = mode (2)
+[17:22:51.131325] [gt68xx] calc_parameters: start
+[17:22:51.131330] [gt68xx] calc_parameters: exit
+[17:22:51.131335] [gt68xx] sane_control_option: exit
+[17:22:51.131339] [gt68xx] sane_get_option_descriptor: option =  (0)
+[17:22:51.131343] [gt68xx] sane_control_option: start: action = get, option =  (0)
+[17:22:51.131348] [gt68xx] sane_control_option: exit
+[17:22:51.131352] [gt68xx] sane_get_option_descriptor: option = (null) (1)
+[17:22:51.131357] [gt68xx] sane_get_option_descriptor: option = mode (2)
+[17:22:51.131361] [gt68xx] sane_get_option_descriptor: option = gray-mode-color (3)
+[17:22:51.131366] [gt68xx] sane_get_option_descriptor: option = source (4)
+[17:22:51.131370] [gt68xx] sane_get_option_descriptor: option = preview (5)
+[17:22:51.131375] [gt68xx] sane_get_option_descriptor: option = depth (6)
+[17:22:51.131379] [gt68xx] sane_get_option_descriptor: option = resolution (7)
+[17:22:51.131383] [gt68xx] sane_get_option_descriptor: option = lamp-off-at-exit (8)
+[17:22:51.131388] [gt68xx] sane_get_option_descriptor: option = backtrack (9)
+[17:22:51.131392] [gt68xx] sane_get_option_descriptor: option = (null) (10)
+[17:22:51.131396] [gt68xx] sane_get_option_descriptor: option = auto-warmup (11)
+[17:22:51.131401] [gt68xx] sane_get_option_descriptor: option = full-scan (12)
+[17:22:51.131405] [gt68xx] sane_get_option_descriptor: option = coarse-calibration (13)
+[17:22:51.131409] [gt68xx] sane_get_option_descriptor: option = coarse-calibration-once (14)
+[17:22:51.131416] [gt68xx] sane_get_option_descriptor: option = quality-cal (15)
+[17:22:51.131421] [gt68xx] sane_get_option_descriptor: option = backtrack-lines (16)
+[17:22:51.131426] [gt68xx] sane_get_option_descriptor: option = (null) (17)
+[17:22:51.131430] [gt68xx] sane_get_option_descriptor: option = gamma-value (18)
+[17:22:51.131434] [gt68xx] sane_get_option_descriptor: option = threshold (19)
+[17:22:51.131439] [gt68xx] sane_get_option_descriptor: option = (null) (20)
+[17:22:51.131443] [gt68xx] sane_get_option_descriptor: option = tl-x (21)
+[17:22:51.131448] [gt68xx] sane_get_option_descriptor: option = tl-y (22)
+[17:22:51.131452] [gt68xx] sane_get_option_descriptor: option = br-x (23)
+[17:22:51.131456] [gt68xx] sane_get_option_descriptor: option = br-y (24)
+[17:22:51.131461] [gt68xx] sane_get_option_descriptor: option = sensors (25)
+[17:22:51.131465] [gt68xx] sane_get_option_descriptor: option = need-calibration (26)
+[17:22:51.131470] [gt68xx] sane_get_option_descriptor: option = page-loaded (27)
+[17:22:51.131474] [gt68xx] sane_get_option_descriptor: option = Buttons (28)
+[17:22:51.131479] [gt68xx] sane_get_option_descriptor: option = calibrate (29)
+[17:22:51.131483] [gt68xx] sane_get_option_descriptor: option = clear (30)
+[17:22:51.131487] [gt68xx] sane_control_option: start: action = get, option = br-x (23)
+[17:22:51.131492] [gt68xx] sane_control_option: exit
+[17:22:51.131496] [gt68xx] sane_control_option: start: action = get, option = tl-x (21)
+[17:22:51.131500] [gt68xx] sane_control_option: exit
+[17:22:51.131504] [gt68xx] sane_control_option: start: action = get, option = br-y (24)
+[17:22:51.131509] [gt68xx] sane_control_option: exit
+[17:22:51.131513] [gt68xx] sane_control_option: start: action = get, option = tl-y (22)
+[17:22:51.131517] [gt68xx] sane_control_option: exit
+[17:22:51.131522] [gt68xx] sane_get_option_descriptor: option = resolution (7)
+[17:22:51.131528] [gt68xx] sane_get_option_descriptor: option = resolution (7)
+[17:22:51.131532] [gt68xx] sane_control_option: start: action = set, option = resolution (7)
+[17:22:51.131537] [gt68xx] calc_parameters: start
+[17:22:51.131541] [gt68xx] calc_parameters: exit
+[17:22:51.131545] [gt68xx] sane_control_option: exit
+[17:22:51.131550] [gt68xx] sane_control_option: start: action = get, option = tl-x (21)
+[17:22:51.131555] [gt68xx] sane_control_option: exit
+[17:22:51.131559] [gt68xx] sane_get_option_descriptor: option = br-x (23)
+[17:22:51.131563] [gt68xx] sane_control_option: start: action = set, option = br-x (23)
+[17:22:51.131568] [gt68xx] calc_parameters: start
+[17:22:51.131572] [gt68xx] calc_parameters: exit
+[17:22:51.131577] [gt68xx] sane_control_option: exit
+[17:22:51.131581] [gt68xx] sane_control_option: start: action = get, option = tl-y (22)
+[17:22:51.131585] [gt68xx] sane_control_option: exit
+[17:22:51.131590] [gt68xx] sane_get_option_descriptor: option = br-y (24)
+[17:22:51.131594] [gt68xx] sane_control_option: start: action = set, option = br-y (24)
+[17:22:51.131598] [gt68xx] calc_parameters: start
+[17:22:51.131603] [gt68xx] calc_parameters: exit
+[17:22:51.131607] [gt68xx] sane_control_option: exit
+[17:22:51.131617] [gt68xx] sane_start: start
+[17:22:51.131622] [gt68xx] calc_parameters: start
+[17:22:51.131627] [gt68xx] calc_parameters: exit
+[17:22:51.536753] [gt68xx] gt68xx_device_read_prepare: total size: 1054592 bytes
+[17:22:51.536808] [gt68xx] gt68xx_device_read_prepare: requested buffer size: 896
+[17:22:51.536812] [gt68xx] gt68xx_device_read_prepare: real size: 896
+[17:22:51.639417] [gt68xx] sane_start: wanted: dpi=100, x=0.0, y=0.0, width=218.0, height=299.0, color=gray
+[17:22:51.639465] [gt68xx] sane_start: exit
+[17:22:51.639471] [gt68xx] sane_get_parameters: start
+[17:22:51.639475] [gt68xx] calc_parameters: start
+[17:22:51.639480] [gt68xx] calc_parameters: exit
+[17:22:51.639484] [gt68xx] sane_get_parameters: format=0, last_frame=1, lines=1177
+[17:22:51.639488] [gt68xx] sane_get_parameters: pixels_per_line=858, bytes per line=858
+[17:22:51.639492] [gt68xx] sane_get_parameters: pixels 858x1177x256
+[17:22:51.639496] [gt68xx] sane_get_parameters: exit
+[17:22:51.639508] [gt68xx] sane_read: start (line 0 of 1177, byte_count 858 of 858)
+[17:22:51.639513] [gt68xx] sane_read: getting line 0 of 1177
+[17:22:51.676414] [gt68xx] sane_read: getting line 1 of 1177
+[17:22:51.691547] [gt68xx] sane_read: getting line 2 of 1177
+[17:22:51.706745] [gt68xx] sane_read: getting line 3 of 1177
+[17:22:51.721282] [gt68xx] sane_read: getting line 4 of 1177
+[17:22:51.736744] [gt68xx] sane_read: getting line 5 of 1177
+[17:22:51.751265] [gt68xx] sane_read: getting line 6 of 1177
+[17:22:51.766285] [gt68xx] sane_read: getting line 7 of 1177
+[17:22:51.781427] [gt68xx] sane_read: getting line 8 of 1177
+[17:22:51.796454] [gt68xx] sane_read: getting line 9 of 1177
+[17:22:51.811743] [gt68xx] sane_read: getting line 10 of 1177
+[17:22:51.826522] [gt68xx] sane_read: getting line 11 of 1177
+[17:22:51.841277] [gt68xx] sane_read: getting line 12 of 1177
+[17:22:51.856396] [gt68xx] sane_read: getting line 13 of 1177
+[17:22:51.871283] [gt68xx] sane_read: getting line 14 of 1177
+[17:22:51.886496] [gt68xx] sane_read: getting line 15 of 1177
+[17:22:51.901490] [gt68xx] sane_read: getting line 16 of 1177
+[17:22:51.916453] [gt68xx] sane_read: getting line 17 of 1177
+[17:22:51.931742] [gt68xx] sane_read: getting line 18 of 1177
+[17:22:51.946750] [gt68xx] sane_read: getting line 19 of 1177
+[17:22:51.961752] [gt68xx] sane_read: getting line 20 of 1177
+[17:22:51.976658] [gt68xx] sane_read: getting line 21 of 1177
+[17:22:51.991454] [gt68xx] sane_read: getting line 22 of 1177
+[17:22:52.006494] [gt68xx] sane_read: getting line 23 of 1177
+[17:22:52.021521] [gt68xx] sane_read: getting line 24 of 1177
+[17:22:52.036739] [gt68xx] sane_read: getting line 25 of 1177
+[17:22:52.051542] [gt68xx] sane_read: getting line 26 of 1177
+[17:22:52.066333] [gt68xx] sane_read: getting line 27 of 1177
+[17:22:52.081556] [gt68xx] sane_read: getting line 28 of 1177
+[17:22:52.096577] [gt68xx] sane_read: getting line 29 of 1177
+[17:22:52.111318] [gt68xx] sane_read: getting line 30 of 1177
+[17:22:52.126280] [gt68xx] sane_read: getting line 31 of 1177
+[17:22:52.141556] [gt68xx] sane_read: getting line 32 of 1177
+[17:22:52.156609] [gt68xx] sane_read: getting line 33 of 1177
+[17:22:52.171570] [gt68xx] sane_read: getting line 34 of 1177
+[17:22:52.186639] [gt68xx] sane_read: getting line 35 of 1177
+[17:22:52.201741] [gt68xx] sane_read: getting line 36 of 1177
+[17:22:52.216302] [gt68xx] sane_read: getting line 37 of 1177
+[17:22:52.231315] [gt68xx] sane_read: getting line 38 of 1177
+[17:22:52.246392] [gt68xx] sane_read: exit (line 39 of 1177, byte_count 164 of 858, 32768 bytes, 32768 total)
+[17:22:52.246464] [gt68xx] sane_read: start (line 39 of 1177, byte_count 164 of 858)
+[17:22:52.246473] [gt68xx] sane_read: getting line 39 of 1177
+[17:22:52.261384] [gt68xx] sane_read: getting line 40 of 1177
+[17:22:52.276319] [gt68xx] sane_read: getting line 41 of 1177
+[17:22:52.291435] [gt68xx] sane_read: getting line 42 of 1177
+[17:22:52.306550] [gt68xx] sane_read: getting line 43 of 1177
+[17:22:52.321750] [gt68xx] sane_read: getting line 44 of 1177
+[17:22:52.336446] [gt68xx] sane_read: getting line 45 of 1177
+[17:22:52.351248] [gt68xx] sane_read: getting line 46 of 1177
+[17:22:52.366353] [gt68xx] sane_read: getting line 47 of 1177
+[17:22:52.381432] [gt68xx] sane_read: getting line 48 of 1177
+[17:22:52.396392] [gt68xx] sane_read: getting line 49 of 1177
+[17:22:52.411397] [gt68xx] sane_read: getting line 50 of 1177
+[17:22:52.426292] [gt68xx] sane_read: getting line 51 of 1177
+[17:22:52.441253] [gt68xx] sane_read: getting line 52 of 1177
+[17:22:52.456342] [gt68xx] sane_read: getting line 53 of 1177
+[17:22:52.471245] [gt68xx] sane_read: getting line 54 of 1177
+[17:22:52.486470] [gt68xx] sane_read: getting line 55 of 1177
+[17:22:52.501470] [gt68xx] sane_read: getting line 56 of 1177
+[17:22:52.516365] [gt68xx] sane_read: getting line 57 of 1177
+[17:22:52.531519] [gt68xx] sane_read: getting line 58 of 1177
+[17:22:52.546704] [gt68xx] sane_read: getting line 59 of 1177
+[17:22:52.561710] [gt68xx] sane_read: getting line 60 of 1177
+[17:22:52.576592] [gt68xx] sane_read: getting line 61 of 1177
+[17:22:52.591251] [gt68xx] sane_read: getting line 62 of 1177
+[17:22:52.606585] [gt68xx] sane_read: getting line 63 of 1177
+[17:22:52.621312] [gt68xx] sane_read: getting line 64 of 1177
+[17:22:52.636412] [gt68xx] sane_read: getting line 65 of 1177
+[17:22:52.651234] [gt68xx] sane_read: getting line 66 of 1177
+[17:22:52.666683] [gt68xx] sane_read: getting line 67 of 1177
+[17:22:52.681221] [gt68xx] sane_read: getting line 68 of 1177
+[17:22:52.696459] [gt68xx] sane_read: getting line 69 of 1177
+[17:22:52.711557] [gt68xx] sane_read: getting line 70 of 1177
+[17:22:52.726490] [gt68xx] sane_read: getting line 71 of 1177
+[17:22:52.741346] [gt68xx] sane_read: getting line 72 of 1177
+[17:22:52.756383] [gt68xx] sane_read: getting line 73 of 1177
+[17:22:52.771534] [gt68xx] sane_read: getting line 74 of 1177
+[17:22:52.786675] [gt68xx] sane_read: getting line 75 of 1177
+[17:22:52.801535] [gt68xx] sane_read: getting line 76 of 1177
+[17:22:52.816674] [gt68xx] sane_read: exit (line 77 of 1177, byte_count 328 of 858, 32768 bytes, 65536 total)
+[17:22:52.816737] [gt68xx] sane_read: start (line 77 of 1177, byte_count 328 of 858)
+[17:22:52.816749] [gt68xx] sane_read: getting line 77 of 1177
+[17:22:52.831232] [gt68xx] sane_read: getting line 78 of 1177
+[17:22:52.846294] [gt68xx] sane_read: getting line 79 of 1177
+[17:22:52.861476] [gt68xx] sane_read: getting line 80 of 1177
+[17:22:52.876474] [gt68xx] sane_read: getting line 81 of 1177
+[17:22:52.891485] [gt68xx] sane_read: getting line 82 of 1177
+[17:22:52.906557] [gt68xx] sane_read: getting line 83 of 1177
+[17:22:52.921694] [gt68xx] sane_read: getting line 84 of 1177
+[17:22:52.936435] [gt68xx] sane_read: getting line 85 of 1177
+[17:22:52.951234] [gt68xx] sane_read: getting line 86 of 1177
+[17:22:52.966219] [gt68xx] sane_read: getting line 87 of 1177
+[17:22:52.981420] [gt68xx] sane_read: getting line 88 of 1177
+[17:22:52.996529] [gt68xx] sane_read: getting line 89 of 1177
+[17:22:53.011677] [gt68xx] sane_read: getting line 90 of 1177
+[17:22:53.026585] [gt68xx] sane_read: getting line 91 of 1177
+[17:22:53.041478] [gt68xx] sane_read: getting line 92 of 1177
+[17:22:53.056546] [gt68xx] sane_read: getting line 93 of 1177
+[17:22:53.071221] [gt68xx] sane_read: getting line 94 of 1177
+[17:22:53.086431] [gt68xx] sane_read: getting line 95 of 1177
+[17:22:53.101329] [gt68xx] sane_read: getting line 96 of 1177
+[17:22:53.116309] [gt68xx] sane_read: getting line 97 of 1177
+[17:22:53.131686] [gt68xx] sane_read: getting line 98 of 1177
+[17:22:53.146586] [gt68xx] sane_read: getting line 99 of 1177
+[17:22:53.161713] [gt68xx] sane_read: getting line 100 of 1177
+[17:22:53.176282] [gt68xx] sane_read: getting line 101 of 1177
+[17:22:53.191307] [gt68xx] sane_read: getting line 102 of 1177
+[17:22:53.206615] [gt68xx] sane_read: getting line 103 of 1177
+[17:22:53.221719] [gt68xx] sane_read: getting line 104 of 1177
+[17:22:53.236456] [gt68xx] sane_read: getting line 105 of 1177
+[17:22:53.251341] [gt68xx] sane_read: getting line 106 of 1177
+[17:22:53.266390] [gt68xx] sane_read: getting line 107 of 1177
+[17:22:53.281318] [gt68xx] sane_read: getting line 108 of 1177
+[17:22:53.296571] [gt68xx] sane_read: getting line 109 of 1177
+[17:22:53.311302] [gt68xx] sane_read: getting line 110 of 1177
+[17:22:53.326284] [gt68xx] sane_read: getting line 111 of 1177
+[17:22:53.341263] [gt68xx] sane_read: getting line 112 of 1177
+[17:22:53.356335] [gt68xx] sane_read: getting line 113 of 1177
+[17:22:53.371234] [gt68xx] sane_read: getting line 114 of 1177
+[17:22:53.386450] [gt68xx] sane_read: exit (line 115 of 1177, byte_count 492 of 858, 32768 bytes, 98304 total)
+[17:22:53.386513] [gt68xx] sane_read: start (line 115 of 1177, byte_count 492 of 858)
+[17:22:53.386525] [gt68xx] sane_read: getting line 115 of 1177
+[17:22:53.401442] [gt68xx] sane_read: getting line 116 of 1177
+[17:22:53.416244] [gt68xx] sane_read: getting line 117 of 1177
+[17:22:53.431299] [gt68xx] sane_read: getting line 118 of 1177
+[17:22:53.446203] [gt68xx] sane_read: getting line 119 of 1177
+[17:22:53.461263] [gt68xx] sane_read: getting line 120 of 1177
+[17:22:53.476193] [gt68xx] sane_read: getting line 121 of 1177
+[17:22:53.491389] [gt68xx] sane_read: getting line 122 of 1177
+[17:22:53.506486] [gt68xx] sane_read: getting line 123 of 1177
+[17:22:53.521221] [gt68xx] sane_read: getting line 124 of 1177
+[17:22:53.536541] [gt68xx] sane_read: getting line 125 of 1177
+[17:22:53.551343] [gt68xx] sane_read: getting line 126 of 1177
+[17:22:53.566216] [gt68xx] sane_read: getting line 127 of 1177
+[17:22:53.581292] [gt68xx] sane_read: getting line 128 of 1177
+[17:22:53.596362] [gt68xx] sane_read: getting line 129 of 1177
+[17:22:53.611315] [gt68xx] sane_read: getting line 130 of 1177
+[17:22:53.626316] [gt68xx] sane_read: getting line 131 of 1177
+[17:22:53.641298] [gt68xx] sane_read: getting line 132 of 1177
+[17:22:53.656349] [gt68xx] sane_read: getting line 133 of 1177
+[17:22:53.671226] [gt68xx] sane_read: getting line 134 of 1177
+[17:22:53.686233] [gt68xx] sane_read: getting line 135 of 1177
+[17:22:53.701557] [gt68xx] sane_read: getting line 136 of 1177
+[17:22:53.716497] [gt68xx] sane_read: getting line 137 of 1177
+[17:22:53.731313] [gt68xx] sane_read: getting line 138 of 1177
+[17:22:53.746481] [gt68xx] sane_read: getting line 139 of 1177
+[17:22:53.761532] [gt68xx] sane_read: getting line 140 of 1177
+[17:22:53.776274] [gt68xx] sane_read: getting line 141 of 1177
+[17:22:53.791254] [gt68xx] sane_read: getting line 142 of 1177
+[17:22:53.806236] [gt68xx] sane_read: getting line 143 of 1177
+[17:22:53.821192] [gt68xx] sane_read: getting line 144 of 1177
+[17:22:53.836314] [gt68xx] sane_read: getting line 145 of 1177
+[17:22:53.851233] [gt68xx] sane_read: getting line 146 of 1177
+[17:22:53.866633] [gt68xx] sane_read: getting line 147 of 1177
+[17:22:53.881462] [gt68xx] sane_read: getting line 148 of 1177
+[17:22:53.896316] [gt68xx] sane_read: getting line 149 of 1177
+[17:22:53.911520] [gt68xx] sane_read: getting line 150 of 1177
+[17:22:53.926234] [gt68xx] sane_read: getting line 151 of 1177
+[17:22:53.941205] [gt68xx] sane_read: getting line 152 of 1177
+[17:22:53.956227] [gt68xx] sane_read: exit (line 153 of 1177, byte_count 656 of 858, 32768 bytes, 131072 total)
+[17:22:53.956300] [gt68xx] sane_read: start (line 153 of 1177, byte_count 656 of 858)
+[17:22:53.956312] [gt68xx] sane_read: getting line 153 of 1177
+[17:22:53.971225] [gt68xx] sane_read: getting line 154 of 1177
+[17:22:53.986451] [gt68xx] sane_read: getting line 155 of 1177
+[17:22:54.001424] [gt68xx] sane_read: getting line 156 of 1177
+[17:22:54.016319] [gt68xx] sane_read: getting line 157 of 1177
+[17:22:54.031497] [gt68xx] sane_read: getting line 158 of 1177
+[17:22:54.046298] [gt68xx] sane_read: getting line 159 of 1177
+[17:22:54.061251] [gt68xx] sane_read: getting line 160 of 1177
+[17:22:54.076211] [gt68xx] sane_read: getting line 161 of 1177
+[17:22:54.091312] [gt68xx] sane_read: getting line 162 of 1177
+[17:22:54.106249] [gt68xx] sane_read: getting line 163 of 1177
+[17:22:54.121211] [gt68xx] sane_read: getting line 164 of 1177
+[17:22:54.136405] [gt68xx] sane_read: getting line 165 of 1177
+[17:22:54.151311] [gt68xx] sane_read: getting line 166 of 1177
+[17:22:54.166321] [gt68xx] sane_read: getting line 167 of 1177
+[17:22:54.181303] [gt68xx] sane_read: getting line 168 of 1177
+[17:22:54.196567] [gt68xx] sane_read: getting line 169 of 1177
+[17:22:54.211588] [gt68xx] sane_read: getting line 170 of 1177
+[17:22:54.226376] [gt68xx] sane_read: getting line 171 of 1177
+[17:22:54.241241] [gt68xx] sane_read: getting line 172 of 1177
+[17:22:54.256478] [gt68xx] sane_read: getting line 173 of 1177
+[17:22:54.271221] [gt68xx] sane_read: getting line 174 of 1177
+[17:22:54.286199] [gt68xx] sane_read: getting line 175 of 1177
+[17:22:54.301313] [gt68xx] sane_read: getting line 176 of 1177
+[17:22:54.316305] [gt68xx] sane_read: getting line 177 of 1177
+[17:22:54.331557] [gt68xx] sane_read: getting line 178 of 1177
+[17:22:54.346255] [gt68xx] sane_read: getting line 179 of 1177
+[17:22:54.361567] [gt68xx] sane_read: getting line 180 of 1177
+[17:22:54.376489] [gt68xx] sane_read: getting line 181 of 1177
+[17:22:54.391530] [gt68xx] sane_read: getting line 182 of 1177
+[17:22:54.406251] [gt68xx] sane_read: getting line 183 of 1177
+[17:22:54.421300] [gt68xx] sane_read: getting line 184 of 1177
+[17:22:54.436499] [gt68xx] sane_read: getting line 185 of 1177
+[17:22:54.451274] [gt68xx] sane_read: getting line 186 of 1177
+[17:22:54.466272] [gt68xx] sane_read: getting line 187 of 1177
+[17:22:54.481295] [gt68xx] sane_read: getting line 188 of 1177
+[17:22:54.496245] [gt68xx] sane_read: getting line 189 of 1177
+[17:22:54.511422] [gt68xx] sane_read: getting line 190 of 1177
+[17:22:54.526303] [gt68xx] sane_read: exit (line 191 of 1177, byte_count 820 of 858, 32768 bytes, 163840 total)
+[17:22:54.526382] [gt68xx] sane_read: start (line 191 of 1177, byte_count 820 of 858)
+[17:22:54.526388] [gt68xx] sane_read: getting line 191 of 1177
+[17:22:54.541398] [gt68xx] sane_read: getting line 192 of 1177
+[17:22:54.556471] [gt68xx] sane_read: getting line 193 of 1177
+[17:22:54.571323] [gt68xx] sane_read: getting line 194 of 1177
+[17:22:54.586431] [gt68xx] sane_read: getting line 195 of 1177
+[17:22:54.601588] [gt68xx] sane_read: getting line 196 of 1177
+[17:22:54.616377] [gt68xx] sane_read: getting line 197 of 1177
+[17:22:54.631236] [gt68xx] sane_read: getting line 198 of 1177
+[17:22:54.646304] [gt68xx] sane_read: getting line 199 of 1177
+[17:22:54.661467] [gt68xx] sane_read: getting line 200 of 1177
+[17:22:54.676394] [gt68xx] sane_read: getting line 201 of 1177
+[17:22:54.691559] [gt68xx] sane_read: getting line 202 of 1177
+[17:22:54.706592] [gt68xx] sane_read: getting line 203 of 1177
+[17:22:54.721275] [gt68xx] sane_read: getting line 204 of 1177
+[17:22:54.736463] [gt68xx] sane_read: getting line 205 of 1177
+[17:22:54.751192] [gt68xx] sane_read: getting line 206 of 1177
+[17:22:54.766262] [gt68xx] sane_read: getting line 207 of 1177
+[17:22:54.781513] [gt68xx] sane_read: getting line 208 of 1177
+[17:22:54.796533] [gt68xx] sane_read: getting line 209 of 1177
+[17:22:54.811453] [gt68xx] sane_read: getting line 210 of 1177
+[17:22:54.826308] [gt68xx] sane_read: getting line 211 of 1177
+[17:22:54.841189] [gt68xx] sane_read: getting line 212 of 1177
+[17:22:54.856396] [gt68xx] sane_read: getting line 213 of 1177
+[17:22:54.871329] [gt68xx] sane_read: getting line 214 of 1177
+[17:22:54.886674] [gt68xx] sane_read: getting line 215 of 1177
+[17:22:54.901216] [gt68xx] sane_read: getting line 216 of 1177
+[17:22:54.916312] [gt68xx] sane_read: getting line 217 of 1177
+[17:22:54.931404] [gt68xx] sane_read: getting line 218 of 1177
+[17:22:54.946321] [gt68xx] sane_read: getting line 219 of 1177
+[17:22:54.961680] [gt68xx] sane_read: getting line 220 of 1177
+[17:22:54.976488] [gt68xx] sane_read: getting line 221 of 1177
+[17:22:54.991232] [gt68xx] sane_read: getting line 222 of 1177
+[17:22:55.006421] [gt68xx] sane_read: getting line 223 of 1177
+[17:22:55.021270] [gt68xx] sane_read: getting line 224 of 1177
+[17:22:55.036479] [gt68xx] sane_read: getting line 225 of 1177
+[17:22:55.051558] [gt68xx] sane_read: getting line 226 of 1177
+[17:22:55.066285] [gt68xx] sane_read: getting line 227 of 1177
+[17:22:55.081446] [gt68xx] sane_read: getting line 228 of 1177
+[17:22:55.096431] [gt68xx] sane_read: getting line 229 of 1177
+[17:22:55.111188] [gt68xx] sane_read: exit (line 230 of 1177, byte_count 126 of 858, 32768 bytes, 196608 total)
+[17:22:55.111252] [gt68xx] sane_read: start (line 230 of 1177, byte_count 126 of 858)
+[17:22:55.111270] [gt68xx] sane_read: getting line 230 of 1177
+[17:22:55.126310] [gt68xx] sane_read: getting line 231 of 1177
+[17:22:55.141523] [gt68xx] sane_read: getting line 232 of 1177
+[17:22:55.156363] [gt68xx] sane_read: getting line 233 of 1177
+[17:22:55.171636] [gt68xx] sane_read: getting line 234 of 1177
+[17:22:55.186432] [gt68xx] sane_read: getting line 235 of 1177
+[17:22:55.201289] [gt68xx] sane_read: getting line 236 of 1177
+[17:22:55.216414] [gt68xx] sane_read: getting line 237 of 1177
+[17:22:55.231181] [gt68xx] sane_read: getting line 238 of 1177
+[17:22:55.246238] [gt68xx] sane_read: getting line 239 of 1177
+[17:22:55.261365] [gt68xx] sane_read: getting line 240 of 1177
+[17:22:55.276466] [gt68xx] sane_read: getting line 241 of 1177
+[17:22:55.291382] [gt68xx] sane_read: getting line 242 of 1177
+[17:22:55.306437] [gt68xx] sane_read: getting line 243 of 1177
+[17:22:55.321433] [gt68xx] sane_read: getting line 244 of 1177
+[17:22:55.336354] [gt68xx] sane_read: getting line 245 of 1177
+[17:22:55.351160] [gt68xx] sane_read: getting line 246 of 1177
+[17:22:55.366350] [gt68xx] sane_read: getting line 247 of 1177
+[17:22:55.381367] [gt68xx] sane_read: getting line 248 of 1177
+[17:22:55.396398] [gt68xx] sane_read: getting line 249 of 1177
+[17:22:55.411263] [gt68xx] sane_read: getting line 250 of 1177
+[17:22:55.426594] [gt68xx] sane_read: getting line 251 of 1177
+[17:22:55.441456] [gt68xx] sane_read: getting line 252 of 1177
+[17:22:55.456219] [gt68xx] sane_read: getting line 253 of 1177
+[17:22:55.471165] [gt68xx] sane_read: getting line 254 of 1177
+[17:22:55.486358] [gt68xx] sane_read: getting line 255 of 1177
+[17:22:55.501294] [gt68xx] sane_read: getting line 256 of 1177
+[17:22:55.516255] [gt68xx] sane_read: getting line 257 of 1177
+[17:22:55.531560] [gt68xx] sane_read: getting line 258 of 1177
+[17:22:55.546474] [gt68xx] sane_read: getting line 259 of 1177
+[17:22:55.561475] [gt68xx] sane_read: getting line 260 of 1177
+[17:22:55.576488] [gt68xx] sane_read: getting line 261 of 1177
+[17:22:55.591432] [gt68xx] sane_read: getting line 262 of 1177
+[17:22:55.606331] [gt68xx] sane_read: getting line 263 of 1177
+[17:22:55.621564] [gt68xx] sane_read: getting line 264 of 1177
+[17:22:55.636602] [gt68xx] sane_read: getting line 265 of 1177
+[17:22:55.651326] [gt68xx] sane_read: getting line 266 of 1177
+[17:22:55.666479] [gt68xx] sane_read: getting line 267 of 1177
+[17:22:55.681359] [gt68xx] sane_read: exit (line 268 of 1177, byte_count 290 of 858, 32768 bytes, 229376 total)
+[17:22:55.681437] [gt68xx] sane_read: start (line 268 of 1177, byte_count 290 of 858)
+[17:22:55.681446] [gt68xx] sane_read: getting line 268 of 1177
+[17:22:55.696443] [gt68xx] sane_read: getting line 269 of 1177
+[17:22:55.711185] [gt68xx] sane_read: getting line 270 of 1177
+[17:22:55.726321] [gt68xx] sane_read: getting line 271 of 1177
+[17:22:55.741478] [gt68xx] sane_read: getting line 272 of 1177
+[17:22:55.756255] [gt68xx] sane_read: getting line 273 of 1177
+[17:22:55.771505] [gt68xx] sane_read: getting line 274 of 1177
+[17:22:55.786499] [gt68xx] sane_read: getting line 275 of 1177
+[17:22:55.801571] [gt68xx] sane_read: getting line 276 of 1177
+[17:22:55.816458] [gt68xx] sane_read: getting line 277 of 1177
+[17:22:55.831201] [gt68xx] sane_read: getting line 278 of 1177
+[17:22:55.846238] [gt68xx] sane_read: getting line 279 of 1177
+[17:22:55.861395] [gt68xx] sane_read: getting line 280 of 1177
+[17:22:55.876463] [gt68xx] sane_read: getting line 281 of 1177
+[17:22:55.891481] [gt68xx] sane_read: getting line 282 of 1177
+[17:22:55.906667] [gt68xx] sane_read: getting line 283 of 1177
+[17:22:55.921562] [gt68xx] sane_read: getting line 284 of 1177
+[17:22:55.936168] [gt68xx] sane_read: getting line 285 of 1177
+[17:22:55.951172] [gt68xx] sane_read: getting line 286 of 1177
+[17:22:55.966342] [gt68xx] sane_read: getting line 287 of 1177
+[17:22:55.981214] [gt68xx] sane_read: getting line 288 of 1177
+[17:22:55.996209] [gt68xx] sane_read: getting line 289 of 1177
+[17:22:56.011348] [gt68xx] sane_read: getting line 290 of 1177
+[17:22:56.026451] [gt68xx] sane_read: getting line 291 of 1177
+[17:22:56.041363] [gt68xx] sane_read: getting line 292 of 1177
+[17:22:56.056334] [gt68xx] sane_read: getting line 293 of 1177
+[17:22:56.071145] [gt68xx] sane_read: getting line 294 of 1177
+[17:22:56.086255] [gt68xx] sane_read: getting line 295 of 1177
+[17:22:56.101240] [gt68xx] sane_read: getting line 296 of 1177
+[17:22:56.116172] [gt68xx] sane_read: getting line 297 of 1177
+[17:22:56.131231] [gt68xx] sane_read: getting line 298 of 1177
+[17:22:56.146332] [gt68xx] sane_read: getting line 299 of 1177
+[17:22:56.161431] [gt68xx] sane_read: getting line 300 of 1177
+[17:22:56.176328] [gt68xx] sane_read: getting line 301 of 1177
+[17:22:56.191182] [gt68xx] sane_read: getting line 302 of 1177
+[17:22:56.206186] [gt68xx] sane_read: getting line 303 of 1177
+[17:22:56.221511] [gt68xx] sane_read: getting line 304 of 1177
+[17:22:56.236209] [gt68xx] sane_read: getting line 305 of 1177
+[17:22:56.251305] [gt68xx] sane_read: exit (line 306 of 1177, byte_count 454 of 858, 32768 bytes, 262144 total)
+[17:22:56.251397] [gt68xx] sane_read: start (line 306 of 1177, byte_count 454 of 858)
+[17:22:56.251407] [gt68xx] sane_read: getting line 306 of 1177
+[17:22:56.266199] [gt68xx] sane_read: getting line 307 of 1177
+[17:22:56.281433] [gt68xx] sane_read: getting line 308 of 1177
+[17:22:56.296254] [gt68xx] sane_read: getting line 309 of 1177
+[17:22:56.311399] [gt68xx] sane_read: getting line 310 of 1177
+[17:22:56.326516] [gt68xx] sane_read: getting line 311 of 1177
+[17:22:56.341169] [gt68xx] sane_read: getting line 312 of 1177
+[17:22:56.356228] [gt68xx] sane_read: getting line 313 of 1177
+[17:22:56.371365] [gt68xx] sane_read: getting line 314 of 1177
+[17:22:56.386311] [gt68xx] sane_read: getting line 315 of 1177
+[17:22:56.401510] [gt68xx] sane_read: getting line 316 of 1177
+[17:22:56.416208] [gt68xx] sane_read: getting line 317 of 1177
+[17:22:56.431207] [gt68xx] sane_read: getting line 318 of 1177
+[17:22:56.446244] [gt68xx] sane_read: getting line 319 of 1177
+[17:22:56.461166] [gt68xx] sane_read: getting line 320 of 1177
+[17:22:56.476203] [gt68xx] sane_read: getting line 321 of 1177
+[17:22:56.491405] [gt68xx] sane_read: getting line 322 of 1177
+[17:22:56.506467] [gt68xx] sane_read: getting line 323 of 1177
+[17:22:56.521469] [gt68xx] sane_read: getting line 324 of 1177
+[17:22:56.536385] [gt68xx] sane_read: getting line 325 of 1177
+[17:22:56.551172] [gt68xx] sane_read: getting line 326 of 1177
+[17:22:56.566386] [gt68xx] sane_read: getting line 327 of 1177
+[17:22:56.581228] [gt68xx] sane_read: getting line 328 of 1177
+[17:22:56.596214] [gt68xx] sane_read: getting line 329 of 1177
+[17:22:56.611513] [gt68xx] sane_read: getting line 330 of 1177
+[17:22:56.626460] [gt68xx] sane_read: getting line 331 of 1177
+[17:22:56.641374] [gt68xx] sane_read: getting line 332 of 1177
+[17:22:56.656375] [gt68xx] sane_read: getting line 333 of 1177
+[17:22:56.671159] [gt68xx] sane_read: getting line 334 of 1177
+[17:22:56.686228] [gt68xx] sane_read: getting line 335 of 1177
+[17:22:56.701482] [gt68xx] sane_read: getting line 336 of 1177
+[17:22:56.716110] [gt68xx] sane_read: getting line 337 of 1177
+[17:22:56.731502] [gt68xx] sane_read: getting line 338 of 1177
+[17:22:56.746505] [gt68xx] sane_read: getting line 339 of 1177
+[17:22:56.761243] [gt68xx] sane_read: getting line 340 of 1177
+[17:22:56.776302] [gt68xx] sane_read: getting line 341 of 1177
+[17:22:56.791159] [gt68xx] sane_read: getting line 342 of 1177
+[17:22:56.806156] [gt68xx] sane_read: getting line 343 of 1177
+[17:22:56.821320] [gt68xx] sane_read: exit (line 344 of 1177, byte_count 618 of 858, 32768 bytes, 294912 total)
+[17:22:56.821421] [gt68xx] sane_read: start (line 344 of 1177, byte_count 618 of 858)
+[17:22:56.821435] [gt68xx] sane_read: getting line 344 of 1177
+[17:22:56.836174] [gt68xx] sane_read: getting line 345 of 1177
+[17:22:56.851146] [gt68xx] sane_read: getting line 346 of 1177
+[17:22:56.866188] [gt68xx] sane_read: getting line 347 of 1177
+[17:22:56.881311] [gt68xx] sane_read: getting line 348 of 1177
+[17:22:56.896415] [gt68xx] sane_read: getting line 349 of 1177
+[17:22:56.911150] [gt68xx] sane_read: getting line 350 of 1177
+[17:22:56.926269] [gt68xx] sane_read: getting line 351 of 1177
+[17:22:56.941316] [gt68xx] sane_read: getting line 352 of 1177
+[17:22:56.956527] [gt68xx] sane_read: getting line 353 of 1177
+[17:22:56.971419] [gt68xx] sane_read: getting line 354 of 1177
+[17:22:56.986233] [gt68xx] sane_read: getting line 355 of 1177
+[17:22:57.001339] [gt68xx] sane_read: getting line 356 of 1177
+[17:22:57.016392] [gt68xx] sane_read: getting line 357 of 1177
+[17:22:57.031222] [gt68xx] sane_read: getting line 358 of 1177
+[17:22:57.046466] [gt68xx] sane_read: getting line 359 of 1177
+[17:22:57.061144] [gt68xx] sane_read: getting line 360 of 1177
+[17:22:57.076461] [gt68xx] sane_read: getting line 361 of 1177
+[17:22:57.091232] [gt68xx] sane_read: getting line 362 of 1177
+[17:22:57.106148] [gt68xx] sane_read: getting line 363 of 1177
+[17:22:57.121371] [gt68xx] sane_read: getting line 364 of 1177
+[17:22:57.136459] [gt68xx] sane_read: getting line 365 of 1177
+[17:22:57.151187] [gt68xx] sane_read: getting line 366 of 1177
+[17:22:57.166343] [gt68xx] sane_read: getting line 367 of 1177
+[17:22:57.181392] [gt68xx] sane_read: getting line 368 of 1177
+[17:22:57.196417] [gt68xx] sane_read: getting line 369 of 1177
+[17:22:57.211250] [gt68xx] sane_read: getting line 370 of 1177
+[17:22:57.226454] [gt68xx] sane_read: getting line 371 of 1177
+[17:22:57.241314] [gt68xx] sane_read: getting line 372 of 1177
+[17:22:57.256373] [gt68xx] sane_read: getting line 373 of 1177
+[17:22:57.271122] [gt68xx] sane_read: getting line 374 of 1177
+[17:22:57.286194] [gt68xx] sane_read: getting line 375 of 1177
+[17:22:57.301205] [gt68xx] sane_read: getting line 376 of 1177
+[17:22:57.316159] [gt68xx] sane_read: getting line 377 of 1177
+[17:22:57.331367] [gt68xx] sane_read: getting line 378 of 1177
+[17:22:57.346266] [gt68xx] sane_read: getting line 379 of 1177
+[17:22:57.361368] [gt68xx] sane_read: getting line 380 of 1177
+[17:22:57.376441] [gt68xx] sane_read: getting line 381 of 1177
+[17:22:57.391176] [gt68xx] sane_read: exit (line 382 of 1177, byte_count 782 of 858, 32768 bytes, 327680 total)
+[17:22:57.391237] [gt68xx] sane_read: start (line 382 of 1177, byte_count 782 of 858)
+[17:22:57.391246] [gt68xx] sane_read: getting line 382 of 1177
+[17:22:57.406188] [gt68xx] sane_read: getting line 383 of 1177
+[17:22:57.421227] [gt68xx] sane_read: getting line 384 of 1177
+[17:22:57.436225] [gt68xx] sane_read: getting line 385 of 1177
+[17:22:57.451459] [gt68xx] sane_read: getting line 386 of 1177
+[17:22:57.466364] [gt68xx] sane_read: getting line 387 of 1177
+[17:22:57.481198] [gt68xx] sane_read: getting line 388 of 1177
+[17:22:57.496197] [gt68xx] sane_read: getting line 389 of 1177
+[17:22:57.511149] [gt68xx] sane_read: getting line 390 of 1177
+[17:22:57.526316] [gt68xx] sane_read: getting line 391 of 1177
+[17:22:57.541426] [gt68xx] sane_read: getting line 392 of 1177
+[17:22:57.556246] [gt68xx] sane_read: getting line 393 of 1177
+[17:22:57.571388] [gt68xx] sane_read: getting line 394 of 1177
+[17:22:57.586226] [gt68xx] sane_read: getting line 395 of 1177
+[17:22:57.601454] [gt68xx] sane_read: getting line 396 of 1177
+[17:22:57.616229] [gt68xx] sane_read: getting line 397 of 1177
+[17:22:57.631171] [gt68xx] sane_read: getting line 398 of 1177
+[17:22:57.646202] [gt68xx] sane_read: getting line 399 of 1177
+[17:22:57.661352] [gt68xx] sane_read: getting line 400 of 1177
+[17:22:57.676332] [gt68xx] sane_read: getting line 401 of 1177
+[17:22:57.691446] [gt68xx] sane_read: getting line 402 of 1177
+[17:22:57.706457] [gt68xx] sane_read: getting line 403 of 1177
+[17:22:57.721355] [gt68xx] sane_read: getting line 404 of 1177
+[17:22:57.736243] [gt68xx] sane_read: getting line 405 of 1177
+[17:22:57.751453] [gt68xx] sane_read: getting line 406 of 1177
+[17:22:57.766362] [gt68xx] sane_read: getting line 407 of 1177
+[17:22:57.781356] [gt68xx] sane_read: getting line 408 of 1177
+[17:22:57.796180] [gt68xx] sane_read: getting line 409 of 1177
+[17:22:57.811511] [gt68xx] sane_read: getting line 410 of 1177
+[17:22:57.826459] [gt68xx] sane_read: getting line 411 of 1177
+[17:22:57.841165] [gt68xx] sane_read: getting line 412 of 1177
+[17:22:57.856178] [gt68xx] sane_read: getting line 413 of 1177
+[17:22:57.871133] [gt68xx] sane_read: getting line 414 of 1177
+[17:22:57.886331] [gt68xx] sane_read: getting line 415 of 1177
+[17:22:57.901247] [gt68xx] sane_read: getting line 416 of 1177
+[17:22:57.916232] [gt68xx] sane_read: getting line 417 of 1177
+[17:22:57.931373] [gt68xx] sane_read: getting line 418 of 1177
+[17:22:57.946311] [gt68xx] sane_read: getting line 419 of 1177
+[17:22:57.961468] [gt68xx] sane_read: getting line 420 of 1177
+[17:22:57.976249] [gt68xx] sane_read: exit (line 421 of 1177, byte_count 88 of 858, 32768 bytes, 360448 total)
+[17:22:57.976335] [gt68xx] sane_read: start (line 421 of 1177, byte_count 88 of 858)
+[17:22:57.976348] [gt68xx] sane_read: getting line 421 of 1177
+[17:22:57.991146] [gt68xx] sane_read: getting line 422 of 1177
+[17:22:58.006369] [gt68xx] sane_read: getting line 423 of 1177
+[17:22:58.021480] [gt68xx] sane_read: getting line 424 of 1177
+[17:22:58.036576] [gt68xx] sane_read: getting line 425 of 1177
+[17:22:58.051391] [gt68xx] sane_read: getting line 426 of 1177
+[17:22:58.066215] [gt68xx] sane_read: getting line 427 of 1177
+[17:22:58.081346] [gt68xx] sane_read: getting line 428 of 1177
+[17:22:58.096466] [gt68xx] sane_read: getting line 429 of 1177
+[17:22:58.111141] [gt68xx] sane_read: getting line 430 of 1177
+[17:22:58.126229] [gt68xx] sane_read: getting line 431 of 1177
+[17:22:58.141310] [gt68xx] sane_read: getting line 432 of 1177
+[17:22:58.156167] [gt68xx] sane_read: getting line 433 of 1177
+[17:22:58.171454] [gt68xx] sane_read: getting line 434 of 1177
+[17:22:58.186467] [gt68xx] sane_read: getting line 435 of 1177
+[17:22:58.201488] [gt68xx] sane_read: getting line 436 of 1177
+[17:22:58.216265] [gt68xx] sane_read: getting line 437 of 1177
+[17:22:58.231163] [gt68xx] sane_read: getting line 438 of 1177
+[17:22:58.246199] [gt68xx] sane_read: getting line 439 of 1177
+[17:22:58.261344] [gt68xx] sane_read: getting line 440 of 1177
+[17:22:58.276315] [gt68xx] sane_read: getting line 441 of 1177
+[17:22:58.291354] [gt68xx] sane_read: getting line 442 of 1177
+[17:22:58.306374] [gt68xx] sane_read: getting line 443 of 1177
+[17:22:58.321452] [gt68xx] sane_read: getting line 444 of 1177
+[17:22:58.336363] [gt68xx] sane_read: getting line 445 of 1177
+[17:22:58.351130] [gt68xx] sane_read: getting line 446 of 1177
+[17:22:58.366240] [gt68xx] sane_read: getting line 447 of 1177
+[17:22:58.381197] [gt68xx] sane_read: getting line 448 of 1177
+[17:22:58.396345] [gt68xx] sane_read: getting line 449 of 1177
+[17:22:58.411225] [gt68xx] sane_read: getting line 450 of 1177
+[17:22:58.426213] [gt68xx] sane_read: getting line 451 of 1177
+[17:22:58.441240] [gt68xx] sane_read: getting line 452 of 1177
+[17:22:58.456455] [gt68xx] sane_read: getting line 453 of 1177
+[17:22:58.471142] [gt68xx] sane_read: getting line 454 of 1177
+[17:22:58.486185] [gt68xx] sane_read: getting line 455 of 1177
+[17:22:58.501356] [gt68xx] sane_read: getting line 456 of 1177
+[17:22:58.516251] [gt68xx] sane_read: getting line 457 of 1177
+[17:22:58.531399] [gt68xx] sane_read: getting line 458 of 1177
+[17:22:58.546217] [gt68xx] sane_read: exit (line 459 of 1177, byte_count 252 of 858, 32768 bytes, 393216 total)
+[17:22:58.546325] [gt68xx] sane_read: start (line 459 of 1177, byte_count 252 of 858)
+[17:22:58.546335] [gt68xx] sane_read: getting line 459 of 1177
+[17:22:58.561218] [gt68xx] sane_read: getting line 460 of 1177
+[17:22:58.576232] [gt68xx] sane_read: getting line 461 of 1177
+[17:22:58.591187] [gt68xx] sane_read: getting line 462 of 1177
+[17:22:58.606165] [gt68xx] sane_read: getting line 463 of 1177
+[17:22:58.621153] [gt68xx] sane_read: getting line 464 of 1177
+[17:22:58.636208] [gt68xx] sane_read: getting line 465 of 1177
+[17:22:58.651245] [gt68xx] sane_read: getting line 466 of 1177
+[17:22:58.666362] [gt68xx] sane_read: getting line 467 of 1177
+[17:22:58.681211] [gt68xx] sane_read: getting line 468 of 1177
+[17:22:58.696216] [gt68xx] sane_read: getting line 469 of 1177
+[17:22:58.711499] [gt68xx] sane_read: getting line 470 of 1177
+[17:22:58.726242] [gt68xx] sane_read: getting line 471 of 1177
+[17:22:58.741178] [gt68xx] sane_read: getting line 472 of 1177
+[17:22:58.756227] [gt68xx] sane_read: getting line 473 of 1177
+[17:22:58.771169] [gt68xx] sane_read: getting line 474 of 1177
+[17:22:58.786147] [gt68xx] sane_read: getting line 475 of 1177
+[17:22:58.801446] [gt68xx] sane_read: getting line 476 of 1177
+[17:22:58.816174] [gt68xx] sane_read: getting line 477 of 1177
+[17:22:58.831432] [gt68xx] sane_read: getting line 478 of 1177
+[17:22:58.846207] [gt68xx] sane_read: getting line 479 of 1177
+[17:22:58.861200] [gt68xx] sane_read: getting line 480 of 1177
+[17:22:58.876225] [gt68xx] sane_read: getting line 481 of 1177
+[17:22:58.891146] [gt68xx] sane_read: getting line 482 of 1177
+[17:22:58.906250] [gt68xx] sane_read: getting line 483 of 1177
+[17:22:58.921138] [gt68xx] sane_read: getting line 484 of 1177
+[17:22:58.936190] [gt68xx] sane_read: getting line 485 of 1177
+[17:22:58.951215] [gt68xx] sane_read: getting line 486 of 1177
+[17:22:58.966141] [gt68xx] sane_read: getting line 487 of 1177
+[17:22:58.981166] [gt68xx] sane_read: getting line 488 of 1177
+[17:22:58.996183] [gt68xx] sane_read: getting line 489 of 1177
+[17:22:59.011373] [gt68xx] sane_read: getting line 490 of 1177
+[17:22:59.026196] [gt68xx] sane_read: getting line 491 of 1177
+[17:22:59.041185] [gt68xx] sane_read: getting line 492 of 1177
+[17:22:59.056309] [gt68xx] sane_read: getting line 493 of 1177
+[17:22:59.071133] [gt68xx] sane_read: getting line 494 of 1177
+[17:22:59.086144] [gt68xx] sane_read: getting line 495 of 1177
+[17:22:59.101442] [gt68xx] sane_read: getting line 496 of 1177
+[17:22:59.116248] [gt68xx] sane_read: exit (line 497 of 1177, byte_count 416 of 858, 32768 bytes, 425984 total)
+[17:22:59.116347] [gt68xx] sane_read: start (line 497 of 1177, byte_count 416 of 858)
+[17:22:59.116360] [gt68xx] sane_read: getting line 497 of 1177
+[17:22:59.131414] [gt68xx] sane_read: getting line 498 of 1177
+[17:22:59.146532] [gt68xx] sane_read: getting line 499 of 1177
+[17:22:59.161574] [gt68xx] sane_read: getting line 500 of 1177
+[17:22:59.176295] [gt68xx] sane_read: getting line 501 of 1177
+[17:22:59.191423] [gt68xx] sane_read: getting line 502 of 1177
+[17:22:59.206580] [gt68xx] sane_read: getting line 503 of 1177
+[17:22:59.221385] [gt68xx] sane_read: getting line 504 of 1177
+[17:22:59.236139] [gt68xx] sane_read: getting line 505 of 1177
+[17:22:59.251481] [gt68xx] sane_read: getting line 506 of 1177
+[17:22:59.266492] [gt68xx] sane_read: getting line 507 of 1177
+[17:22:59.281230] [gt68xx] sane_read: getting line 508 of 1177
+[17:22:59.296315] [gt68xx] sane_read: getting line 509 of 1177
+[17:22:59.311393] [gt68xx] sane_read: getting line 510 of 1177
+[17:22:59.326339] [gt68xx] sane_read: getting line 511 of 1177
+[17:22:59.341116] [gt68xx] sane_read: getting line 512 of 1177
+[17:22:59.356203] [gt68xx] sane_read: getting line 513 of 1177
+[17:22:59.371195] [gt68xx] sane_read: getting line 514 of 1177
+[17:22:59.386393] [gt68xx] sane_read: getting line 515 of 1177
+[17:22:59.401178] [gt68xx] sane_read: getting line 516 of 1177
+[17:22:59.416200] [gt68xx] sane_read: getting line 517 of 1177
+[17:22:59.431391] [gt68xx] sane_read: getting line 518 of 1177
+[17:22:59.446160] [gt68xx] sane_read: getting line 519 of 1177
+[17:22:59.461180] [gt68xx] sane_read: getting line 520 of 1177
+[17:22:59.476292] [gt68xx] sane_read: getting line 521 of 1177
+[17:22:59.491169] [gt68xx] sane_read: getting line 522 of 1177
+[17:22:59.506294] [gt68xx] sane_read: getting line 523 of 1177
+[17:22:59.521491] [gt68xx] sane_read: getting line 524 of 1177
+[17:22:59.536190] [gt68xx] sane_read: getting line 525 of 1177
+[17:22:59.551450] [gt68xx] sane_read: getting line 526 of 1177
+[17:22:59.566467] [gt68xx] sane_read: getting line 527 of 1177
+[17:22:59.581466] [gt68xx] sane_read: getting line 528 of 1177
+[17:22:59.596409] [gt68xx] sane_read: getting line 529 of 1177
+[17:22:59.611525] [gt68xx] sane_read: getting line 530 of 1177
+[17:22:59.626459] [gt68xx] sane_read: getting line 531 of 1177
+[17:22:59.641408] [gt68xx] sane_read: getting line 532 of 1177
+[17:22:59.656388] [gt68xx] sane_read: getting line 533 of 1177
+[17:22:59.671161] [gt68xx] sane_read: getting line 534 of 1177
+[17:22:59.686230] [gt68xx] sane_read: exit (line 535 of 1177, byte_count 580 of 858, 32768 bytes, 458752 total)
+[17:22:59.686322] [gt68xx] sane_read: start (line 535 of 1177, byte_count 580 of 858)
+[17:22:59.686335] [gt68xx] sane_read: getting line 535 of 1177
+[17:22:59.701525] [gt68xx] sane_read: getting line 536 of 1177
+[17:22:59.716440] [gt68xx] sane_read: getting line 537 of 1177
+[17:22:59.731566] [gt68xx] sane_read: getting line 538 of 1177
+[17:22:59.746628] [gt68xx] sane_read: getting line 539 of 1177
+[17:22:59.761178] [gt68xx] sane_read: getting line 540 of 1177
+[17:22:59.776326] [gt68xx] sane_read: getting line 541 of 1177
+[17:22:59.791203] [gt68xx] sane_read: getting line 542 of 1177
+[17:22:59.806148] [gt68xx] sane_read: getting line 543 of 1177
+[17:22:59.821527] [gt68xx] sane_read: getting line 544 of 1177
+[17:22:59.836433] [gt68xx] sane_read: getting line 545 of 1177
+[17:22:59.851468] [gt68xx] sane_read: getting line 546 of 1177
+[17:22:59.866635] [gt68xx] sane_read: getting line 547 of 1177
+[17:22:59.881628] [gt68xx] sane_read: getting line 548 of 1177
+[17:22:59.896480] [gt68xx] sane_read: getting line 549 of 1177
+[17:22:59.911592] [gt68xx] sane_read: getting line 550 of 1177
+[17:22:59.926543] [gt68xx] sane_read: getting line 551 of 1177
+[17:22:59.941232] [gt68xx] sane_read: getting line 552 of 1177
+[17:22:59.956190] [gt68xx] sane_read: getting line 553 of 1177
+[17:22:59.971520] [gt68xx] sane_read: getting line 554 of 1177
+[17:22:59.986138] [gt68xx] sane_read: getting line 555 of 1177
+[17:23:00.001143] [gt68xx] sane_read: getting line 556 of 1177
+[17:23:00.016144] [gt68xx] sane_read: getting line 557 of 1177
+[17:23:00.031135] [gt68xx] sane_read: getting line 558 of 1177
+[17:23:00.046130] [gt68xx] sane_read: getting line 559 of 1177
+[17:23:00.061141] [gt68xx] sane_read: getting line 560 of 1177
+[17:23:00.076175] [gt68xx] sane_read: getting line 561 of 1177
+[17:23:00.091148] [gt68xx] sane_read: getting line 562 of 1177
+[17:23:00.106139] [gt68xx] sane_read: getting line 563 of 1177
+[17:23:00.121150] [gt68xx] sane_read: getting line 564 of 1177
+[17:23:00.136332] [gt68xx] sane_read: getting line 565 of 1177
+[17:23:00.151158] [gt68xx] sane_read: getting line 566 of 1177
+[17:23:00.166203] [gt68xx] sane_read: getting line 567 of 1177
+[17:23:00.181164] [gt68xx] sane_read: getting line 568 of 1177
+[17:23:00.196189] [gt68xx] sane_read: getting line 569 of 1177
+[17:23:00.211372] [gt68xx] sane_read: getting line 570 of 1177
+[17:23:00.226196] [gt68xx] sane_read: getting line 571 of 1177
+[17:23:00.241146] [gt68xx] sane_read: getting line 572 of 1177
+[17:23:00.256210] [gt68xx] sane_read: exit (line 573 of 1177, byte_count 744 of 858, 32768 bytes, 491520 total)
+[17:23:00.256304] [gt68xx] sane_read: start (line 573 of 1177, byte_count 744 of 858)
+[17:23:00.256319] [gt68xx] sane_read: getting line 573 of 1177
+[17:23:00.271148] [gt68xx] sane_read: getting line 574 of 1177
+[17:23:00.286176] [gt68xx] sane_read: getting line 575 of 1177
+[17:23:00.301195] [gt68xx] sane_read: getting line 576 of 1177
+[17:23:00.316195] [gt68xx] sane_read: getting line 577 of 1177
+[17:23:00.331491] [gt68xx] sane_read: getting line 578 of 1177
+[17:23:00.346081] [gt68xx] sane_read: getting line 579 of 1177
+[17:23:00.361218] [gt68xx] sane_read: getting line 580 of 1177
+[17:23:00.376318] [gt68xx] sane_read: getting line 581 of 1177
+[17:23:00.391065] [gt68xx] sane_read: getting line 582 of 1177
+[17:23:00.406160] [gt68xx] sane_read: getting line 583 of 1177
+[17:23:00.421400] [gt68xx] sane_read: getting line 584 of 1177
+[17:23:00.436364] [gt68xx] sane_read: getting line 585 of 1177
+[17:23:00.451388] [gt68xx] sane_read: getting line 586 of 1177
+[17:23:00.466308] [gt68xx] sane_read: getting line 587 of 1177
+[17:23:00.481300] [gt68xx] sane_read: getting line 588 of 1177
+[17:23:00.496256] [gt68xx] sane_read: getting line 589 of 1177
+[17:23:00.511048] [gt68xx] sane_read: getting line 590 of 1177
+[17:23:00.526132] [gt68xx] sane_read: getting line 591 of 1177
+[17:23:00.541339] [gt68xx] sane_read: getting line 592 of 1177
+[17:23:00.556213] [gt68xx] sane_read: getting line 593 of 1177
+[17:23:00.571107] [gt68xx] sane_read: getting line 594 of 1177
+[17:23:00.586201] [gt68xx] sane_read: getting line 595 of 1177
+[17:23:00.601129] [gt68xx] sane_read: getting line 596 of 1177
+[17:23:00.616173] [gt68xx] sane_read: getting line 597 of 1177
+[17:23:00.631198] [gt68xx] sane_read: getting line 598 of 1177
+[17:23:00.646213] [gt68xx] sane_read: getting line 599 of 1177
+[17:23:00.661050] [gt68xx] sane_read: getting line 600 of 1177
+[17:23:00.676173] [gt68xx] sane_read: getting line 601 of 1177
+[17:23:00.691379] [gt68xx] sane_read: getting line 602 of 1177
+[17:23:00.706222] [gt68xx] sane_read: getting line 603 of 1177
+[17:23:00.721290] [gt68xx] sane_read: getting line 604 of 1177
+[17:23:00.736082] [gt68xx] sane_read: getting line 605 of 1177
+[17:23:00.751033] [gt68xx] sane_read: getting line 606 of 1177
+[17:23:00.766224] [gt68xx] sane_read: getting line 607 of 1177
+[17:23:00.781286] [gt68xx] sane_read: getting line 608 of 1177
+[17:23:00.796230] [gt68xx] sane_read: getting line 609 of 1177
+[17:23:00.811381] [gt68xx] sane_read: getting line 610 of 1177
+[17:23:00.826325] [gt68xx] sane_read: getting line 611 of 1177
+[17:23:00.841087] [gt68xx] sane_read: exit (line 612 of 1177, byte_count 50 of 858, 32768 bytes, 524288 total)
+[17:23:00.841149] [gt68xx] sane_read: start (line 612 of 1177, byte_count 50 of 858)
+[17:23:00.841162] [gt68xx] sane_read: getting line 612 of 1177
+[17:23:00.856224] [gt68xx] sane_read: getting line 613 of 1177
+[17:23:00.871036] [gt68xx] sane_read: getting line 614 of 1177
+[17:23:00.886270] [gt68xx] sane_read: getting line 615 of 1177
+[17:23:00.901273] [gt68xx] sane_read: getting line 616 of 1177
+[17:23:00.916368] [gt68xx] sane_read: getting line 617 of 1177
+[17:23:00.931032] [gt68xx] sane_read: getting line 618 of 1177
+[17:23:00.946372] [gt68xx] sane_read: getting line 619 of 1177
+[17:23:00.961151] [gt68xx] sane_read: getting line 620 of 1177
+[17:23:00.976223] [gt68xx] sane_read: getting line 621 of 1177
+[17:23:00.991065] [gt68xx] sane_read: getting line 622 of 1177
+[17:23:01.006130] [gt68xx] sane_read: getting line 623 of 1177
+[17:23:01.021126] [gt68xx] sane_read: getting line 624 of 1177
+[17:23:01.036127] [gt68xx] sane_read: getting line 625 of 1177
+[17:23:01.051347] [gt68xx] sane_read: getting line 626 of 1177
+[17:23:01.066176] [gt68xx] sane_read: getting line 627 of 1177
+[17:23:01.081287] [gt68xx] sane_read: getting line 628 of 1177
+[17:23:01.096365] [gt68xx] sane_read: getting line 629 of 1177
+[17:23:01.111053] [gt68xx] sane_read: getting line 630 of 1177
+[17:23:01.126128] [gt68xx] sane_read: getting line 631 of 1177
+[17:23:01.141135] [gt68xx] sane_read: getting line 632 of 1177
+[17:23:01.156135] [gt68xx] sane_read: getting line 633 of 1177
+[17:23:01.171376] [gt68xx] sane_read: getting line 634 of 1177
+[17:23:01.186268] [gt68xx] sane_read: getting line 635 of 1177
+[17:23:01.201306] [gt68xx] sane_read: getting line 636 of 1177
+[17:23:01.216386] [gt68xx] sane_read: getting line 637 of 1177
+[17:23:01.231089] [gt68xx] sane_read: getting line 638 of 1177
+[17:23:01.246106] [gt68xx] sane_read: getting line 639 of 1177
+[17:23:01.261285] [gt68xx] sane_read: getting line 640 of 1177
+[17:23:01.276293] [gt68xx] sane_read: getting line 641 of 1177
+[17:23:01.291307] [gt68xx] sane_read: getting line 642 of 1177
+[17:23:01.306211] [gt68xx] sane_read: getting line 643 of 1177
+[17:23:01.321369] [gt68xx] sane_read: getting line 644 of 1177
+[17:23:01.336127] [gt68xx] sane_read: getting line 645 of 1177
+[17:23:01.351170] [gt68xx] sane_read: getting line 646 of 1177
+[17:23:01.366270] [gt68xx] sane_read: getting line 647 of 1177
+[17:23:01.381194] [gt68xx] sane_read: getting line 648 of 1177
+[17:23:01.396218] [gt68xx] sane_read: getting line 649 of 1177
+[17:23:01.411148] [gt68xx] sane_read: exit (line 650 of 1177, byte_count 214 of 858, 32768 bytes, 557056 total)
+[17:23:01.411212] [gt68xx] sane_read: start (line 650 of 1177, byte_count 214 of 858)
+[17:23:01.411225] [gt68xx] sane_read: getting line 650 of 1177
+[17:23:01.426345] [gt68xx] sane_read: getting line 651 of 1177
+[17:23:01.441344] [gt68xx] sane_read: getting line 652 of 1177
+[17:23:01.456389] [gt68xx] sane_read: getting line 653 of 1177
+[17:23:01.471033] [gt68xx] sane_read: getting line 654 of 1177
+[17:23:01.486209] [gt68xx] sane_read: getting line 655 of 1177
+[17:23:01.501299] [gt68xx] sane_read: getting line 656 of 1177
+[17:23:01.516135] [gt68xx] sane_read: getting line 657 of 1177
+[17:23:01.531360] [gt68xx] sane_read: getting line 658 of 1177
+[17:23:01.546381] [gt68xx] sane_read: getting line 659 of 1177
+[17:23:01.561227] [gt68xx] sane_read: getting line 660 of 1177
+[17:23:01.576138] [gt68xx] sane_read: getting line 661 of 1177
+[17:23:01.591064] [gt68xx] sane_read: getting line 662 of 1177
+[17:23:01.606080] [gt68xx] sane_read: getting line 663 of 1177
+[17:23:01.621083] [gt68xx] sane_read: getting line 664 of 1177
+[17:23:01.636013] [gt68xx] sane_read: getting line 665 of 1177
+[17:23:01.651377] [gt68xx] sane_read: getting line 666 of 1177
+[17:23:01.666297] [gt68xx] sane_read: getting line 667 of 1177
+[17:23:01.681377] [gt68xx] sane_read: getting line 668 of 1177
+[17:23:01.696279] [gt68xx] sane_read: getting line 669 of 1177
+[17:23:01.711049] [gt68xx] sane_read: getting line 670 of 1177
+[17:23:01.726113] [gt68xx] sane_read: getting line 671 of 1177
+[17:23:01.741246] [gt68xx] sane_read: getting line 672 of 1177
+[17:23:01.756140] [gt68xx] sane_read: getting line 673 of 1177
+[17:23:01.771341] [gt68xx] sane_read: getting line 674 of 1177
+[17:23:01.786189] [gt68xx] sane_read: getting line 675 of 1177
+[17:23:01.801376] [gt68xx] sane_read: getting line 676 of 1177
+[17:23:01.816146] [gt68xx] sane_read: getting line 677 of 1177
+[17:23:01.831043] [gt68xx] sane_read: getting line 678 of 1177
+[17:23:01.846087] [gt68xx] sane_read: getting line 679 of 1177
+[17:23:01.861025] [gt68xx] sane_read: getting line 680 of 1177
+[17:23:01.876144] [gt68xx] sane_read: getting line 681 of 1177
+[17:23:01.891080] [gt68xx] sane_read: getting line 682 of 1177
+[17:23:01.906338] [gt68xx] sane_read: getting line 683 of 1177
+[17:23:01.921215] [gt68xx] sane_read: getting line 684 of 1177
+[17:23:01.936062] [gt68xx] sane_read: getting line 685 of 1177
+[17:23:01.951051] [gt68xx] sane_read: getting line 686 of 1177
+[17:23:01.966183] [gt68xx] sane_read: getting line 687 of 1177
+[17:23:01.981052] [gt68xx] sane_read: exit (line 688 of 1177, byte_count 378 of 858, 32768 bytes, 589824 total)
+[17:23:01.981116] [gt68xx] sane_read: start (line 688 of 1177, byte_count 378 of 858)
+[17:23:01.981129] [gt68xx] sane_read: getting line 688 of 1177
+[17:23:01.996181] [gt68xx] sane_read: getting line 689 of 1177
+[17:23:02.011316] [gt68xx] sane_read: getting line 690 of 1177
+[17:23:02.026227] [gt68xx] sane_read: getting line 691 of 1177
+[17:23:02.041191] [gt68xx] sane_read: getting line 692 of 1177
+[17:23:02.056342] [gt68xx] sane_read: getting line 693 of 1177
+[17:23:02.071081] [gt68xx] sane_read: getting line 694 of 1177
+[17:23:02.086125] [gt68xx] sane_read: getting line 695 of 1177
+[17:23:02.101105] [gt68xx] sane_read: getting line 696 of 1177
+[17:23:02.116035] [gt68xx] sane_read: getting line 697 of 1177
+[17:23:02.131207] [gt68xx] sane_read: getting line 698 of 1177
+[17:23:02.146071] [gt68xx] sane_read: getting line 699 of 1177
+[17:23:02.161134] [gt68xx] sane_read: getting line 700 of 1177
+[17:23:02.176229] [gt68xx] sane_read: getting line 701 of 1177
+[17:23:02.191013] [gt68xx] sane_read: getting line 702 of 1177
+[17:23:02.206138] [gt68xx] sane_read: getting line 703 of 1177
+[17:23:02.221122] [gt68xx] sane_read: getting line 704 of 1177
+[17:23:02.236097] [gt68xx] sane_read: getting line 705 of 1177
+[17:23:02.251337] [gt68xx] sane_read: getting line 706 of 1177
+[17:23:02.266183] [gt68xx] sane_read: getting line 707 of 1177
+[17:23:02.281234] [gt68xx] sane_read: getting line 708 of 1177
+[17:23:02.296233] [gt68xx] sane_read: getting line 709 of 1177
+[17:23:02.311010] [gt68xx] sane_read: getting line 710 of 1177
+[17:23:02.326118] [gt68xx] sane_read: getting line 711 of 1177
+[17:23:02.341059] [gt68xx] sane_read: getting line 712 of 1177
+[17:23:02.356230] [gt68xx] sane_read: getting line 713 of 1177
+[17:23:02.371102] [gt68xx] sane_read: getting line 714 of 1177
+[17:23:02.386101] [gt68xx] sane_read: getting line 715 of 1177
+[17:23:02.401270] [gt68xx] sane_read: getting line 716 of 1177
+[17:23:02.416234] [gt68xx] sane_read: getting line 717 of 1177
+[17:23:02.431013] [gt68xx] sane_read: getting line 718 of 1177
+[17:23:02.446099] [gt68xx] sane_read: getting line 719 of 1177
+[17:23:02.461231] [gt68xx] sane_read: getting line 720 of 1177
+[17:23:02.476223] [gt68xx] sane_read: getting line 721 of 1177
+[17:23:02.491164] [gt68xx] sane_read: getting line 722 of 1177
+[17:23:02.506387] [gt68xx] sane_read: getting line 723 of 1177
+[17:23:02.521343] [gt68xx] sane_read: getting line 724 of 1177
+[17:23:02.536349] [gt68xx] sane_read: getting line 725 of 1177
+[17:23:02.551013] [gt68xx] sane_read: exit (line 726 of 1177, byte_count 542 of 858, 32768 bytes, 622592 total)
+[17:23:02.551086] [gt68xx] sane_read: start (line 726 of 1177, byte_count 542 of 858)
+[17:23:02.551094] [gt68xx] sane_read: getting line 726 of 1177
+[17:23:02.566221] [gt68xx] sane_read: getting line 727 of 1177
+[17:23:02.581184] [gt68xx] sane_read: getting line 728 of 1177
+[17:23:02.596226] [gt68xx] sane_read: getting line 729 of 1177
+[17:23:02.611049] [gt68xx] sane_read: getting line 730 of 1177
+[17:23:02.626136] [gt68xx] sane_read: getting line 731 of 1177
+[17:23:02.641357] [gt68xx] sane_read: getting line 732 of 1177
+[17:23:02.656191] [gt68xx] sane_read: getting line 733 of 1177
+[17:23:02.671141] [gt68xx] sane_read: getting line 734 of 1177
+[17:23:02.686188] [gt68xx] sane_read: getting line 735 of 1177
+[17:23:02.701234] [gt68xx] sane_read: getting line 736 of 1177
+[17:23:02.716188] [gt68xx] sane_read: getting line 737 of 1177
+[17:23:02.731318] [gt68xx] sane_read: getting line 738 of 1177
+[17:23:02.746206] [gt68xx] sane_read: getting line 739 of 1177
+[17:23:02.761199] [gt68xx] sane_read: getting line 740 of 1177
+[17:23:02.776317] [gt68xx] sane_read: getting line 741 of 1177
+[17:23:02.791325] [gt68xx] sane_read: getting line 742 of 1177
+[17:23:02.806401] [gt68xx] sane_read: getting line 743 of 1177
+[17:23:02.821296] [gt68xx] sane_read: getting line 744 of 1177
+[17:23:02.836149] [gt68xx] sane_read: getting line 745 of 1177
+[17:23:02.851057] [gt68xx] sane_read: getting line 746 of 1177
+[17:23:02.866075] [gt68xx] sane_read: getting line 747 of 1177
+[17:23:02.881178] [gt68xx] sane_read: getting line 748 of 1177
+[17:23:02.896321] [gt68xx] sane_read: getting line 749 of 1177
+[17:23:02.910954] [gt68xx] sane_read: getting line 750 of 1177
+[17:23:02.926073] [gt68xx] sane_read: getting line 751 of 1177
+[17:23:02.941107] [gt68xx] sane_read: getting line 752 of 1177
+[17:23:02.956078] [gt68xx] sane_read: getting line 753 of 1177
+[17:23:02.971360] [gt68xx] sane_read: getting line 754 of 1177
+[17:23:02.986189] [gt68xx] sane_read: getting line 755 of 1177
+[17:23:03.001396] [gt68xx] sane_read: getting line 756 of 1177
+[17:23:03.016291] [gt68xx] sane_read: getting line 757 of 1177
+[17:23:03.031063] [gt68xx] sane_read: getting line 758 of 1177
+[17:23:03.046081] [gt68xx] sane_read: getting line 759 of 1177
+[17:23:03.061170] [gt68xx] sane_read: getting line 760 of 1177
+[17:23:03.076310] [gt68xx] sane_read: getting line 761 of 1177
+[17:23:03.091027] [gt68xx] sane_read: getting line 762 of 1177
+[17:23:03.106134] [gt68xx] sane_read: getting line 763 of 1177
+[17:23:03.121301] [gt68xx] sane_read: exit (line 764 of 1177, byte_count 706 of 858, 32768 bytes, 655360 total)
+[17:23:03.121387] [gt68xx] sane_read: start (line 764 of 1177, byte_count 706 of 858)
+[17:23:03.121398] [gt68xx] sane_read: getting line 764 of 1177
+[17:23:03.136162] [gt68xx] sane_read: getting line 765 of 1177
+[17:23:03.151058] [gt68xx] sane_read: getting line 766 of 1177
+[17:23:03.166201] [gt68xx] sane_read: getting line 767 of 1177
+[17:23:03.181291] [gt68xx] sane_read: getting line 768 of 1177
+[17:23:03.196128] [gt68xx] sane_read: getting line 769 of 1177
+[17:23:03.211189] [gt68xx] sane_read: getting line 770 of 1177
+[17:23:03.226046] [gt68xx] sane_read: getting line 771 of 1177
+[17:23:03.241136] [gt68xx] sane_read: getting line 772 of 1177
+[17:23:03.256120] [gt68xx] sane_read: getting line 773 of 1177
+[17:23:03.271038] [gt68xx] sane_read: getting line 774 of 1177
+[17:23:03.286343] [gt68xx] sane_read: getting line 775 of 1177
+[17:23:03.301091] [gt68xx] sane_read: getting line 776 of 1177
+[17:23:03.316095] [gt68xx] sane_read: getting line 777 of 1177
+[17:23:03.331475] [gt68xx] sane_read: getting line 778 of 1177
+[17:23:03.346094] [gt68xx] sane_read: getting line 779 of 1177
+[17:23:03.361096] [gt68xx] sane_read: getting line 780 of 1177
+[17:23:03.376053] [gt68xx] sane_read: getting line 781 of 1177
+[17:23:03.391048] [gt68xx] sane_read: getting line 782 of 1177
+[17:23:03.405999] [gt68xx] sane_read: getting line 783 of 1177
+[17:23:03.421089] [gt68xx] sane_read: getting line 784 of 1177
+[17:23:03.436169] [gt68xx] sane_read: getting line 785 of 1177
+[17:23:03.451072] [gt68xx] sane_read: getting line 786 of 1177
+[17:23:03.466062] [gt68xx] sane_read: getting line 787 of 1177
+[17:23:03.481060] [gt68xx] sane_read: getting line 788 of 1177
+[17:23:03.496051] [gt68xx] sane_read: getting line 789 of 1177
+[17:23:03.511215] [gt68xx] sane_read: getting line 790 of 1177
+[17:23:03.525999] [gt68xx] sane_read: getting line 791 of 1177
+[17:23:03.541023] [gt68xx] sane_read: getting line 792 of 1177
+[17:23:03.556065] [gt68xx] sane_read: getting line 793 of 1177
+[17:23:03.571124] [gt68xx] sane_read: getting line 794 of 1177
+[17:23:03.586162] [gt68xx] sane_read: getting line 795 of 1177
+[17:23:03.601358] [gt68xx] sane_read: getting line 796 of 1177
+[17:23:03.615954] [gt68xx] sane_read: getting line 797 of 1177
+[17:23:03.631038] [gt68xx] sane_read: getting line 798 of 1177
+[17:23:03.646048] [gt68xx] sane_read: getting line 799 of 1177
+[17:23:03.661054] [gt68xx] sane_read: getting line 800 of 1177
+[17:23:03.675962] [gt68xx] sane_read: getting line 801 of 1177
+[17:23:03.691044] [gt68xx] sane_read: getting line 802 of 1177
+[17:23:03.705979] [gt68xx] sane_read: exit (line 803 of 1177, byte_count 12 of 858, 32768 bytes, 688128 total)
+[17:23:03.706065] [gt68xx] sane_read: start (line 803 of 1177, byte_count 12 of 858)
+[17:23:03.706084] [gt68xx] sane_read: getting line 803 of 1177
+[17:23:03.721358] [gt68xx] sane_read: getting line 804 of 1177
+[17:23:03.736012] [gt68xx] sane_read: getting line 805 of 1177
+[17:23:03.751161] [gt68xx] sane_read: getting line 806 of 1177
+[17:23:03.766046] [gt68xx] sane_read: getting line 807 of 1177
+[17:23:03.781033] [gt68xx] sane_read: getting line 808 of 1177
+[17:23:03.796049] [gt68xx] sane_read: getting line 809 of 1177
+[17:23:03.811211] [gt68xx] sane_read: getting line 810 of 1177
+[17:23:03.826031] [gt68xx] sane_read: getting line 811 of 1177
+[17:23:03.840971] [gt68xx] sane_read: getting line 812 of 1177
+[17:23:03.856058] [gt68xx] sane_read: getting line 813 of 1177
+[17:23:03.871159] [gt68xx] sane_read: getting line 814 of 1177
+[17:23:03.886168] [gt68xx] sane_read: getting line 815 of 1177
+[17:23:03.900971] [gt68xx] sane_read: getting line 816 of 1177
+[17:23:03.916131] [gt68xx] sane_read: getting line 817 of 1177
+[17:23:03.931216] [gt68xx] sane_read: getting line 818 of 1177
+[17:23:03.946054] [gt68xx] sane_read: getting line 819 of 1177
+[17:23:03.961227] [gt68xx] sane_read: getting line 820 of 1177
+[17:23:03.976011] [gt68xx] sane_read: getting line 821 of 1177
+[17:23:03.990958] [gt68xx] sane_read: getting line 822 of 1177
+[17:23:04.006029] [gt68xx] sane_read: getting line 823 of 1177
+[17:23:04.021119] [gt68xx] sane_read: getting line 824 of 1177
+[17:23:04.036070] [gt68xx] sane_read: getting line 825 of 1177
+[17:23:04.051067] [gt68xx] sane_read: getting line 826 of 1177
+[17:23:04.066222] [gt68xx] sane_read: getting line 827 of 1177
+[17:23:04.081035] [gt68xx] sane_read: getting line 828 of 1177
+[17:23:04.096064] [gt68xx] sane_read: getting line 829 of 1177
+[17:23:04.111188] [gt68xx] sane_read: getting line 830 of 1177
+[17:23:04.125958] [gt68xx] sane_read: getting line 831 of 1177
+[17:23:04.141009] [gt68xx] sane_read: getting line 832 of 1177
+[17:23:04.156046] [gt68xx] sane_read: getting line 833 of 1177
+[17:23:04.171256] [gt68xx] sane_read: getting line 834 of 1177
+[17:23:04.186161] [gt68xx] sane_read: getting line 835 of 1177
+[17:23:04.201463] [gt68xx] sane_read: getting line 836 of 1177
+[17:23:04.216086] [gt68xx] sane_read: getting line 837 of 1177
+[17:23:04.231171] [gt68xx] sane_read: getting line 838 of 1177
+[17:23:04.246075] [gt68xx] sane_read: getting line 839 of 1177
+[17:23:04.261072] [gt68xx] sane_read: getting line 840 of 1177
+[17:23:04.276005] [gt68xx] sane_read: exit (line 841 of 1177, byte_count 176 of 858, 32768 bytes, 720896 total)
+[17:23:04.276060] [gt68xx] sane_read: start (line 841 of 1177, byte_count 176 of 858)
+[17:23:04.276072] [gt68xx] sane_read: getting line 841 of 1177
+[17:23:04.291091] [gt68xx] sane_read: getting line 842 of 1177
+[17:23:04.306022] [gt68xx] sane_read: getting line 843 of 1177
+[17:23:04.321155] [gt68xx] sane_read: getting line 844 of 1177
+[17:23:04.336313] [gt68xx] sane_read: getting line 845 of 1177
+[17:23:04.351042] [gt68xx] sane_read: getting line 846 of 1177
+[17:23:04.366050] [gt68xx] sane_read: getting line 847 of 1177
+[17:23:04.381295] [gt68xx] sane_read: getting line 848 of 1177
+[17:23:04.396105] [gt68xx] sane_read: getting line 849 of 1177
+[17:23:04.411004] [gt68xx] sane_read: getting line 850 of 1177
+[17:23:04.426138] [gt68xx] sane_read: getting line 851 of 1177
+[17:23:04.441135] [gt68xx] sane_read: getting line 852 of 1177
+[17:23:04.455954] [gt68xx] sane_read: getting line 853 of 1177
+[17:23:04.471139] [gt68xx] sane_read: getting line 854 of 1177
+[17:23:04.486156] [gt68xx] sane_read: getting line 855 of 1177
+[17:23:04.501203] [gt68xx] sane_read: getting line 856 of 1177
+[17:23:04.516028] [gt68xx] sane_read: getting line 857 of 1177
+[17:23:04.531143] [gt68xx] sane_read: getting line 858 of 1177
+[17:23:04.546438] [gt68xx] sane_read: getting line 859 of 1177
+[17:23:04.561134] [gt68xx] sane_read: getting line 860 of 1177
+[17:23:04.576079] [gt68xx] sane_read: getting line 861 of 1177
+[17:23:04.591211] [gt68xx] sane_read: getting line 862 of 1177
+[17:23:04.606276] [gt68xx] sane_read: getting line 863 of 1177
+[17:23:04.620926] [gt68xx] sane_read: getting line 864 of 1177
+[17:23:04.636131] [gt68xx] sane_read: getting line 865 of 1177
+[17:23:04.650963] [gt68xx] sane_read: getting line 866 of 1177
+[17:23:04.666242] [gt68xx] sane_read: getting line 867 of 1177
+[17:23:04.681427] [gt68xx] sane_read: getting line 868 of 1177
+[17:23:04.696252] [gt68xx] sane_read: getting line 869 of 1177
+[17:23:04.710980] [gt68xx] sane_read: getting line 870 of 1177
+[17:23:04.726100] [gt68xx] sane_read: getting line 871 of 1177
+[17:23:04.741208] [gt68xx] sane_read: getting line 872 of 1177
+[17:23:04.756003] [gt68xx] sane_read: getting line 873 of 1177
+[17:23:04.771241] [gt68xx] sane_read: getting line 874 of 1177
+[17:23:04.786237] [gt68xx] sane_read: getting line 875 of 1177
+[17:23:04.801344] [gt68xx] sane_read: getting line 876 of 1177
+[17:23:04.816052] [gt68xx] sane_read: getting line 877 of 1177
+[17:23:04.830967] [gt68xx] sane_read: getting line 878 of 1177
+[17:23:04.845981] [gt68xx] sane_read: exit (line 879 of 1177, byte_count 340 of 858, 32768 bytes, 753664 total)
+[17:23:04.846033] [gt68xx] sane_read: start (line 879 of 1177, byte_count 340 of 858)
+[17:23:04.846045] [gt68xx] sane_read: getting line 879 of 1177
+[17:23:04.861013] [gt68xx] sane_read: getting line 880 of 1177
+[17:23:04.876129] [gt68xx] sane_read: getting line 881 of 1177
+[17:23:04.891069] [gt68xx] sane_read: getting line 882 of 1177
+[17:23:04.906444] [gt68xx] sane_read: getting line 883 of 1177
+[17:23:04.921188] [gt68xx] sane_read: getting line 884 of 1177
+[17:23:04.936148] [gt68xx] sane_read: getting line 885 of 1177
+[17:23:04.951139] [gt68xx] sane_read: getting line 886 of 1177
+[17:23:04.966147] [gt68xx] sane_read: getting line 887 of 1177
+[17:23:04.981042] [gt68xx] sane_read: getting line 888 of 1177
+[17:23:04.996074] [gt68xx] sane_read: getting line 889 of 1177
+[17:23:05.011051] [gt68xx] sane_read: getting line 890 of 1177
+[17:23:05.026242] [gt68xx] sane_read: getting line 891 of 1177
+[17:23:05.041141] [gt68xx] sane_read: getting line 892 of 1177
+[17:23:05.056177] [gt68xx] sane_read: getting line 893 of 1177
+[17:23:05.071045] [gt68xx] sane_read: getting line 894 of 1177
+[17:23:05.086018] [gt68xx] sane_read: getting line 895 of 1177
+[17:23:05.101331] [gt68xx] sane_read: getting line 896 of 1177
+[17:23:05.116283] [gt68xx] sane_read: getting line 897 of 1177
+[17:23:05.131428] [gt68xx] sane_read: getting line 898 of 1177
+[17:23:05.146431] [gt68xx] sane_read: getting line 899 of 1177
+[17:23:05.161364] [gt68xx] sane_read: getting line 900 of 1177
+[17:23:05.176317] [gt68xx] sane_read: getting line 901 of 1177
+[17:23:05.191011] [gt68xx] sane_read: getting line 902 of 1177
+[17:23:05.205966] [gt68xx] sane_read: getting line 903 of 1177
+[17:23:05.221440] [gt68xx] sane_read: getting line 904 of 1177
+[17:23:05.236245] [gt68xx] sane_read: getting line 905 of 1177
+[17:23:05.251338] [gt68xx] sane_read: getting line 906 of 1177
+[17:23:05.266149] [gt68xx] sane_read: getting line 907 of 1177
+[17:23:05.281245] [gt68xx] sane_read: getting line 908 of 1177
+[17:23:05.296181] [gt68xx] sane_read: getting line 909 of 1177
+[17:23:05.311011] [gt68xx] sane_read: getting line 910 of 1177
+[17:23:05.326029] [gt68xx] sane_read: getting line 911 of 1177
+[17:23:05.340980] [gt68xx] sane_read: getting line 912 of 1177
+[17:23:05.355984] [gt68xx] sane_read: getting line 913 of 1177
+[17:23:05.371142] [gt68xx] sane_read: getting line 914 of 1177
+[17:23:05.386268] [gt68xx] sane_read: getting line 915 of 1177
+[17:23:05.401346] [gt68xx] sane_read: getting line 916 of 1177
+[17:23:05.416280] [gt68xx] sane_read: exit (line 917 of 1177, byte_count 504 of 858, 32768 bytes, 786432 total)
+[17:23:05.416356] [gt68xx] sane_read: start (line 917 of 1177, byte_count 504 of 858)
+[17:23:05.416365] [gt68xx] sane_read: getting line 917 of 1177
+[17:23:05.431002] [gt68xx] sane_read: getting line 918 of 1177
+[17:23:05.446014] [gt68xx] sane_read: getting line 919 of 1177
+[17:23:05.461137] [gt68xx] sane_read: getting line 920 of 1177
+[17:23:05.476245] [gt68xx] sane_read: getting line 921 of 1177
+[17:23:05.491146] [gt68xx] sane_read: getting line 922 of 1177
+[17:23:05.506041] [gt68xx] sane_read: getting line 923 of 1177
+[17:23:05.521318] [gt68xx] sane_read: getting line 924 of 1177
+[17:23:05.536246] [gt68xx] sane_read: getting line 925 of 1177
+[17:23:05.550982] [gt68xx] sane_read: getting line 926 of 1177
+[17:23:05.565983] [gt68xx] sane_read: getting line 927 of 1177
+[17:23:05.581204] [gt68xx] sane_read: getting line 928 of 1177
+[17:23:05.596029] [gt68xx] sane_read: getting line 929 of 1177
+[17:23:05.611340] [gt68xx] sane_read: getting line 930 of 1177
+[17:23:05.625937] [gt68xx] sane_read: getting line 931 of 1177
+[17:23:05.641012] [gt68xx] sane_read: getting line 932 of 1177
+[17:23:05.656099] [gt68xx] sane_read: getting line 933 of 1177
+[17:23:05.670999] [gt68xx] sane_read: getting line 934 of 1177
+[17:23:05.686108] [gt68xx] sane_read: getting line 935 of 1177
+[17:23:05.701340] [gt68xx] sane_read: getting line 936 of 1177
+[17:23:05.716006] [gt68xx] sane_read: getting line 937 of 1177
+[17:23:05.731405] [gt68xx] sane_read: getting line 938 of 1177
+[17:23:05.746030] [gt68xx] sane_read: getting line 939 of 1177
+[17:23:05.761135] [gt68xx] sane_read: getting line 940 of 1177
+[17:23:05.776235] [gt68xx] sane_read: getting line 941 of 1177
+[17:23:05.790981] [gt68xx] sane_read: getting line 942 of 1177
+[17:23:05.805920] [gt68xx] sane_read: getting line 943 of 1177
+[17:23:05.821028] [gt68xx] sane_read: getting line 944 of 1177
+[17:23:05.835982] [gt68xx] sane_read: getting line 945 of 1177
+[17:23:05.850983] [gt68xx] sane_read: getting line 946 of 1177
+[17:23:05.866214] [gt68xx] sane_read: getting line 947 of 1177
+[17:23:05.881398] [gt68xx] sane_read: getting line 948 of 1177
+[17:23:05.896118] [gt68xx] sane_read: getting line 949 of 1177
+[17:23:05.910991] [gt68xx] sane_read: getting line 950 of 1177
+[17:23:05.926005] [gt68xx] sane_read: getting line 951 of 1177
+[17:23:05.941188] [gt68xx] sane_read: getting line 952 of 1177
+[17:23:05.956050] [gt68xx] sane_read: getting line 953 of 1177
+[17:23:05.970983] [gt68xx] sane_read: getting line 954 of 1177
+[17:23:05.986081] [gt68xx] sane_read: exit (line 955 of 1177, byte_count 668 of 858, 32768 bytes, 819200 total)
+[17:23:05.986157] [gt68xx] sane_read: start (line 955 of 1177, byte_count 668 of 858)
+[17:23:05.986165] [gt68xx] sane_read: getting line 955 of 1177
+[17:23:06.001184] [gt68xx] sane_read: getting line 956 of 1177
+[17:23:06.017308] [gt68xx] sane_read: getting line 957 of 1177
+[17:23:06.030902] [gt68xx] sane_read: getting line 958 of 1177
+[17:23:06.046145] [gt68xx] sane_read: getting line 959 of 1177
+[17:23:06.061110] [gt68xx] sane_read: getting line 960 of 1177
+[17:23:06.076135] [gt68xx] sane_read: getting line 961 of 1177
+[17:23:06.091148] [gt68xx] sane_read: getting line 962 of 1177
+[17:23:06.106208] [gt68xx] sane_read: getting line 963 of 1177
+[17:23:06.120995] [gt68xx] sane_read: getting line 964 of 1177
+[17:23:06.135908] [gt68xx] sane_read: getting line 965 of 1177
+[17:23:06.150935] [gt68xx] sane_read: getting line 966 of 1177
+[17:23:06.165971] [gt68xx] sane_read: getting line 967 of 1177
+[17:23:06.180938] [gt68xx] sane_read: getting line 968 of 1177
+[17:23:06.195965] [gt68xx] sane_read: getting line 969 of 1177
+[17:23:06.211107] [gt68xx] sane_read: getting line 970 of 1177
+[17:23:06.226316] [gt68xx] sane_read: getting line 971 of 1177
+[17:23:06.240932] [gt68xx] sane_read: getting line 972 of 1177
+[17:23:06.256156] [gt68xx] sane_read: getting line 973 of 1177
+[17:23:06.270950] [gt68xx] sane_read: getting line 974 of 1177
+[17:23:06.285914] [gt68xx] sane_read: getting line 975 of 1177
+[17:23:06.300926] [gt68xx] sane_read: getting line 976 of 1177
+[17:23:06.315957] [gt68xx] sane_read: getting line 977 of 1177
+[17:23:06.330951] [gt68xx] sane_read: getting line 978 of 1177
+[17:23:06.345970] [gt68xx] sane_read: getting line 979 of 1177
+[17:23:06.361066] [gt68xx] sane_read: getting line 980 of 1177
+[17:23:06.375928] [gt68xx] sane_read: getting line 981 of 1177
+[17:23:06.391171] [gt68xx] sane_read: getting line 982 of 1177
+[17:23:06.406162] [gt68xx] sane_read: getting line 983 of 1177
+[17:23:06.420990] [gt68xx] sane_read: getting line 984 of 1177
+[17:23:06.435988] [gt68xx] sane_read: getting line 985 of 1177
+[17:23:06.450996] [gt68xx] sane_read: getting line 986 of 1177
+[17:23:06.466178] [gt68xx] sane_read: getting line 987 of 1177
+[17:23:06.480949] [gt68xx] sane_read: getting line 988 of 1177
+[17:23:06.496009] [gt68xx] sane_read: getting line 989 of 1177
+[17:23:06.510927] [gt68xx] sane_read: getting line 990 of 1177
+[17:23:06.525999] [gt68xx] sane_read: getting line 991 of 1177
+[17:23:06.541093] [gt68xx] sane_read: getting line 992 of 1177
+[17:23:06.555999] [gt68xx] sane_read: exit (line 993 of 1177, byte_count 832 of 858, 32768 bytes, 851968 total)
+[17:23:06.556061] [gt68xx] sane_read: start (line 993 of 1177, byte_count 832 of 858)
+[17:23:06.556071] [gt68xx] sane_read: getting line 993 of 1177
+[17:23:06.571202] [gt68xx] sane_read: getting line 994 of 1177
+[17:23:06.586321] [gt68xx] sane_read: getting line 995 of 1177
+[17:23:06.601124] [gt68xx] sane_read: getting line 996 of 1177
+[17:23:06.616197] [gt68xx] sane_read: getting line 997 of 1177
+[17:23:06.630909] [gt68xx] sane_read: getting line 998 of 1177
+[17:23:06.645964] [gt68xx] sane_read: getting line 999 of 1177
+[17:23:06.660989] [gt68xx] sane_read: getting line 1000 of 1177
+[17:23:06.676225] [gt68xx] sane_read: getting line 1001 of 1177
+[17:23:06.690949] [gt68xx] sane_read: getting line 1002 of 1177
+[17:23:06.706229] [gt68xx] sane_read: getting line 1003 of 1177
+[17:23:06.721238] [gt68xx] sane_read: getting line 1004 of 1177
+[17:23:06.736090] [gt68xx] sane_read: getting line 1005 of 1177
+[17:23:06.750912] [gt68xx] sane_read: getting line 1006 of 1177
+[17:23:06.765962] [gt68xx] sane_read: getting line 1007 of 1177
+[17:23:06.781078] [gt68xx] sane_read: getting line 1008 of 1177
+[17:23:06.795995] [gt68xx] sane_read: getting line 1009 of 1177
+[17:23:06.811125] [gt68xx] sane_read: getting line 1010 of 1177
+[17:23:06.826099] [gt68xx] sane_read: getting line 1011 of 1177
+[17:23:06.840909] [gt68xx] sane_read: getting line 1012 of 1177
+[17:23:06.855978] [gt68xx] sane_read: getting line 1013 of 1177
+[17:23:06.871098] [gt68xx] sane_read: getting line 1014 of 1177
+[17:23:06.885997] [gt68xx] sane_read: getting line 1015 of 1177
+[17:23:06.901122] [gt68xx] sane_read: getting line 1016 of 1177
+[17:23:06.916010] [gt68xx] sane_read: getting line 1017 of 1177
+[17:23:06.930998] [gt68xx] sane_read: getting line 1018 of 1177
+[17:23:06.946190] [gt68xx] sane_read: getting line 1019 of 1177
+[17:23:06.961127] [gt68xx] sane_read: getting line 1020 of 1177
+[17:23:06.976108] [gt68xx] sane_read: getting line 1021 of 1177
+[17:23:06.990945] [gt68xx] sane_read: getting line 1022 of 1177
+[17:23:07.006030] [gt68xx] sane_read: getting line 1023 of 1177
+[17:23:07.021138] [gt68xx] sane_read: getting line 1024 of 1177
+[17:23:07.036088] [gt68xx] sane_read: getting line 1025 of 1177
+[17:23:07.051019] [gt68xx] sane_read: getting line 1026 of 1177
+[17:23:07.066081] [gt68xx] sane_read: getting line 1027 of 1177
+[17:23:07.081125] [gt68xx] sane_read: getting line 1028 of 1177
+[17:23:07.096012] [gt68xx] sane_read: getting line 1029 of 1177
+[17:23:07.111203] [gt68xx] sane_read: getting line 1030 of 1177
+[17:23:07.126185] [gt68xx] sane_read: getting line 1031 of 1177
+[17:23:07.141090] [gt68xx] sane_read: exit (line 1032 of 1177, byte_count 138 of 858, 32768 bytes, 884736 total)
+[17:23:07.141171] [gt68xx] sane_read: start (line 1032 of 1177, byte_count 138 of 858)
+[17:23:07.141183] [gt68xx] sane_read: getting line 1032 of 1177
+[17:23:07.155983] [gt68xx] sane_read: getting line 1033 of 1177
+[17:23:07.171210] [gt68xx] sane_read: getting line 1034 of 1177
+[17:23:07.186210] [gt68xx] sane_read: getting line 1035 of 1177
+[17:23:07.201204] [gt68xx] sane_read: getting line 1036 of 1177
+[17:23:07.216135] [gt68xx] sane_read: getting line 1037 of 1177
+[17:23:07.230896] [gt68xx] sane_read: getting line 1038 of 1177
+[17:23:07.245974] [gt68xx] sane_read: getting line 1039 of 1177
+[17:23:07.260968] [gt68xx] sane_read: getting line 1040 of 1177
+[17:23:07.276057] [gt68xx] sane_read: getting line 1041 of 1177
+[17:23:07.291213] [gt68xx] sane_read: getting line 1042 of 1177
+[17:23:07.305982] [gt68xx] sane_read: getting line 1043 of 1177
+[17:23:07.320952] [gt68xx] sane_read: getting line 1044 of 1177
+[17:23:07.336157] [gt68xx] sane_read: getting line 1045 of 1177
+[17:23:07.350870] [gt68xx] sane_read: getting line 1046 of 1177
+[17:23:07.365973] [gt68xx] sane_read: getting line 1047 of 1177
+[17:23:07.381161] [gt68xx] sane_read: getting line 1048 of 1177
+[17:23:07.396051] [gt68xx] sane_read: getting line 1049 of 1177
+[17:23:07.411098] [gt68xx] sane_read: getting line 1050 of 1177
+[17:23:07.426160] [gt68xx] sane_read: getting line 1051 of 1177
+[17:23:07.440997] [gt68xx] sane_read: getting line 1052 of 1177
+[17:23:07.455983] [gt68xx] sane_read: getting line 1053 of 1177
+[17:23:07.471023] [gt68xx] sane_read: getting line 1054 of 1177
+[17:23:07.485936] [gt68xx] sane_read: getting line 1055 of 1177
+[17:23:07.500975] [gt68xx] sane_read: getting line 1056 of 1177
+[17:23:07.516058] [gt68xx] sane_read: getting line 1057 of 1177
+[17:23:07.531053] [gt68xx] sane_read: getting line 1058 of 1177
+[17:23:07.546107] [gt68xx] sane_read: getting line 1059 of 1177
+[17:23:07.561101] [gt68xx] sane_read: getting line 1060 of 1177
+[17:23:07.576177] [gt68xx] sane_read: getting line 1061 of 1177
+[17:23:07.590920] [gt68xx] sane_read: getting line 1062 of 1177
+[17:23:07.606099] [gt68xx] sane_read: getting line 1063 of 1177
+[17:23:07.621103] [gt68xx] sane_read: getting line 1064 of 1177
+[17:23:07.635898] [gt68xx] sane_read: getting line 1065 of 1177
+[17:23:07.650976] [gt68xx] sane_read: getting line 1066 of 1177
+[17:23:07.665889] [gt68xx] sane_read: getting line 1067 of 1177
+[17:23:07.681073] [gt68xx] sane_read: getting line 1068 of 1177
+[17:23:07.696132] [gt68xx] sane_read: getting line 1069 of 1177
+[17:23:07.710904] [gt68xx] sane_read: exit (line 1070 of 1177, byte_count 302 of 858, 32768 bytes, 917504 total)
+[17:23:07.710969] [gt68xx] sane_read: start (line 1070 of 1177, byte_count 302 of 858)
+[17:23:07.710979] [gt68xx] sane_read: getting line 1070 of 1177
+[17:23:07.725917] [gt68xx] sane_read: getting line 1071 of 1177
+[17:23:07.740935] [gt68xx] sane_read: getting line 1072 of 1177
+[17:23:07.755935] [gt68xx] sane_read: getting line 1073 of 1177
+[17:23:07.771167] [gt68xx] sane_read: getting line 1074 of 1177
+[17:23:07.786018] [gt68xx] sane_read: getting line 1075 of 1177
+[17:23:07.801184] [gt68xx] sane_read: getting line 1076 of 1177
+[17:23:07.816138] [gt68xx] sane_read: getting line 1077 of 1177
+[17:23:07.831167] [gt68xx] sane_read: getting line 1078 of 1177
+[17:23:07.845913] [gt68xx] sane_read: getting line 1079 of 1177
+[17:23:07.860998] [gt68xx] sane_read: getting line 1080 of 1177
+[17:23:07.875961] [gt68xx] sane_read: getting line 1081 of 1177
+[17:23:07.890977] [gt68xx] sane_read: getting line 1082 of 1177
+[17:23:07.906327] [gt68xx] sane_read: getting line 1083 of 1177
+[17:23:07.921148] [gt68xx] sane_read: getting line 1084 of 1177
+[17:23:07.935951] [gt68xx] sane_read: getting line 1085 of 1177
+[17:23:07.950909] [gt68xx] sane_read: getting line 1086 of 1177
+[17:23:07.966047] [gt68xx] sane_read: getting line 1087 of 1177
+[17:23:07.980904] [gt68xx] sane_read: getting line 1088 of 1177
+[17:23:07.995874] [gt68xx] sane_read: getting line 1089 of 1177
+[17:23:08.011240] [gt68xx] sane_read: getting line 1090 of 1177
+[17:23:08.026028] [gt68xx] sane_read: getting line 1091 of 1177
+[17:23:08.041190] [gt68xx] sane_read: getting line 1092 of 1177
+[17:23:08.056142] [gt68xx] sane_read: getting line 1093 of 1177
+[17:23:08.070900] [gt68xx] sane_read: getting line 1094 of 1177
+[17:23:08.085892] [gt68xx] sane_read: getting line 1095 of 1177
+[17:23:08.100996] [gt68xx] sane_read: getting line 1096 of 1177
+[17:23:08.116112] [gt68xx] sane_read: getting line 1097 of 1177
+[17:23:08.130907] [gt68xx] sane_read: getting line 1098 of 1177
+[17:23:08.145910] [gt68xx] sane_read: getting line 1099 of 1177
+[17:23:08.160881] [gt68xx] sane_read: getting line 1100 of 1177
+[17:23:08.176123] [gt68xx] sane_read: getting line 1101 of 1177
+[17:23:08.190898] [gt68xx] sane_read: getting line 1102 of 1177
+[17:23:08.205949] [gt68xx] sane_read: getting line 1103 of 1177
+[17:23:08.221112] [gt68xx] sane_read: getting line 1104 of 1177
+[17:23:08.235924] [gt68xx] sane_read: getting line 1105 of 1177
+[17:23:08.251041] [gt68xx] sane_read: getting line 1106 of 1177
+[17:23:08.266162] [gt68xx] sane_read: getting line 1107 of 1177
+[17:23:08.281165] [gt68xx] sane_read: exit (line 1108 of 1177, byte_count 466 of 858, 32768 bytes, 950272 total)
+[17:23:08.281241] [gt68xx] sane_read: start (line 1108 of 1177, byte_count 466 of 858)
+[17:23:08.281250] [gt68xx] sane_read: getting line 1108 of 1177
+[17:23:08.296125] [gt68xx] sane_read: getting line 1109 of 1177
+[17:23:08.310906] [gt68xx] sane_read: getting line 1110 of 1177
+[17:23:08.325984] [gt68xx] sane_read: getting line 1111 of 1177
+[17:23:08.340886] [gt68xx] sane_read: getting line 1112 of 1177
+[17:23:08.356116] [gt68xx] sane_read: getting line 1113 of 1177
+[17:23:08.370961] [gt68xx] sane_read: getting line 1114 of 1177
+[17:23:08.385961] [gt68xx] sane_read: getting line 1115 of 1177
+[17:23:08.401058] [gt68xx] sane_read: getting line 1116 of 1177
+[17:23:08.415930] [gt68xx] sane_read: getting line 1117 of 1177
+[17:23:08.431058] [gt68xx] sane_read: getting line 1118 of 1177
+[17:23:08.445849] [gt68xx] sane_read: getting line 1119 of 1177
+[17:23:08.460948] [gt68xx] sane_read: getting line 1120 of 1177
+[17:23:08.475957] [gt68xx] sane_read: getting line 1121 of 1177
+[17:23:08.490887] [gt68xx] sane_read: getting line 1122 of 1177
+[17:23:08.506132] [gt68xx] sane_read: getting line 1123 of 1177
+[17:23:08.521112] [gt68xx] sane_read: getting line 1124 of 1177
+[17:23:08.536162] [gt68xx] sane_read: getting line 1125 of 1177
+[17:23:08.550985] [gt68xx] sane_read: getting line 1126 of 1177
+[17:23:08.565955] [gt68xx] sane_read: getting line 1127 of 1177
+[17:23:08.581223] [gt68xx] sane_read: getting line 1128 of 1177
+[17:23:08.595952] [gt68xx] sane_read: getting line 1129 of 1177
+[17:23:08.610855] [gt68xx] sane_read: getting line 1130 of 1177
+[17:23:08.625873] [gt68xx] sane_read: getting line 1131 of 1177
+[17:23:08.640916] [gt68xx] sane_read: getting line 1132 of 1177
+[17:23:08.655928] [gt68xx] sane_read: getting line 1133 of 1177
+[17:23:08.670941] [gt68xx] sane_read: getting line 1134 of 1177
+[17:23:08.685932] [gt68xx] sane_read: getting line 1135 of 1177
+[17:23:08.700959] [gt68xx] sane_read: getting line 1136 of 1177
+[17:23:08.715931] [gt68xx] sane_read: getting line 1137 of 1177
+[17:23:08.731050] [gt68xx] sane_read: getting line 1138 of 1177
+[17:23:08.745870] [gt68xx] sane_read: getting line 1139 of 1177
+[17:23:08.760839] [gt68xx] sane_read: getting line 1140 of 1177
+[17:23:08.775953] [gt68xx] sane_read: getting line 1141 of 1177
+[17:23:08.790868] [gt68xx] sane_read: getting line 1142 of 1177
+[17:23:08.805855] [gt68xx] sane_read: getting line 1143 of 1177
+[17:23:08.820892] [gt68xx] sane_read: getting line 1144 of 1177
+[17:23:08.835973] [gt68xx] sane_read: getting line 1145 of 1177
+[17:23:08.850923] [gt68xx] sane_read: exit (line 1146 of 1177, byte_count 630 of 858, 32768 bytes, 983040 total)
+[17:23:08.850987] [gt68xx] sane_read: start (line 1146 of 1177, byte_count 630 of 858)
+[17:23:08.850995] [gt68xx] sane_read: getting line 1146 of 1177
+[17:23:08.865931] [gt68xx] sane_read: getting line 1147 of 1177
+[17:23:08.881220] [gt68xx] sane_read: getting line 1148 of 1177
+[17:23:08.895944] [gt68xx] sane_read: getting line 1149 of 1177
+[17:23:08.910846] [gt68xx] sane_read: getting line 1150 of 1177
+[17:23:08.925886] [gt68xx] sane_read: getting line 1151 of 1177
+[17:23:08.940927] [gt68xx] sane_read: getting line 1152 of 1177
+[17:23:08.955965] [gt68xx] sane_read: getting line 1153 of 1177
+[17:23:08.970978] [gt68xx] sane_read: getting line 1154 of 1177
+[17:23:08.986161] [gt68xx] sane_read: getting line 1155 of 1177
+[17:23:09.001032] [gt68xx] sane_read: getting line 1156 of 1177
+[17:23:09.015885] [gt68xx] sane_read: getting line 1157 of 1177
+[17:23:09.030871] [gt68xx] sane_read: getting line 1158 of 1177
+[17:23:09.045832] [gt68xx] sane_read: getting line 1159 of 1177
+[17:23:09.060940] [gt68xx] sane_read: getting line 1160 of 1177
+[17:23:09.076064] [gt68xx] sane_read: getting line 1161 of 1177
+[17:23:09.091022] [gt68xx] sane_read: getting line 1162 of 1177
+[17:23:09.105951] [gt68xx] sane_read: getting line 1163 of 1177
+[17:23:09.120930] [gt68xx] sane_read: getting line 1164 of 1177
+[17:23:09.136003] [gt68xx] sane_read: getting line 1165 of 1177
+[17:23:09.151123] [gt68xx] sane_read: getting line 1166 of 1177
+[17:23:09.165929] [gt68xx] sane_read: getting line 1167 of 1177
+[17:23:09.181205] [gt68xx] sane_read: getting line 1168 of 1177
+[17:23:09.195920] [gt68xx] sane_read: getting line 1169 of 1177
+[17:23:09.210930] [gt68xx] sane_read: getting line 1170 of 1177
+[17:23:09.225984] [gt68xx] sane_read: getting line 1171 of 1177
+[17:23:09.241042] [gt68xx] sane_read: getting line 1172 of 1177
+[17:23:09.256182] [gt68xx] sane_read: getting line 1173 of 1177
+[17:23:09.271185] [gt68xx] sane_read: getting line 1174 of 1177
+[17:23:09.286184] [gt68xx] sane_read: getting line 1175 of 1177
+[17:23:09.300818] [gt68xx] sane_read: getting line 1176 of 1177
+[17:23:09.303382] [gt68xx] sane_read: scan complete: 26826 bytes, 1009866 total
+[17:23:09.303428] [gt68xx] sane_read: start (line 1177 of 1177, byte_count 858 of 858)
+[17:23:09.303452] [gt68xx] sane_read: nothing more to scan: EOF
+[17:23:09.303931] [gt68xx] sane_cancel: start
+[17:23:09.303939] [gt68xx] sane_cancel: scan finished, scanned 1009866 bytes in 18 seconds
+[17:23:09.304832] [gt68xx] sane_cancel: exit
+[17:23:09.304843] [gt68xx] sane_close: start
+[17:23:09.305743] [gt68xx] sane_close: exit
+[17:23:09.305754] [gt68xx] sane_exit: start
+[17:23:09.305924] [gt68xx] sane_exit: exit

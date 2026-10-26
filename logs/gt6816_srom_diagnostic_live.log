@@ -1,0 +1,8 @@
+2026-10-15 14:20:16,334 INFO saved volatile 8 KiB M1 backup to gt6816_m1_pre_srom_diagnostic.bin
+2026-10-15 14:20:16,352 INFO requested stage boot; FF80.3 will request external SROM reload
+2026-10-15 14:20:16,353 INFO PRE marker verified; stage reached EP1 before SROM reload
+2026-10-15 14:20:19,353 WARNING POST marker attempt 1/3 failed: POST marker unavailable: [Errno 110] Operation timed out
+2026-10-15 14:20:19,404 WARNING POST marker attempt 2/3 failed: POST marker unavailable: [Errno 16] Resource busy
+2026-10-15 14:20:19,454 WARNING POST marker attempt 3/3 failed: POST marker unavailable: [Errno 16] Resource busy
+2026-10-15 14:20:19,505 ERROR FAILED: POST marker unavailable after 3 attempts: POST marker unavailable: [Errno 16] Resource busy
+2026-10-15 14:20:19,505 ERROR Recovery: unplug/replug to restore the ROM USB bootstrap; use the saved M1 backup only for a separately verified RAM restore

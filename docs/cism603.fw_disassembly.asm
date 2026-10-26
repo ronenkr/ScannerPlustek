@@ -1,0 +1,4631 @@
+; cism603.fw  8192 bytes, base 0x0000
+; traced 3452 instructions covering 7068 bytes; 78 call targets
+
+vec_0000:
+  0000  02 00 48  LJMP loc_0048
+
+vec_0003:
+  0003  02 0D B8  LJMP loc_0DB8
+  0006  DB FFh,FFh,FFh,FFh,FFh   ; padding FF
+
+vec_000B:
+  000B  02 0E 53  LJMP loc_0E53
+  000E  DB FFh,FFh,FFh,FFh,FFh   ; padding FF
+
+vec_0013:
+  0013  02 0D F2  LJMP loc_0DF2
+  0016  DB FFh,FFh,FFh,FFh,FFh   ; padding FF
+
+vec_001B:
+  001B  02 0E CC  LJMP loc_0ECC
+  001E  DB FFh,FFh,FFh,FFh,FFh   ; padding FF
+
+vec_0023:
+  0023  02 0E D1  LJMP loc_0ED1
+  0026  DB FFh,FFh,FFh,FFh,FFh   ; padding FF
+
+vec_002B:
+  002B  02 0E D0  LJMP loc_0ED0
+  002E  DB FFh,FFh   ; padding FF
+
+loc_0030:    ; xref 0DEF
+  0030  90 FF 80  MOV DPTR,#FF80h  ; DCR
+  0033  E0        MOVX A,@DPTR
+  0034  D2 E0     SETB ACC.0
+  0036  F0        MOVX @DPTR,A
+  0037  00        NOP
+  0038  00        NOP
+  0039  00        NOP
+  003A  00        NOP
+  003B  00        NOP
+  003C  12 14 70  LCALL sub_1470
+  003F  32        RETI
+  0040  DB 02h,00h,48h   ; data/unreached
+
+loc_0043:    ; xref 0046, 0088
+  0043  75 87 01  MOV PCON,#01h
+  0046  01 43     AJMP loc_0043
+
+loc_0048:    ; xref 0000
+  0048  E4        CLR A
+  0049  F5 D0     MOV PSW,A
+  004B  75 81 BF  MOV SP,#BFh
+  004E  F8        MOV R0,A
+
+loc_004F:    ; xref 0050
+  004F  F6        MOV @R0,A
+  0050  D8 FD     DJNZ R0,loc_004F
+  0052  75 A8 05  MOV IE,#05h
+  0055  75 88 05  MOV TCON,#05h
+  0058  75 89 11  MOV TMOD,#11h
+  005B  75 91 01  MOV SFR_91h,#01h
+  005E  90 FF B0  MOV DPTR,#FFB0h  ; ISR
+  0061  74 0E     MOV A,#0Eh
+  0063  F0        MOVX @DPTR,A
+  0064  90 FF 80  MOV DPTR,#FF80h  ; DCR
+  0067  E0        MOVX A,@DPTR
+  0068  C2 E2     CLR ACC.2
+  006A  F0        MOVX @DPTR,A
+  006B  90 FF CC  MOV DPTR,#FFCCh  ; UDCR
+  006E  74 06     MOV A,#06h
+  0070  F0        MOVX @DPTR,A
+  0071  90 FF AF  MOV DPTR,#FFAFh  ; UIE1R
+  0074  74 3F     MOV A,#3Fh
+  0076  F0        MOVX @DPTR,A
+  0077  90 FF AE  MOV DPTR,#FFAEh  ; UIE2R
+  007A  74 15     MOV A,#15h
+  007C  F0        MOVX @DPTR,A
+  007D  D2 AF     SETB IE.7
+  007F  90 FF AD  MOV DPTR,#FFADh  ; TIER
+  0082  74 DF     MOV A,#DFh
+  0084  F0        MOVX @DPTR,A
+  0085  12 09 FA  LCALL sub_09FA
+  0088  02 00 43  LJMP loc_0043
+
+sub_008B:    ; xref 09BE, 14FC
+  008B  90 FF 00  MOV DPTR,#FF00h  ; TGCR
+  008E  E0        MOVX A,@DPTR
+  008F  C2 E0     CLR ACC.0
+  0091  F0        MOVX @DPTR,A
+  0092  90 FF 01  MOV DPTR,#FF01h  ; MOD6DR
+  0095  74 17     MOV A,#17h
+  0097  F0        MOVX @DPTR,A
+  0098  90 FF 02  MOV DPTR,#FF02h  ; MOD6PR
+  009B  74 17     MOV A,#17h
+  009D  F0        MOVX @DPTR,A
+  009E  90 FF 03  MOV DPTR,#FF03h  ; MOD16HR
+  00A1  74 15     MOV A,#15h
+  00A3  F0        MOVX @DPTR,A
+  00A4  90 FF 04  MOV DPTR,#FF04h  ; MOD16LR
+  00A7  74 7B     MOV A,#7Bh
+  00A9  F0        MOVX @DPTR,A
+  00AA  90 FF 0C  MOV DPTR,#FF0Ch  ; LEDRHR
+  00AD  74 00     MOV A,#00h
+  00AF  F0        MOVX @DPTR,A
+  00B0  90 FF 0D  MOV DPTR,#FF0Dh  ; LEDRLR
+  00B3  74 08     MOV A,#08h
+  00B5  F0        MOVX @DPTR,A
+  00B6  90 FF 0E  MOV DPTR,#FF0Eh  ; LEDFHR
+  00B9  74 01     MOV A,#01h
+  00BB  F0        MOVX @DPTR,A
+  00BC  90 FF 0F  MOV DPTR,#FF0Fh  ; LEDFLR
+  00BF  74 2C     MOV A,#2Ch
+  00C1  F0        MOVX @DPTR,A
+  00C2  90 FF 10  MOV DPTR,#FF10h  ; LEDCR
+  00C5  74 00     MOV A,#00h
+  00C7  F0        MOVX @DPTR,A
+  00C8  90 FF 07  MOV DPTR,#FF07h  ; SHR6R
+  00CB  74 00     MOV A,#00h
+  00CD  F0        MOVX @DPTR,A
+  00CE  90 FF 08  MOV DPTR,#FF08h  ; SHF6R
+  00D1  74 00     MOV A,#00h
+  00D3  F0        MOVX @DPTR,A
+  00D4  90 FF 09  MOV DPTR,#FF09h  ; SHR8R
+  00D7  74 00     MOV A,#00h
+  00D9  F0        MOVX @DPTR,A
+  00DA  90 FF 0A  MOV DPTR,#FF0Ah  ; SHF8R
+  00DD  74 0C     MOV A,#0Ch
+  00DF  F0        MOVX @DPTR,A
+  00E0  90 FF 0B  MOV DPTR,#FF0Bh  ; SHCR
+  00E3  74 03     MOV A,#03h
+  00E5  F0        MOVX @DPTR,A
+  00E6  90 FF 1A  MOV DPTR,#FF1Ah  ; H1RR
+  00E9  74 C0     MOV A,#C0h
+  00EB  F0        MOVX @DPTR,A
+  00EC  90 FF 1B  MOV DPTR,#FF1Bh  ; H1FR
+  00EF  74 0B     MOV A,#0Bh
+  00F1  F0        MOVX @DPTR,A
+  00F2  90 FF 1C  MOV DPTR,#FF1Ch  ; H2RR
+  00F5  74 C3     MOV A,#C3h
+  00F7  F0        MOVX @DPTR,A
+  00F8  90 FF 1D  MOV DPTR,#FF1Dh  ; H2FR
+  00FB  74 0D     MOV A,#0Dh
+  00FD  F0        MOVX @DPTR,A
+  00FE  90 FF 8A  MOV DPTR,#FF8Ah  ; DMACR
+  0101  E0        MOVX A,@DPTR
+  0102  54 03     ANL A,#03h
+  0104  44 10     ORL A,#10h
+  0106  F0        MOVX @DPTR,A
+  0107  90 FF 00  MOV DPTR,#FF00h  ; TGCR
+  010A  E0        MOVX A,@DPTR
+  010B  D2 E1     SETB ACC.1
+  010D  F0        MOVX @DPTR,A
+  010E  90 FF 00  MOV DPTR,#FF00h  ; TGCR
+  0111  E0        MOVX A,@DPTR
+  0112  D2 E0     SETB ACC.0
+  0114  F0        MOVX @DPTR,A
+  0115  22        RET
+
+sub_0116:    ; xref 14F9
+  0116  90 FF 1E  MOV DPTR,#FF1Eh  ; CLAMP0RR
+  0119  74 00     MOV A,#00h
+  011B  F0        MOVX @DPTR,A
+  011C  90 FF 1F  MOV DPTR,#FF1Fh  ; CLAMP0FR
+  011F  74 1F     MOV A,#1Fh
+  0121  F0        MOVX @DPTR,A
+  0122  90 FF 20  MOV DPTR,#FF20h  ; CCLP0RR
+  0125  74 C1     MOV A,#C1h
+  0127  F0        MOVX @DPTR,A
+  0128  90 FF 21  MOV DPTR,#FF21h  ; CCLP0FR
+  012B  74 0B     MOV A,#0Bh
+  012D  F0        MOVX @DPTR,A
+  012E  90 FF 22  MOV DPTR,#FF22h  ; CLAMP1RR
+  0131  74 01     MOV A,#01h
+  0133  F0        MOVX @DPTR,A
+  0134  90 FF 23  MOV DPTR,#FF23h  ; CLAMP1FR
+  0137  74 0B     MOV A,#0Bh
+  0139  F0        MOVX @DPTR,A
+  013A  90 FF 24  MOV DPTR,#FF24h  ; CCLP1RR
+  013D  74 00     MOV A,#00h
+  013F  F0        MOVX @DPTR,A
+  0140  90 FF 25  MOV DPTR,#FF25h  ; CCLP1FR
+  0143  74 00     MOV A,#00h
+  0145  F0        MOVX @DPTR,A
+  0146  90 FF 26  MOV DPTR,#FF26h  ; CLAMP2RR
+  0149  74 01     MOV A,#01h
+  014B  F0        MOVX @DPTR,A
+  014C  90 FF 27  MOV DPTR,#FF27h  ; CLAMP2FR
+  014F  74 0B     MOV A,#0Bh
+  0151  F0        MOVX @DPTR,A
+  0152  90 FF 28  MOV DPTR,#FF28h  ; CCLP2RR
+  0155  74 00     MOV A,#00h
+  0157  F0        MOVX @DPTR,A
+  0158  90 FF 29  MOV DPTR,#FF29h  ; CCLP2FR
+  015B  74 00     MOV A,#00h
+  015D  F0        MOVX @DPTR,A
+  015E  90 FF 98  MOV DPTR,#FF98h  ; AC2R
+  0161  74 0F     MOV A,#0Fh
+  0163  F0        MOVX @DPTR,A
+  0164  90 FF 97  MOV DPTR,#FF97h  ; ACR
+  0167  74 00     MOV A,#00h
+  0169  F0        MOVX @DPTR,A
+  016A  90 FF 20  MOV DPTR,#FF20h  ; CCLP0RR
+  016D  74 00     MOV A,#00h
+  016F  F0        MOVX @DPTR,A
+  0170  90 FF 24  MOV DPTR,#FF24h  ; CCLP1RR
+  0173  74 00     MOV A,#00h
+  0175  F0        MOVX @DPTR,A
+  0176  90 FF 28  MOV DPTR,#FF28h  ; CCLP2RR
+  0179  74 00     MOV A,#00h
+  017B  F0        MOVX @DPTR,A
+  017C  90 FF 05  MOV DPTR,#FF05h  ; ADCLKRR
+  017F  74 05     MOV A,#05h
+  0181  F0        MOVX @DPTR,A
+  0182  90 FF 06  MOV DPTR,#FF06h  ; ADCLKFR
+  0185  74 15     MOV A,#15h
+  0187  F0        MOVX @DPTR,A
+  0188  90 FF 2A  MOV DPTR,#FF2Ah  ; CDSR0RR
+  018B  74 41     MOV A,#41h
+  018D  F0        MOVX @DPTR,A
+  018E  90 FF 2B  MOV DPTR,#FF2Bh  ; CDSR0FR
+  0191  74 02     MOV A,#02h
+  0193  F0        MOVX @DPTR,A
+  0194  90 FF 30  MOV DPTR,#FF30h  ; CDSS0RR
+  0197  74 4D     MOV A,#4Dh
+  0199  F0        MOVX @DPTR,A
+  019A  90 FF 31  MOV DPTR,#FF31h  ; CDSS0FR
+  019D  74 0E     MOV A,#0Eh
+  019F  F0        MOVX @DPTR,A
+  01A0  90 FF 36  MOV DPTR,#FF36h  ; CDSD0RR
+  01A3  74 41     MOV A,#41h
+  01A5  F0        MOVX @DPTR,A
+  01A6  90 FF 37  MOV DPTR,#FF37h  ; CDSD0FR
+  01A9  74 02     MOV A,#02h
+  01AB  F0        MOVX @DPTR,A
+  01AC  90 FF 99  MOV DPTR,#FF99h  ; COFF0R
+  01AF  74 0D     MOV A,#0Dh
+  01B1  F0        MOVX @DPTR,A
+  01B2  90 FF 9A  MOV DPTR,#FF9Ah  ; CPGA0R
+  01B5  74 28     MOV A,#28h
+  01B7  F0        MOVX @DPTR,A
+  01B8  90 FF 9B  MOV DPTR,#FF9Bh  ; COFF1R
+  01BB  74 09     MOV A,#09h
+  01BD  F0        MOVX @DPTR,A
+  01BE  90 FF 9C  MOV DPTR,#FF9Ch  ; CPGA1R
+  01C1  74 2A     MOV A,#2Ah
+  01C3  F0        MOVX @DPTR,A
+  01C4  90 FF 9D  MOV DPTR,#FF9Dh  ; COFF2R
+  01C7  74 1D     MOV A,#1Dh
+  01C9  F0        MOVX @DPTR,A
+  01CA  90 FF 9E  MOV DPTR,#FF9Eh  ; CPGA2R
+  01CD  74 24     MOV A,#24h
+  01CF  F0        MOVX @DPTR,A
+  01D0  22        RET
+
+sub_01D1:    ; xref 179A
+  01D1  30 2A 0E  JNB 25h.2,loc_01E2
+  01D4  30 21 0B  JNB 24h.1,loc_01E2
+  01D7  D2 4E     SETB 29h.6
+  01D9  90 FF A2  MOV DPTR,#FFA2h  ; PPHDR
+  01DC  74 00     MOV A,#00h
+  01DE  F0        MOVX @DPTR,A
+  01DF  C2 3A     CLR 27h.2
+  01E1  22        RET
+
+loc_01E2:    ; xref 01D1, 01D4
+  01E2  20 62 03  JB 2Ch.2,loc_01E8
+  01E5  20 20 1A  JB 24h.0,loc_0202
+
+loc_01E8:    ; xref 01E2
+  01E8  30 2C 04  JNB 25h.4,loc_01EF
+  01EB  C2 2B     CLR 25h.3
+  01ED  C2 2C     CLR 25h.4
+
+loc_01EF:    ; xref 01E8
+  01EF  30 2E 04  JNB 25h.6,loc_01F6
+  01F2  C2 2E     CLR 25h.6
+  01F4  C2 2B     CLR 25h.3
+
+loc_01F6:    ; xref 01EF
+  01F6  30 2D 06  JNB 25h.5,loc_01FF
+  01F9  C2 2D     CLR 25h.5
+  01FB  D2 2B     SETB 25h.3
+  01FD  D2 2E     SETB 25h.6
+
+loc_01FF:    ; xref 01F6
+  01FF  02 02 5E  LJMP loc_025E
+
+loc_0202:    ; xref 01E5
+  0202  30 2C 0A  JNB 25h.4,loc_020F
+  0205  79 7F     MOV R1,#7Fh
+  0207  E7        MOV A,@R1
+  0208  B5 49 04  CJNE A,49h,loc_020F
+  020B  C2 2B     CLR 25h.3
+  020D  C2 2C     CLR 25h.4
+
+loc_020F:    ; xref 0202, 0208
+  020F  05 49     INC 49h
+  0211  E5 49     MOV A,49h
+  0213  B4 01 1F  CJNE A,#01h,loc_0235
+  0216  30 2E 04  JNB 25h.6,loc_021D
+  0219  C2 2E     CLR 25h.6
+  021B  C2 2B     CLR 25h.3
+
+loc_021D:    ; xref 0216
+  021D  30 2D 06  JNB 25h.5,loc_0226
+  0220  C2 2D     CLR 25h.5
+  0222  D2 2B     SETB 25h.3
+  0224  D2 2E     SETB 25h.6
+
+loc_0226:    ; xref 021D
+  0226  12 12 A7  LCALL sub_12A7
+  0229  20 60 06  JB 2Ch.0,loc_0232
+  022C  90 FF 10  MOV DPTR,#FF10h  ; LEDCR
+  022F  74 04     MOV A,#04h
+  0231  F0        MOVX @DPTR,A
+
+loc_0232:    ; xref 0229
+  0232  02 02 AB  LJMP loc_02AB
+
+loc_0235:    ; xref 0213
+  0235  B4 02 0F  CJNE A,#02h,loc_0247
+  0238  12 12 82  LCALL sub_1282
+  023B  20 60 06  JB 2Ch.0,loc_0244
+  023E  90 FF 10  MOV DPTR,#FF10h  ; LEDCR
+  0241  74 01     MOV A,#01h
+  0243  F0        MOVX @DPTR,A
+
+loc_0244:    ; xref 023B
+  0244  02 02 AB  LJMP loc_02AB
+
+loc_0247:    ; xref 0235
+  0247  B4 03 02  CJNE A,#03h,loc_024C
+  024A  80 03     SJMP loc_024F
+
+loc_024C:    ; xref 0247
+  024C  C2 3A     CLR 27h.2
+  024E  22        RET
+
+loc_024F:    ; xref 024A
+  024F  E4        CLR A
+  0250  F5 49     MOV 49h,A
+  0252  12 12 5F  LCALL sub_125F
+  0255  20 60 06  JB 2Ch.0,loc_025E
+  0258  90 FF 10  MOV DPTR,#FF10h  ; LEDCR
+  025B  74 10     MOV A,#10h
+  025D  F0        MOVX @DPTR,A
+
+loc_025E:    ; xref 01FF, 0255
+  025E  30 2A 0A  JNB 25h.2,loc_026B
+  0261  15 4A     DEC 4Ah
+  0263  E5 4A     MOV A,4Ah
+  0265  70 04     JNZ loc_026B
+  0267  C2 2A     CLR 25h.2
+  0269  D2 2C     SETB 25h.4
+
+loc_026B:    ; xref 025E, 0265
+  026B  30 29 12  JNB 25h.1,loc_0280
+  026E  15 4A     DEC 4Ah
+  0270  E5 4A     MOV A,4Ah
+  0272  70 0C     JNZ loc_0280
+  0274  12 1E 61  LCALL sub_1E61
+  0277  C2 50     CLR 2Ah.0
+  0279  C2 29     CLR 25h.1
+  027B  D2 2A     SETB 25h.2
+  027D  85 46 4A  MOV 4Ah,46h
+
+loc_0280:    ; xref 026B, 0272
+  0280  30 2B 20  JNB 25h.3,loc_02A3
+  0283  20 2E 1D  JB 25h.6,loc_02A3
+  0286  20 2C 1A  JB 25h.4,loc_02A3
+  0289  20 2A 17  JB 25h.2,loc_02A3
+  028C  20 29 14  JB 25h.1,loc_02A3
+  028F  D2 29     SETB 25h.1
+  0291  D2 50     SETB 2Ah.0
+  0293  D2 4E     SETB 29h.6
+  0295  90 FF A2  MOV DPTR,#FFA2h  ; PPHDR
+  0298  74 00     MOV A,#00h
+  029A  F0        MOVX @DPTR,A
+  029B  85 46 4A  MOV 4Ah,46h
+  029E  20 20 00  JB 24h.0,loc_02A1
+
+loc_02A1:    ; xref 029E
+  02A1  05 4A     INC 4Ah
+
+loc_02A3:    ; xref 0280, 0283, 0286, 0289, 028C
+  02A3  D2 4A     SETB 29h.2
+  02A5  12 1E 61  LCALL sub_1E61
+  02A8  12 1F 97  LCALL sub_1F97
+
+loc_02AB:    ; xref 0232, 0244
+  02AB  20 2B 03  JB 25h.3,loc_02B1
+  02AE  D2 3A     SETB 27h.2
+  02B0  22        RET
+
+loc_02B1:    ; xref 02AB
+  02B1  C2 3A     CLR 27h.2
+  02B3  22        RET
+
+sub_02B4:    ; xref 10D6
+  02B4  78 06     MOV R0,#06h
+  02B6  79 99     MOV R1,#99h
+  02B8  7A 42     MOV R2,#42h
+
+loc_02BA:    ; xref 02CE
+  02BA  75 91 00  MOV SFR_91h,#00h
+  02BD  75 83 3F  MOV DPH,#3Fh
+  02C0  8A 82     MOV DPL,R2
+  02C2  E0        MOVX A,@DPTR
+  02C3  0A        INC R2
+  02C4  75 91 01  MOV SFR_91h,#01h
+  02C7  75 83 FF  MOV DPH,#FFh
+  02CA  89 82     MOV DPL,R1
+  02CC  F0        MOVX @DPTR,A
+  02CD  09        INC R1
+  02CE  D8 EA     DJNZ R0,loc_02BA
+  02D0  22        RET
+  02D1  DB 78h,03h,79h,99h,75h,83h,FFh,89h,82h,E0h,75h,F0h,3Fh,C5h,F0h,95h   ; data/unreached
+  02E1  DB F0h,F0h,09h,09h,D8h,EEh,22h,58h,02h,58h,02h,70h,16h,C6h,1Bh,00h   ; data/unreached
+  02F1  DB 00h,00h,00h,00h,00h,00h,00h,40h,10h,10h,00h,00h,08h,00h,45h,00h   ; data/unreached
+  0301  DB 00h,3Fh,00h,3Fh,00h,3Fh,00h,3Fh,00h,3Fh,00h,3Fh,00h,00h,00h,00h   ; data/unreached
+  0311  DB 00h,00h,00h,00h,00h,00h,00h,00h,00h,00h,00h,00h,00h,11h,43h,00h   ; data/unreached
+  0321  DB 00h,00h,00h,0Fh,0Fh,0Fh,0Fh   ; data/unreached
+
+sub_0328:    ; xref 0DD1
+  0328  90 FF AC  MOV DPTR,#FFACh  ; UIS1R
+  032B  E0        MOVX A,@DPTR
+  032C  F5 F0     MOV B,A
+  032E  90 FF AF  MOV DPTR,#FFAFh  ; UIE1R
+  0331  E0        MOVX A,@DPTR
+  0332  55 F0     ANL A,B
+  0334  20 E0 57  JB ACC.0,loc_038E
+  0337  20 E1 5E  JB ACC.1,loc_0398
+  033A  20 E2 65  JB ACC.2,loc_03A2
+  033D  20 E3 69  JB ACC.3,loc_03A9
+  0340  20 E4 6D  JB ACC.4,loc_03B0
+  0343  20 E5 71  JB ACC.5,loc_03B7
+  0346  90 FF B0  MOV DPTR,#FFB0h  ; ISR
+  0349  E0        MOVX A,@DPTR
+  034A  D2 E7     SETB ACC.7
+  034C  F0        MOVX @DPTR,A
+  034D  90 FF AC  MOV DPTR,#FFACh  ; UIS1R
+  0350  E0        MOVX A,@DPTR
+  0351  F5 F0     MOV B,A
+  0353  90 FF AF  MOV DPTR,#FFAFh  ; UIE1R
+  0356  E0        MOVX A,@DPTR
+  0357  55 F0     ANL A,B
+  0359  20 E3 62  JB ACC.3,loc_03BE
+  035C  30 E2 03  JNB ACC.2,loc_0362
+  035F  02 04 05  LJMP loc_0405
+
+loc_0362:    ; xref 035C
+  0362  90 FF B0  MOV DPTR,#FFB0h  ; ISR
+  0365  E0        MOVX A,@DPTR
+  0366  C2 E7     CLR ACC.7
+  0368  F0        MOVX @DPTR,A
+  0369  90 FF AB  MOV DPTR,#FFABh  ; UIS2R
+  036C  E0        MOVX A,@DPTR
+  036D  F5 F0     MOV B,A
+  036F  90 FF AE  MOV DPTR,#FFAEh  ; UIE2R
+  0372  E0        MOVX A,@DPTR
+  0373  55 F0     ANL A,B
+  0375  20 E0 63  JB ACC.0,loc_03DB
+  0378  20 E1 6A  JB ACC.1,loc_03E5
+  037B  20 E2 70  JB ACC.2,loc_03EE
+  037E  20 E4 7A  JB ACC.4,loc_03FB
+  0381  02 0A 07  LJMP loc_0A07
+  0384  DB E4h,90h,FFh,ACh,F0h,90h,FFh,ABh,F0h,22h   ; data/unreached
+
+loc_038E:    ; xref 0334
+  038E  74 FE     MOV A,#FEh
+  0390  90 FF AC  MOV DPTR,#FFACh  ; UIS1R
+  0393  F0        MOVX @DPTR,A
+  0394  12 04 C6  LCALL sub_04C6
+  0397  22        RET
+
+loc_0398:    ; xref 0337
+  0398  74 FD     MOV A,#FDh
+  039A  90 FF AC  MOV DPTR,#FFACh  ; UIS1R
+  039D  F0        MOVX @DPTR,A
+  039E  12 04 E1  LCALL sub_04E1
+  03A1  22        RET
+
+loc_03A2:    ; xref 033A
+  03A2  74 FB     MOV A,#FBh
+  03A4  90 FF AC  MOV DPTR,#FFACh  ; UIS1R
+  03A7  F0        MOVX @DPTR,A
+  03A8  22        RET
+
+loc_03A9:    ; xref 033D
+  03A9  74 F7     MOV A,#F7h
+  03AB  90 FF AC  MOV DPTR,#FFACh  ; UIS1R
+  03AE  F0        MOVX @DPTR,A
+  03AF  22        RET
+
+loc_03B0:    ; xref 0340
+  03B0  74 EF     MOV A,#EFh
+  03B2  90 FF AC  MOV DPTR,#FFACh  ; UIS1R
+  03B5  F0        MOVX @DPTR,A
+  03B6  22        RET
+
+loc_03B7:    ; xref 0343
+  03B7  74 DF     MOV A,#DFh
+  03B9  90 FF AC  MOV DPTR,#FFACh  ; UIS1R
+  03BC  F0        MOVX @DPTR,A
+  03BD  22        RET
+
+loc_03BE:    ; xref 0359
+  03BE  90 FF B0  MOV DPTR,#FFB0h  ; ISR
+  03C1  E0        MOVX A,@DPTR
+  03C2  C2 E7     CLR ACC.7
+  03C4  F0        MOVX @DPTR,A
+  03C5  90 FF C0  MOV DPTR,#FFC0h  ; UEIR
+  03C8  74 01     MOV A,#01h
+  03CA  F0        MOVX @DPTR,A
+  03CB  90 FF C8  MOV DPTR,#FFC8h  ; UECR
+  03CE  74 0D     MOV A,#0Dh
+  03D0  F0        MOVX @DPTR,A
+
+loc_03D1:    ; xref 03D5
+  03D1  90 FF C9  MOV DPTR,#FFC9h  ; UETSR
+  03D4  E0        MOVX A,@DPTR
+  03D5  30 E1 F9  JNB ACC.1,loc_03D1
+  03D8  80 59     SJMP loc_0433
+  03DA  DB 22h   ; data/unreached
+
+loc_03DB:    ; xref 0375
+  03DB  74 FE     MOV A,#FEh
+  03DD  90 FF AB  MOV DPTR,#FFABh  ; UIS2R
+  03E0  F0        MOVX @DPTR,A
+  03E1  12 15 7F  LCALL sub_157F
+  03E4  22        RET
+
+loc_03E5:    ; xref 0378
+  03E5  74 FD     MOV A,#FDh
+  03E7  90 FF AB  MOV DPTR,#FFABh  ; UIS2R
+  03EA  F0        MOVX @DPTR,A
+  03EB  C2 46     CLR 28h.6
+  03ED  22        RET
+
+loc_03EE:    ; xref 037B
+  03EE  74 FB     MOV A,#FBh
+  03F0  90 FF AB  MOV DPTR,#FFABh  ; UIS2R
+  03F3  F0        MOVX @DPTR,A
+  03F4  12 09 09  LCALL sub_0909
+  03F7  22        RET
+  03F8  DB D2h,49h,22h   ; data/unreached
+
+loc_03FB:    ; xref 037E
+  03FB  74 EF     MOV A,#EFh
+  03FD  90 FF AB  MOV DPTR,#FFABh  ; UIS2R
+  0400  F0        MOVX @DPTR,A
+  0401  12 15 9A  LCALL sub_159A
+  0404  22        RET
+
+loc_0405:    ; xref 035F
+  0405  90 FF B0  MOV DPTR,#FFB0h  ; ISR
+  0408  E0        MOVX A,@DPTR
+  0409  C2 E7     CLR ACC.7
+  040B  F0        MOVX @DPTR,A
+  040C  90 FF A6  MOV DPTR,#FFA6h  ; EDLSAR
+  040F  E5 71     MOV A,71h
+  0411  F0        MOVX @DPTR,A
+  0412  90 FF A5  MOV DPTR,#FFA5h  ; EDHSAR
+  0415  74 3F     MOV A,#3Fh
+  0417  F0        MOVX @DPTR,A
+  0418  90 FF A9  MOV DPTR,#FFA9h  ; EDCR
+  041B  74 E2     MOV A,#E2h
+  041D  F0        MOVX @DPTR,A
+  041E  90 FF B0  MOV DPTR,#FFB0h  ; ISR
+  0421  E0        MOVX A,@DPTR
+  0422  D2 E7     SETB ACC.7
+  0424  F0        MOVX @DPTR,A
+  0425  74 FB     MOV A,#FBh
+  0427  90 FF AC  MOV DPTR,#FFACh  ; UIS1R
+  042A  F0        MOVX @DPTR,A
+  042B  90 FF B0  MOV DPTR,#FFB0h  ; ISR
+  042E  E0        MOVX A,@DPTR
+  042F  C2 E7     CLR ACC.7
+  0431  F0        MOVX @DPTR,A
+  0432  22        RET
+
+loc_0433:    ; xref 03D8
+  0433  90 FF B2  MOV DPTR,#FFB2h  ; DBCARCR
+  0436  E0        MOVX A,@DPTR
+  0437  D2 E4     SETB ACC.4
+  0439  F0        MOVX @DPTR,A
+  043A  90 FF C6  MOV DPTR,#FFC6h  ; DUTPC1R
+  043D  E0        MOVX A,@DPTR
+  043E  B4 08 1E  CJNE A,#08h,loc_045F
+  0441  90 FF B0  MOV DPTR,#FFB0h  ; ISR
+  0444  E0        MOVX A,@DPTR
+  0445  D2 E7     SETB ACC.7
+  0447  F0        MOVX @DPTR,A
+  0448  90 FF C3  MOV DPTR,#FFC3h  ; DUTPS2R
+  044B  74 B0     MOV A,#B0h
+  044D  F0        MOVX @DPTR,A
+  044E  90 FF C4  MOV DPTR,#FFC4h  ; DUTPS1R
+  0451  74 40     MOV A,#40h
+  0453  F0        MOVX @DPTR,A
+  0454  90 FF B0  MOV DPTR,#FFB0h  ; ISR
+  0457  E0        MOVX A,@DPTR
+  0458  C2 E7     CLR ACC.7
+  045A  F0        MOVX @DPTR,A
+  045B  79 40     MOV R1,#40h
+  045D  80 1C     SJMP loc_047B
+
+loc_045F:    ; xref 043E
+  045F  90 FF B0  MOV DPTR,#FFB0h  ; ISR
+  0462  E0        MOVX A,@DPTR
+  0463  D2 E7     SETB ACC.7
+  0465  F0        MOVX @DPTR,A
+  0466  90 FF C3  MOV DPTR,#FFC3h  ; DUTPS2R
+  0469  74 B0     MOV A,#B0h
+  046B  F0        MOVX @DPTR,A
+  046C  90 FF C4  MOV DPTR,#FFC4h  ; DUTPS1R
+  046F  74 44     MOV A,#44h
+  0471  F0        MOVX @DPTR,A
+  0472  90 FF B0  MOV DPTR,#FFB0h  ; ISR
+  0475  E0        MOVX A,@DPTR
+  0476  C2 E7     CLR ACC.7
+  0478  F0        MOVX @DPTR,A
+  0479  79 44     MOV R1,#44h
+
+loc_047B:    ; xref 045D
+  047B  90 FF A5  MOV DPTR,#FFA5h  ; EDHSAR
+  047E  E0        MOVX A,@DPTR
+  047F  FF        MOV R7,A
+  0480  90 FF A6  MOV DPTR,#FFA6h  ; EDLSAR
+  0483  E0        MOVX A,@DPTR
+  0484  FE        MOV R6,A
+  0485  C3        CLR C
+  0486  EE        MOV A,R6
+  0487  99        SUBB A,R1
+  0488  90 FF A6  MOV DPTR,#FFA6h  ; EDLSAR
+  048B  F0        MOVX @DPTR,A
+  048C  EF        MOV A,R7
+  048D  94 00     SUBB A,#00h
+  048F  90 FF A5  MOV DPTR,#FFA5h  ; EDHSAR
+  0492  F0        MOVX @DPTR,A
+  0493  90 FF B2  MOV DPTR,#FFB2h  ; DBCARCR
+  0496  74 0C     MOV A,#0Ch
+  0498  F0        MOVX @DPTR,A
+  0499  90 FF B2  MOV DPTR,#FFB2h  ; DBCARCR
+  049C  74 02     MOV A,#02h
+  049E  F0        MOVX @DPTR,A
+  049F  90 FF A9  MOV DPTR,#FFA9h  ; EDCR
+  04A2  74 E2     MOV A,#E2h
+  04A4  F0        MOVX @DPTR,A
+  04A5  90 FF B0  MOV DPTR,#FFB0h  ; ISR
+  04A8  E0        MOVX A,@DPTR
+  04A9  D2 E7     SETB ACC.7
+  04AB  F0        MOVX @DPTR,A
+  04AC  74 F7     MOV A,#F7h
+  04AE  90 FF AC  MOV DPTR,#FFACh  ; UIS1R
+  04B1  F0        MOVX @DPTR,A
+  04B2  90 FF B0  MOV DPTR,#FFB0h  ; ISR
+  04B5  E0        MOVX A,@DPTR
+  04B6  C2 E7     CLR ACC.7
+  04B8  F0        MOVX @DPTR,A
+  04B9  90 FF C0  MOV DPTR,#FFC0h  ; UEIR
+  04BC  74 01     MOV A,#01h
+  04BE  F0        MOVX @DPTR,A
+  04BF  90 FF C8  MOV DPTR,#FFC8h  ; UECR
+  04C2  74 0F     MOV A,#0Fh
+  04C4  F0        MOVX @DPTR,A
+  04C5  22        RET
+
+sub_04C6:    ; xref 0394
+  04C6  E5 68     MOV A,68h
+  04C8  F5 F0     MOV B,A
+  04CA  75 68 00  MOV 68h,#00h
+  04CD  70 03     JNZ loc_04D2
+  04CF  02 0A 07  LJMP loc_0A07
+
+loc_04D2:    ; xref 04CD
+  04D2  54 E0     ANL A,#E0h
+  04D4  B4 60 05  CJNE A,#60h,loc_04DC
+  04D7  E5 F0     MOV A,B
+  04D9  02 0A 52  LJMP loc_0A52
+
+loc_04DC:    ; xref 04D4
+  04DC  E5 F0     MOV A,B
+  04DE  02 06 00  LJMP loc_0600
+
+sub_04E1:    ; xref 039E
+  04E1  90 FF C0  MOV DPTR,#FFC0h  ; UEIR
+  04E4  74 00     MOV A,#00h
+  04E6  F0        MOVX @DPTR,A
+  04E7  90 FF CA  MOV DPTR,#FFCAh  ; UERSR
+  04EA  E0        MOVX A,@DPTR
+  04EB  30 E6 03  JNB ACC.6,loc_04F1
+  04EE  02 05 24  LJMP loc_0524
+
+loc_04F1:    ; xref 04EB
+  04F1  E5 69     MOV A,69h
+  04F3  F5 F0     MOV B,A
+  04F5  75 69 00  MOV 69h,#00h
+  04F8  70 1B     JNZ loc_0515
+  04FA  90 FF C9  MOV DPTR,#FFC9h  ; UETSR
+  04FD  E0        MOVX A,@DPTR
+  04FE  D2 E3     SETB ACC.3
+  0500  90 FF C9  MOV DPTR,#FFC9h  ; UETSR
+  0503  F0        MOVX @DPTR,A
+  0504  D2 E7     SETB ACC.7
+  0506  90 FF C9  MOV DPTR,#FFC9h  ; UETSR
+  0509  F0        MOVX @DPTR,A
+  050A  C2 E3     CLR ACC.3
+  050C  90 FF C9  MOV DPTR,#FFC9h  ; UETSR
+  050F  F0        MOVX @DPTR,A
+  0510  74 12     MOV A,#12h
+  0512  02 0B E9  LJMP loc_0BE9
+
+loc_0515:    ; xref 04F8
+  0515  54 E0     ANL A,#E0h
+  0517  B4 60 05  CJNE A,#60h,loc_051F
+  051A  E5 F0     MOV A,B
+  051C  02 0A A9  LJMP loc_0AA9
+
+loc_051F:    ; xref 0517
+  051F  E5 F0     MOV A,B
+  0521  02 06 2D  LJMP loc_062D
+
+loc_0524:    ; xref 04EE
+  0524  90 FF B8  MOV DPTR,#FFB8h  ; URT
+  0527  E0        MOVX A,@DPTR
+  0528  F5 F0     MOV B,A
+  052A  54 1F     ANL A,#1Fh
+  052C  F5 6B     MOV 6Bh,A
+  052E  E5 F0     MOV A,B
+  0530  54 60     ANL A,#60h
+  0532  B4 00 03  CJNE A,#00h,loc_0538
+  0535  02 05 47  LJMP loc_0547
+
+loc_0538:    ; xref 0532
+  0538  B4 20 03  CJNE A,#20h,loc_053E
+  053B  02 05 AC  LJMP loc_05AC
+
+loc_053E:    ; xref 0538
+  053E  B4 40 03  CJNE A,#40h,loc_0544
+  0541  02 05 AF  LJMP loc_05AF
+
+loc_0544:    ; xref 053E
+  0544  02 05 AC  LJMP loc_05AC
+
+loc_0547:    ; xref 0535
+  0547  90 FF B9  MOV DPTR,#FFB9h  ; URC
+  054A  E0        MOVX A,@DPTR
+  054B  B4 00 03  CJNE A,#00h,loc_0551
+  054E  02 0A FA  LJMP loc_0AFA
+
+loc_0551:    ; xref 054B
+  0551  B4 01 03  CJNE A,#01h,loc_0557
+  0554  02 0B 38  LJMP loc_0B38
+
+loc_0557:    ; xref 0551
+  0557  B4 03 03  CJNE A,#03h,loc_055D
+  055A  02 0B 6B  LJMP loc_0B6B
+
+loc_055D:    ; xref 0557
+  055D  B4 05 03  CJNE A,#05h,loc_0563
+  0560  02 0B 9E  LJMP loc_0B9E
+
+loc_0563:    ; xref 055D
+  0563  B4 06 25  CJNE A,#06h,loc_058B
+  0566  90 FF BB  MOV DPTR,#FFBBh  ; URVHB
+  0569  E0        MOVX A,@DPTR
+  056A  B4 01 03  CJNE A,#01h,loc_0570
+  056D  02 0B D5  LJMP loc_0BD5
+
+loc_0570:    ; xref 056A
+  0570  B4 02 03  CJNE A,#02h,loc_0576
+  0573  02 0C 00  LJMP loc_0C00
+
+loc_0576:    ; xref 0570
+  0576  B4 03 0F  CJNE A,#03h,loc_0588
+  0579  02 0C 31  LJMP loc_0C31
+  057C  DB B4h,04h,03h,02h,0Ah,07h,B4h,05h,03h,02h,0Ah,07h   ; data/unreached
+
+loc_0588:    ; xref 0576
+  0588  02 05 E0  LJMP loc_05E0
+
+loc_058B:    ; xref 0563
+  058B  B4 07 03  CJNE A,#07h,loc_0591
+  058E  02 0C 65  LJMP loc_0C65
+
+loc_0591:    ; xref 058B
+  0591  B4 08 03  CJNE A,#08h,loc_0597
+  0594  02 0C 6E  LJMP loc_0C6E
+
+loc_0597:    ; xref 0591
+  0597  B4 09 03  CJNE A,#09h,loc_059D
+  059A  02 0C 88  LJMP loc_0C88
+
+loc_059D:    ; xref 0597
+  059D  B4 0A 03  CJNE A,#0Ah,loc_05A3
+  05A0  02 0C 9A  LJMP loc_0C9A
+
+loc_05A3:    ; xref 059D
+  05A3  B4 0B 03  CJNE A,#0Bh,loc_05A9
+  05A6  02 0C B6  LJMP loc_0CB6
+
+loc_05A9:    ; xref 05A3
+  05A9  02 0C C2  LJMP loc_0CC2
+
+loc_05AC:    ; xref 053B, 0544
+  05AC  02 0A 07  LJMP loc_0A07
+
+loc_05AF:    ; xref 0541
+  05AF  90 FF BA  MOV DPTR,#FFBAh  ; URVLB
+  05B2  E0        MOVX A,@DPTR
+  05B3  B4 09 03  CJNE A,#09h,loc_05B9
+  05B6  02 06 5A  LJMP loc_065A
+
+loc_05B9:    ; xref 05B3
+  05B9  B4 0A 03  CJNE A,#0Ah,loc_05BF
+  05BC  02 06 69  LJMP loc_0669
+
+loc_05BF:    ; xref 05B9
+  05BF  B4 0B 03  CJNE A,#0Bh,loc_05C5
+  05C2  02 06 7F  LJMP loc_067F
+
+loc_05C5:    ; xref 05BF
+  05C5  B4 0C 03  CJNE A,#0Ch,loc_05CB
+  05C8  02 06 8E  LJMP loc_068E
+
+loc_05CB:    ; xref 05C5
+  05CB  B4 10 03  CJNE A,#10h,loc_05D1
+  05CE  02 06 9D  LJMP loc_069D
+
+loc_05D1:    ; xref 05CB
+  05D1  B4 11 03  CJNE A,#11h,loc_05D7
+  05D4  02 06 BE  LJMP loc_06BE
+
+loc_05D7:    ; xref 05D1
+  05D7  B4 12 03  CJNE A,#12h,loc_05DD
+  05DA  02 06 DB  LJMP loc_06DB
+
+loc_05DD:    ; xref 05D7
+  05DD  02 06 F9  LJMP loc_06F9
+
+loc_05E0:    ; xref 0588, 0B4C, 0B7F
+  05E0  90 FF C0  MOV DPTR,#FFC0h  ; UEIR
+  05E3  74 00     MOV A,#00h
+  05E5  F0        MOVX @DPTR,A
+  05E6  90 FF C8  MOV DPTR,#FFC8h  ; UECR
+  05E9  74 6D     MOV A,#6Dh
+  05EB  F0        MOVX @DPTR,A
+  05EC  90 FF A9  MOV DPTR,#FFA9h  ; EDCR
+  05EF  74 E2     MOV A,#E2h
+  05F1  F0        MOVX @DPTR,A
+  05F2  90 FF C0  MOV DPTR,#FFC0h  ; UEIR
+  05F5  74 00     MOV A,#00h
+  05F7  F0        MOVX @DPTR,A
+  05F8  90 FF CA  MOV DPTR,#FFCAh  ; UERSR
+  05FB  E0        MOVX A,@DPTR
+  05FC  C2 E6     CLR ACC.6
+  05FE  F0        MOVX @DPTR,A
+  05FF  22        RET
+
+loc_0600:    ; xref 04DE
+  0600  B4 21 03  CJNE A,#21h,loc_0606
+  0603  02 06 68  LJMP loc_0668
+
+loc_0606:    ; xref 0600
+  0606  B4 22 03  CJNE A,#22h,loc_060C
+  0609  02 06 7B  LJMP loc_067B
+
+loc_060C:    ; xref 0606
+  060C  B4 23 03  CJNE A,#23h,loc_0612
+  060F  02 06 8D  LJMP loc_068D
+
+loc_0612:    ; xref 060C
+  0612  B4 24 03  CJNE A,#24h,loc_0618
+  0615  02 06 98  LJMP loc_0698
+
+loc_0618:    ; xref 0612
+  0618  B4 27 03  CJNE A,#27h,loc_061E
+  061B  02 06 B1  LJMP loc_06B1
+
+loc_061E:    ; xref 0618
+  061E  B4 28 03  CJNE A,#28h,loc_0624
+  0621  02 06 CF  LJMP loc_06CF
+
+loc_0624:    ; xref 061E
+  0624  B4 29 03  CJNE A,#29h,loc_062A
+  0627  02 06 E9  LJMP loc_06E9
+
+loc_062A:    ; xref 0624
+  062A  02 07 03  LJMP loc_0703
+
+loc_062D:    ; xref 0521
+  062D  B4 21 03  CJNE A,#21h,loc_0633
+  0630  02 06 64  LJMP loc_0664
+
+loc_0633:    ; xref 062D
+  0633  B4 22 03  CJNE A,#22h,loc_0639
+  0636  02 06 7A  LJMP loc_067A
+
+loc_0639:    ; xref 0633
+  0639  B4 23 03  CJNE A,#23h,loc_063F
+  063C  02 06 89  LJMP loc_0689
+
+loc_063F:    ; xref 0639
+  063F  B4 24 03  CJNE A,#24h,loc_0645
+  0642  02 06 99  LJMP loc_0699
+
+loc_0645:    ; xref 063F
+  0645  B4 27 03  CJNE A,#27h,loc_064B
+  0648  02 06 A7  LJMP loc_06A7
+
+loc_064B:    ; xref 0645
+  064B  B4 28 03  CJNE A,#28h,loc_0651
+  064E  02 06 D0  LJMP loc_06D0
+
+loc_0651:    ; xref 064B
+  0651  B4 29 03  CJNE A,#29h,loc_0657
+  0654  02 06 E5  LJMP loc_06E5
+
+loc_0657:    ; xref 0651
+  0657  02 07 04  LJMP loc_0704
+
+loc_065A:    ; xref 05B6
+  065A  75 68 21  MOV 68h,#21h
+  065D  75 69 21  MOV 69h,#21h
+  0660  12 08 3B  LCALL sub_083B
+  0663  22        RET
+
+loc_0664:    ; xref 0630
+  0664  75 69 21  MOV 69h,#21h
+  0667  22        RET
+
+loc_0668:    ; xref 0603
+  0668  22        RET
+
+loc_0669:    ; xref 05BC
+  0669  7E 00     MOV R6,#00h
+  066B  7F 09     MOV R7,#09h
+  066D  12 07 0B  LCALL sub_070B
+  0670  75 68 22  MOV 68h,#22h
+  0673  75 69 22  MOV 69h,#22h
+  0676  12 07 DF  LCALL sub_07DF
+  0679  22        RET
+
+loc_067A:    ; xref 0636
+  067A  22        RET
+
+loc_067B:    ; xref 0609
+  067B  75 69 22  MOV 69h,#22h
+  067E  22        RET
+
+loc_067F:    ; xref 05C2
+  067F  75 68 23  MOV 68h,#23h
+  0682  75 69 23  MOV 69h,#23h
+  0685  12 08 3B  LCALL sub_083B
+  0688  22        RET
+
+loc_0689:    ; xref 063C
+  0689  75 69 23  MOV 69h,#23h
+  068C  22        RET
+
+loc_068D:    ; xref 060F
+  068D  22        RET
+
+loc_068E:    ; xref 05C8
+  068E  75 68 24  MOV 68h,#24h
+  0691  75 69 24  MOV 69h,#24h
+  0694  12 07 DF  LCALL sub_07DF
+  0697  22        RET
+
+loc_0698:    ; xref 0615
+  0698  22        RET
+
+loc_0699:    ; xref 0642
+  0699  75 69 24  MOV 69h,#24h
+  069C  22        RET
+
+loc_069D:    ; xref 05CE
+  069D  75 68 27  MOV 68h,#27h
+  06A0  75 69 27  MOV 69h,#27h
+  06A3  12 08 3B  LCALL sub_083B
+  06A6  22        RET
+
+loc_06A7:    ; xref 0648
+  06A7  75 69 27  MOV 69h,#27h
+  06AA  90 FF A9  MOV DPTR,#FFA9h  ; EDCR
+  06AD  74 E0     MOV A,#E0h
+  06AF  F0        MOVX @DPTR,A
+  06B0  22        RET
+
+loc_06B1:    ; xref 061B
+  06B1  12 07 3D  LCALL sub_073D
+  06B4  75 72 00  MOV 72h,#00h
+  06B7  12 19 74  LCALL sub_1974
+  06BA  12 0E E0  LCALL sub_0EE0
+  06BD  22        RET
+
+loc_06BE:    ; xref 05D4
+  06BE  AE 72     MOV R6,72h
+  06C0  AF 48     MOV R7,48h
+  06C2  12 07 0B  LCALL sub_070B
+  06C5  75 68 28  MOV 68h,#28h
+  06C8  75 69 28  MOV 69h,#28h
+  06CB  12 07 DF  LCALL sub_07DF
+  06CE  22        RET
+
+loc_06CF:    ; xref 0621
+  06CF  22        RET
+
+loc_06D0:    ; xref 064E
+  06D0  75 69 28  MOV 69h,#28h
+  06D3  E5 72     MOV A,72h
+  06D5  70 03     JNZ loc_06DA
+  06D7  12 10 86  LCALL sub_1086
+
+loc_06DA:    ; xref 06D5
+  06DA  22        RET
+
+loc_06DB:    ; xref 05DA
+  06DB  75 68 29  MOV 68h,#29h
+  06DE  75 69 29  MOV 69h,#29h
+  06E1  12 08 AA  LCALL sub_08AA
+  06E4  22        RET
+
+loc_06E5:    ; xref 0654
+  06E5  75 69 29  MOV 69h,#29h
+  06E8  22        RET
+
+loc_06E9:    ; xref 0627
+  06E9  90 FF D8  MOV DPTR,#FFD8h  ; UDCRR0
+  06EC  E0        MOVX A,@DPTR
+  06ED  F5 48     MOV 48h,A
+  06EF  12 13 5D  LCALL sub_135D
+  06F2  12 07 5D  LCALL sub_075D
+  06F5  12 07 68  LCALL sub_0768
+  06F8  22        RET
+
+loc_06F9:    ; xref 05DD
+  06F9  75 68 2A  MOV 68h,#2Ah
+  06FC  75 69 2A  MOV 69h,#2Ah
+  06FF  12 08 76  LCALL sub_0876
+  0702  22        RET
+
+loc_0703:    ; xref 062A
+  0703  22        RET
+
+loc_0704:    ; xref 0657
+  0704  75 69 2A  MOV 69h,#2Ah
+  0707  12 14 12  LCALL sub_1412
+  070A  22        RET
+
+sub_070B:    ; xref 066D, 06C2, 0B03, 0B0F, 0B1B, 0C70, 0C9E
+  070B  75 91 00  MOV SFR_91h,#00h
+  070E  90 3F 00  MOV DPTR,#3F00h
+  0711  EE        MOV A,R6
+  0712  F0        MOVX @DPTR,A
+  0713  A3        INC DPTR
+  0714  EF        MOV A,R7
+  0715  F0        MOVX @DPTR,A
+  0716  75 91 01  MOV SFR_91h,#01h
+  0719  22        RET
+  071A  DB 75h,91h,00h,90h,3Fh,02h,EAh,F0h,A3h,EBh,F0h,75h,91h,01h,22h,75h   ; data/unreached
+  072A  DB 91h,00h,79h,A0h,7Ah,08h,90h,3Fh,02h,E7h,F0h,A3h,09h,DAh,FAh,75h   ; data/unreached
+  073A  DB 91h,01h,22h   ; data/unreached
+
+sub_073D:    ; xref 06B1, 0F05, 10F8, 112C, 1145, 1312, 131C, 1333
+  073D  75 91 00  MOV SFR_91h,#00h
+  0740  90 3F 40  MOV DPTR,#3F40h
+  0743  E0        MOVX A,@DPTR
+  0744  F5 48     MOV 48h,A
+  0746  A3        INC DPTR
+  0747  A3        INC DPTR
+  0748  E0        MOVX A,@DPTR
+  0749  FA        MOV R2,A
+  074A  A3        INC DPTR
+  074B  E0        MOVX A,@DPTR
+  074C  FB        MOV R3,A
+  074D  A3        INC DPTR
+  074E  E0        MOVX A,@DPTR
+  074F  FC        MOV R4,A
+  0750  A3        INC DPTR
+  0751  E0        MOVX A,@DPTR
+  0752  FD        MOV R5,A
+  0753  A3        INC DPTR
+  0754  E0        MOVX A,@DPTR
+  0755  FE        MOV R6,A
+  0756  A3        INC DPTR
+  0757  E0        MOVX A,@DPTR
+  0758  FF        MOV R7,A
+  0759  75 91 01  MOV SFR_91h,#01h
+  075C  22        RET
+
+sub_075D:    ; xref 06F2
+  075D  E8        MOV A,R0
+  075E  90 FF D0  MOV DPTR,#FFD0h  ; UDSTR0
+  0761  F0        MOVX @DPTR,A
+  0762  E9        MOV A,R1
+  0763  90 FF D1  MOV DPTR,#FFD1h  ; UDSTR1
+  0766  F0        MOVX @DPTR,A
+  0767  22        RET
+
+sub_0768:    ; xref 06F5
+  0768  EA        MOV A,R2
+  0769  90 FF D2  MOV DPTR,#FFD2h  ; UDSTR2
+  076C  F0        MOVX @DPTR,A
+  076D  EB        MOV A,R3
+  076E  90 FF D3  MOV DPTR,#FFD3h  ; UDSTR3
+  0771  F0        MOVX @DPTR,A
+  0772  EC        MOV A,R4
+  0773  90 FF D4  MOV DPTR,#FFD4h  ; UDSTR4
+  0776  F0        MOVX @DPTR,A
+  0777  ED        MOV A,R5
+  0778  90 FF D5  MOV DPTR,#FFD5h  ; UDSTR5
+  077B  F0        MOVX @DPTR,A
+  077C  EE        MOV A,R6
+  077D  90 FF D6  MOV DPTR,#FFD6h  ; UDSTR6
+  0780  F0        MOVX @DPTR,A
+  0781  EF        MOV A,R7
+  0782  90 FF D7  MOV DPTR,#FFD7h  ; UDSTR7
+  0785  F0        MOVX @DPTR,A
+  0786  22        RET
+  0787  DB 22h   ; data/unreached
+
+sub_0788:    ; xref 1049
+  0788  E4        CLR A
+  0789  90 FF 83  MOV DPTR,#FF83h  ; M1SAHR
+  078C  F0        MOVX @DPTR,A
+  078D  90 FF 84  MOV DPTR,#FF84h  ; M1SALR
+  0790  F0        MOVX @DPTR,A
+  0791  90 FF 85  MOV DPTR,#FF85h  ; M2SAHR
+  0794  F0        MOVX @DPTR,A
+  0795  90 FF 86  MOV DPTR,#FF86h  ; M2SALR
+  0798  F0        MOVX @DPTR,A
+  0799  EA        MOV A,R2
+  079A  90 FF 82  MOV DPTR,#FF82h  ; D1TBLR
+  079D  F0        MOVX @DPTR,A
+  079E  EB        MOV A,R3
+  079F  90 FF 81  MOV DPTR,#FF81h  ; D1TBHR
+  07A2  F0        MOVX @DPTR,A
+  07A3  D2 00     SETB 20h.0
+  07A5  22        RET
+
+sub_07A6:    ; xref 07C7, 07EF, 084B
+  07A6  E4        CLR A
+  07A7  90 FF C4  MOV DPTR,#FFC4h  ; DUTPS1R
+  07AA  F0        MOVX @DPTR,A
+  07AB  90 FF C3  MOV DPTR,#FFC3h  ; DUTPS2R
+  07AE  F0        MOVX @DPTR,A
+  07AF  90 FF C6  MOV DPTR,#FFC6h  ; DUTPC1R
+  07B2  F0        MOVX @DPTR,A
+  07B3  90 FF C5  MOV DPTR,#FFC5h  ; DUTPC2R
+  07B6  F0        MOVX @DPTR,A
+  07B7  22        RET
+
+sub_07B8:    ; xref 0B65, 0B98, 0BA7, 0C68, 0C94, 0CBC, 0CC5
+  07B8  75 70 00  MOV 70h,#00h
+
+sub_07BB:    ; xref 0B2F, 0BF7, 0C28, 0C5C, 0C7F, 0CAD
+  07BB  90 FF A6  MOV DPTR,#FFA6h  ; EDLSAR
+  07BE  E5 71     MOV A,71h
+  07C0  F0        MOVX @DPTR,A
+  07C1  90 FF A5  MOV DPTR,#FFA5h  ; EDHSAR
+  07C4  74 3F     MOV A,#3Fh
+  07C6  F0        MOVX @DPTR,A
+  07C7  F1 A6     ACALL sub_07A6
+  07C9  E5 70     MOV A,70h
+  07CB  90 FF C4  MOV DPTR,#FFC4h  ; DUTPS1R
+  07CE  F0        MOVX @DPTR,A
+  07CF  90 FF C0  MOV DPTR,#FFC0h  ; UEIR
+  07D2  74 00     MOV A,#00h
+  07D4  F0        MOVX @DPTR,A
+  07D5  90 FF C8  MOV DPTR,#FFC8h  ; UECR
+  07D8  74 2F     MOV A,#2Fh
+  07DA  F0        MOVX @DPTR,A
+  07DB  12 08 13  LCALL sub_0813
+  07DE  22        RET
+
+sub_07DF:    ; xref 0676, 0694, 06CB
+  07DF  90 FF BC  MOV DPTR,#FFBCh  ; URILB
+  07E2  E0        MOVX A,@DPTR
+  07E3  90 FF A6  MOV DPTR,#FFA6h  ; EDLSAR
+  07E6  F0        MOVX @DPTR,A
+  07E7  90 FF BD  MOV DPTR,#FFBDh  ; URIHB
+  07EA  E0        MOVX A,@DPTR
+  07EB  90 FF A5  MOV DPTR,#FFA5h  ; EDHSAR
+  07EE  F0        MOVX @DPTR,A
+  07EF  F1 A6     ACALL sub_07A6
+  07F1  90 FF BE  MOV DPTR,#FFBEh  ; URLLB
+  07F4  E0        MOVX A,@DPTR
+  07F5  03        RR A
+  07F6  03        RR A
+  07F7  03        RR A
+  07F8  03        RR A
+  07F9  03        RR A
+  07FA  03        RR A
+  07FB  F5 F0     MOV B,A
+  07FD  90 FF BF  MOV DPTR,#FFBFh  ; URLHB
+  0800  E0        MOVX A,@DPTR
+  0801  23        RL A
+  0802  23        RL A
+  0803  45 F0     ORL A,B
+  0805  90 FF C6  MOV DPTR,#FFC6h  ; DUTPC1R
+  0808  F0        MOVX @DPTR,A
+  0809  90 FF C4  MOV DPTR,#FFC4h  ; DUTPS1R
+  080C  74 40     MOV A,#40h
+  080E  F0        MOVX @DPTR,A
+  080F  12 08 13  LCALL sub_0813
+  0812  22        RET
+
+sub_0813:    ; xref 07DB, 080F
+  0813  90 FF B0  MOV DPTR,#FFB0h  ; ISR
+  0816  E0        MOVX A,@DPTR
+  0817  D2 E7     SETB ACC.7
+  0819  F0        MOVX @DPTR,A
+  081A  90 FF C3  MOV DPTR,#FFC3h  ; DUTPS2R
+  081D  74 80     MOV A,#80h
+  081F  F0        MOVX @DPTR,A
+  0820  90 FF B0  MOV DPTR,#FFB0h  ; ISR
+  0823  E0        MOVX A,@DPTR
+  0824  C2 E7     CLR ACC.7
+  0826  F0        MOVX @DPTR,A
+  0827  90 FF A9  MOV DPTR,#FFA9h  ; EDCR
+  082A  74 E2     MOV A,#E2h
+  082C  F0        MOVX @DPTR,A
+  082D  90 FF C0  MOV DPTR,#FFC0h  ; UEIR
+  0830  74 00     MOV A,#00h
+  0832  F0        MOVX @DPTR,A
+  0833  90 FF CA  MOV DPTR,#FFCAh  ; UERSR
+  0836  E0        MOVX A,@DPTR
+  0837  C2 E6     CLR ACC.6
+  0839  F0        MOVX @DPTR,A
+  083A  22        RET
+
+sub_083B:    ; xref 0660, 0685, 06A3
+  083B  90 FF BC  MOV DPTR,#FFBCh  ; URILB
+  083E  E0        MOVX A,@DPTR
+  083F  90 FF A6  MOV DPTR,#FFA6h  ; EDLSAR
+  0842  F0        MOVX @DPTR,A
+  0843  90 FF BD  MOV DPTR,#FFBDh  ; URIHB
+  0846  E0        MOVX A,@DPTR
+  0847  90 FF A5  MOV DPTR,#FFA5h  ; EDHSAR
+  084A  F0        MOVX @DPTR,A
+  084B  12 07 A6  LCALL sub_07A6
+  084E  90 FF B0  MOV DPTR,#FFB0h  ; ISR
+  0851  E0        MOVX A,@DPTR
+  0852  D2 E7     SETB ACC.7
+  0854  F0        MOVX @DPTR,A
+  0855  90 FF C3  MOV DPTR,#FFC3h  ; DUTPS2R
+  0858  74 80     MOV A,#80h
+  085A  F0        MOVX @DPTR,A
+  085B  90 FF B0  MOV DPTR,#FFB0h  ; ISR
+  085E  E0        MOVX A,@DPTR
+  085F  C2 E7     CLR ACC.7
+  0861  F0        MOVX @DPTR,A
+  0862  90 FF A9  MOV DPTR,#FFA9h  ; EDCR
+  0865  74 EA     MOV A,#EAh
+  0867  F0        MOVX @DPTR,A
+  0868  90 FF C0  MOV DPTR,#FFC0h  ; UEIR
+  086B  74 00     MOV A,#00h
+  086D  F0        MOVX @DPTR,A
+  086E  90 FF CA  MOV DPTR,#FFCAh  ; UERSR
+  0871  E0        MOVX A,@DPTR
+  0872  C2 E6     CLR ACC.6
+  0874  F0        MOVX @DPTR,A
+  0875  22        RET
+
+sub_0876:    ; xref 06FF
+  0876  90 FF C2  MOV DPTR,#FFC2h  ; DUTBCI8R
+  0879  74 08     MOV A,#08h
+  087B  F0        MOVX @DPTR,A
+  087C  90 FF B0  MOV DPTR,#FFB0h  ; ISR
+  087F  E0        MOVX A,@DPTR
+  0880  D2 E7     SETB ACC.7
+  0882  F0        MOVX @DPTR,A
+  0883  90 FF C3  MOV DPTR,#FFC3h  ; DUTPS2R
+  0886  74 B8     MOV A,#B8h
+  0888  F0        MOVX @DPTR,A
+  0889  90 FF A9  MOV DPTR,#FFA9h  ; EDCR
+  088C  74 E2     MOV A,#E2h
+  088E  F0        MOVX @DPTR,A
+  088F  90 FF C3  MOV DPTR,#FFC3h  ; DUTPS2R
+  0892  74 90     MOV A,#90h
+  0894  F0        MOVX @DPTR,A
+  0895  90 FF B0  MOV DPTR,#FFB0h  ; ISR
+  0898  E0        MOVX A,@DPTR
+  0899  C2 E7     CLR ACC.7
+  089B  F0        MOVX @DPTR,A
+  089C  90 FF C0  MOV DPTR,#FFC0h  ; UEIR
+  089F  74 00     MOV A,#00h
+  08A1  F0        MOVX @DPTR,A
+  08A2  90 FF CA  MOV DPTR,#FFCAh  ; UERSR
+  08A5  E0        MOVX A,@DPTR
+  08A6  C2 E6     CLR ACC.6
+  08A8  F0        MOVX @DPTR,A
+  08A9  22        RET
+
+sub_08AA:    ; xref 06E1
+  08AA  90 FF B0  MOV DPTR,#FFB0h  ; ISR
+  08AD  E0        MOVX A,@DPTR
+  08AE  D2 E7     SETB ACC.7
+  08B0  F0        MOVX @DPTR,A
+  08B1  90 FF C3  MOV DPTR,#FFC3h  ; DUTPS2R
+  08B4  74 B8     MOV A,#B8h
+  08B6  F0        MOVX @DPTR,A
+  08B7  E4        CLR A
+  08B8  90 FF C2  MOV DPTR,#FFC2h  ; DUTBCI8R
+  08BB  F0        MOVX @DPTR,A
+  08BC  90 FF A9  MOV DPTR,#FFA9h  ; EDCR
+  08BF  74 E2     MOV A,#E2h
+  08C1  F0        MOVX @DPTR,A
+  08C2  90 FF C3  MOV DPTR,#FFC3h  ; DUTPS2R
+  08C5  74 90     MOV A,#90h
+  08C7  F0        MOVX @DPTR,A
+  08C8  90 FF B0  MOV DPTR,#FFB0h  ; ISR
+  08CB  E0        MOVX A,@DPTR
+  08CC  C2 E7     CLR ACC.7
+  08CE  F0        MOVX @DPTR,A
+  08CF  90 FF C0  MOV DPTR,#FFC0h  ; UEIR
+  08D2  74 00     MOV A,#00h
+  08D4  F0        MOVX @DPTR,A
+  08D5  90 FF CA  MOV DPTR,#FFCAh  ; UERSR
+  08D8  E0        MOVX A,@DPTR
+  08D9  C2 E6     CLR ACC.6
+  08DB  F0        MOVX @DPTR,A
+  08DC  22        RET
+  08DD  DB E4h,90h,FFh,D0h,F0h,90h,FFh,D1h,F0h,90h,FFh,D2h,F0h,E5h,90h,90h   ; data/unreached
+  08ED  DB FFh,D3h,F0h,90h,FFh,A2h,E0h,90h,FFh,D4h,F0h,90h,FFh,A1h,E0h,90h   ; data/unreached
+  08FD  DB FFh,D5h,F0h,90h,FFh,A3h,E0h,90h,FFh,D6h,F0h,22h   ; data/unreached
+
+sub_0909:    ; xref 03F4
+  0909  90 FF 87  MOV DPTR,#FF87h  ; ASR
+  090C  74 3F     MOV A,#3Fh
+  090E  F0        MOVX @DPTR,A
+  090F  90 FF CC  MOV DPTR,#FFCCh  ; UDCR
+  0912  74 07     MOV A,#07h
+  0914  F0        MOVX @DPTR,A
+  0915  90 FF 10  MOV DPTR,#FF10h  ; LEDCR
+  0918  74 00     MOV A,#00h
+  091A  F0        MOVX @DPTR,A
+  091B  90 FF 1A  MOV DPTR,#FF1Ah  ; H1RR
+  091E  74 00     MOV A,#00h
+  0920  F0        MOVX @DPTR,A
+  0921  90 FF 1C  MOV DPTR,#FF1Ch  ; H2RR
+  0924  74 1F     MOV A,#1Fh
+  0926  F0        MOVX @DPTR,A
+  0927  E5 77     MOV A,77h
+  0929  D2 E5     SETB ACC.5
+  092B  90 FF FF  MOV DPTR,#FFFFh
+  092E  F0        MOVX @DPTR,A
+  092F  F5 77     MOV 77h,A
+  0931  90 FF FD  MOV DPTR,#FFFDh
+  0934  74 00     MOV A,#00h
+  0936  F0        MOVX @DPTR,A
+  0937  90 FF CC  MOV DPTR,#FFCCh  ; UDCR
+  093A  E0        MOVX A,@DPTR
+  093B  C2 E2     CLR ACC.2
+  093D  F0        MOVX @DPTR,A
+  093E  90 FF 00  MOV DPTR,#FF00h  ; TGCR
+  0941  E0        MOVX A,@DPTR
+  0942  D2 E0     SETB ACC.0
+  0944  F0        MOVX @DPTR,A
+  0945  90 FF A2  MOV DPTR,#FFA2h  ; PPHDR
+  0948  74 F8     MOV A,#F8h
+  094A  F0        MOVX @DPTR,A
+  094B  90 FF A1  MOV DPTR,#FFA1h  ; PPHSR
+  094E  74 00     MOV A,#00h
+  0950  F0        MOVX @DPTR,A
+  0951  90 FF A3  MOV DPTR,#FFA3h  ; PPDSR
+  0954  74 80     MOV A,#80h
+  0956  F0        MOVX @DPTR,A
+  0957  C2 26     CLR 24h.6
+  0959  90 FF 16  MOV DPTR,#FF16h  ; SHRRR
+  095C  74 00     MOV A,#00h
+  095E  F0        MOVX @DPTR,A
+  095F  90 FF 9F  MOV DPTR,#FF9Fh  ; SCR
+  0962  74 01     MOV A,#01h
+  0964  F0        MOVX @DPTR,A
+  0965  90 FF 9F  MOV DPTR,#FF9Fh  ; SCR
+  0968  74 23     MOV A,#23h
+  096A  F0        MOVX @DPTR,A
+  096B  90 FF 9F  MOV DPTR,#FF9Fh  ; SCR
+  096E  74 33     MOV A,#33h
+  0970  F0        MOVX @DPTR,A
+  0971  90 FF 9F  MOV DPTR,#FF9Fh  ; SCR
+  0974  74 3F     MOV A,#3Fh
+  0976  F0        MOVX @DPTR,A
+  0977  90 FF 9F  MOV DPTR,#FF9Fh  ; SCR
+  097A  74 BF     MOV A,#BFh
+  097C  F0        MOVX @DPTR,A
+  097D  90 FF 9F  MOV DPTR,#FF9Fh  ; SCR
+  0980  74 33     MOV A,#33h
+  0982  F0        MOVX @DPTR,A
+  0983  78 02     MOV R0,#02h
+
+loc_0985:    ; xref 0989
+  0985  79 EE     MOV R1,#EEh
+
+loc_0987:    ; xref 0987
+  0987  D9 FE     DJNZ R1,loc_0987
+  0989  D8 FA     DJNZ R0,loc_0985
+  098B  90 FF 9F  MOV DPTR,#FF9Fh  ; SCR
+  098E  74 23     MOV A,#23h
+  0990  F0        MOVX @DPTR,A
+  0991  90 FF 9F  MOV DPTR,#FF9Fh  ; SCR
+  0994  74 01     MOV A,#01h
+  0996  F0        MOVX @DPTR,A
+  0997  90 FF 9F  MOV DPTR,#FF9Fh  ; SCR
+  099A  74 00     MOV A,#00h
+  099C  F0        MOVX @DPTR,A
+  099D  90 FF CC  MOV DPTR,#FFCCh  ; UDCR
+  09A0  74 06     MOV A,#06h
+  09A2  F0        MOVX @DPTR,A
+  09A3  90 FF 87  MOV DPTR,#FF87h  ; ASR
+  09A6  E0        MOVX A,@DPTR
+  09A7  30 E7 14  JNB ACC.7,loc_09BE
+  09AA  90 FF CC  MOV DPTR,#FFCCh  ; UDCR
+  09AD  74 26     MOV A,#26h
+  09AF  F0        MOVX @DPTR,A
+  09B0  78 04     MOV R0,#04h
+
+loc_09B2:    ; xref 09B6
+  09B2  79 EE     MOV R1,#EEh
+
+loc_09B4:    ; xref 09B4
+  09B4  D9 FE     DJNZ R1,loc_09B4
+  09B6  D8 FA     DJNZ R0,loc_09B2
+  09B8  90 FF CC  MOV DPTR,#FFCCh  ; UDCR
+  09BB  74 06     MOV A,#06h
+  09BD  F0        MOVX @DPTR,A
+
+loc_09BE:    ; xref 09A7
+  09BE  12 00 8B  LCALL sub_008B
+  09C1  90 FF A2  MOV DPTR,#FFA2h  ; PPHDR
+  09C4  74 F8     MOV A,#F8h
+  09C6  F0        MOVX @DPTR,A
+  09C7  90 FF A3  MOV DPTR,#FFA3h  ; PPDSR
+  09CA  74 80     MOV A,#80h
+  09CC  F0        MOVX @DPTR,A
+  09CD  90 FF A1  MOV DPTR,#FFA1h  ; PPHSR
+  09D0  74 00     MOV A,#00h
+  09D2  F0        MOVX @DPTR,A
+  09D3  75 90 FF  MOV P1,#FFh
+  09D6  90 FF 94  MOV DPTR,#FF94h  ; GPIOCR
+  09D9  74 0F     MOV A,#0Fh
+  09DB  F0        MOVX @DPTR,A
+  09DC  90 FF 95  MOV DPTR,#FF95h  ; GPIODR
+  09DF  74 FF     MOV A,#FFh
+  09E1  F0        MOVX @DPTR,A
+  09E2  C2 4E     CLR 29h.6
+  09E4  90 FF A2  MOV DPTR,#FFA2h  ; PPHDR
+  09E7  74 00     MOV A,#00h
+  09E9  F0        MOVX @DPTR,A
+  09EA  C2 26     CLR 24h.6
+  09EC  90 FF 16  MOV DPTR,#FF16h  ; SHRRR
+  09EF  74 00     MOV A,#00h
+  09F1  F0        MOVX @DPTR,A
+  09F2  90 FF CC  MOV DPTR,#FFCCh  ; UDCR
+  09F5  E0        MOVX A,@DPTR
+  09F6  D2 E2     SETB ACC.2
+  09F8  F0        MOVX @DPTR,A
+  09F9  22        RET
+
+sub_09FA:    ; xref 0085, 0EC8
+  09FA  C2 8C     CLR TCON.4
+  09FC  75 8C 44  MOV TH0,#44h
+  09FF  75 8A 80  MOV TL0,#80h
+  0A02  D2 A9     SETB IE.1
+  0A04  D2 8C     SETB TCON.4
+  0A06  22        RET
+
+loc_0A07:    ; xref 0381, 04CF, 05AC, 0AA6, 0AF7, 0B20, 0B5F, 0B92
+  0A07  22        RET
+  0A08  DB 12h,01h,10h,01h,00h,00h,00h,40h,B3h,07h,12h,04h,01h,00h,00h,02h   ; data/unreached
+  0A18  DB 00h,01h,09h,02h,20h,00h,01h,01h,00h,A0h,F5h,09h,04h,00h,00h,02h   ; data/unreached
+  0A28  DB FFh,FFh,FFh,00h,07h,05h,81h,02h,40h,00h,00h,07h,05h,02h,02h,40h   ; data/unreached
+  0A38  DB 00h,00h,04h,03h,09h,04h,26h,03h,36h,30h,30h,64h,70h,69h,20h,55h   ; data/unreached
+  0A48  DB 53h,42h,20h,53h,63h,61h,6Eh,6Eh,65h,72h   ; data/unreached
+
+loc_0A52:    ; xref 04D9
+  0A52  B4 61 03  CJNE A,#61h,loc_0A58
+  0A55  02 0B 33  LJMP loc_0B33
+
+loc_0A58:    ; xref 0A52
+  0A58  B4 62 03  CJNE A,#62h,loc_0A5E
+  0A5B  02 0B 69  LJMP loc_0B69
+
+loc_0A5E:    ; xref 0A58
+  0A5E  B4 64 03  CJNE A,#64h,loc_0A64
+  0A61  02 0B 9C  LJMP loc_0B9C
+
+loc_0A64:    ; xref 0A5E
+  0A64  B4 66 03  CJNE A,#66h,loc_0A6A
+  0A67  02 0B AB  LJMP loc_0BAB
+
+loc_0A6A:    ; xref 0A64
+  0A6A  B4 75 03  CJNE A,#75h,loc_0A70
+  0A6D  02 0B D0  LJMP loc_0BD0
+
+loc_0A70:    ; xref 0A6A
+  0A70  B4 6E 03  CJNE A,#6Eh,loc_0A76
+  0A73  02 0B FB  LJMP loc_0BFB
+
+loc_0A76:    ; xref 0A70
+  0A76  B4 6F 03  CJNE A,#6Fh,loc_0A7C
+  0A79  02 0C 2C  LJMP loc_0C2C
+
+loc_0A7C:    ; xref 0A76
+  0A7C  B4 70 03  CJNE A,#70h,loc_0A82
+  0A7F  02 0C 60  LJMP loc_0C60
+
+loc_0A82:    ; xref 0A7C
+  0A82  B4 68 03  CJNE A,#68h,loc_0A88
+  0A85  02 0C 6C  LJMP loc_0C6C
+
+loc_0A88:    ; xref 0A82
+  0A88  B4 69 03  CJNE A,#69h,loc_0A8E
+  0A8B  02 0C 83  LJMP loc_0C83
+
+loc_0A8E:    ; xref 0A88
+  0A8E  B4 6A 03  CJNE A,#6Ah,loc_0A94
+  0A91  02 0C 98  LJMP loc_0C98
+
+loc_0A94:    ; xref 0A8E
+  0A94  B4 6B 03  CJNE A,#6Bh,loc_0A9A
+  0A97  02 0C B1  LJMP loc_0CB1
+
+loc_0A9A:    ; xref 0A94
+  0A9A  B4 6C 03  CJNE A,#6Ch,loc_0AA0
+  0A9D  02 0C C0  LJMP loc_0CC0
+
+loc_0AA0:    ; xref 0A9A
+  0AA0  B4 6D 03  CJNE A,#6Dh,loc_0AA6
+  0AA3  02 0C C9  LJMP loc_0CC9
+
+loc_0AA6:    ; xref 0AA0
+  0AA6  02 0A 07  LJMP loc_0A07
+
+loc_0AA9:    ; xref 051C
+  0AA9  B4 61 03  CJNE A,#61h,loc_0AAF
+  0AAC  02 0B 34  LJMP loc_0B34
+
+loc_0AAF:    ; xref 0AA9
+  0AAF  B4 62 03  CJNE A,#62h,loc_0AB5
+  0AB2  02 0B 6A  LJMP loc_0B6A
+
+loc_0AB5:    ; xref 0AAF
+  0AB5  B4 64 03  CJNE A,#64h,loc_0ABB
+  0AB8  02 0B 9D  LJMP loc_0B9D
+
+loc_0ABB:    ; xref 0AB5
+  0ABB  B4 66 03  CJNE A,#66h,loc_0AC1
+  0ABE  02 0B B2  LJMP loc_0BB2
+
+loc_0AC1:    ; xref 0ABB
+  0AC1  B4 75 03  CJNE A,#75h,loc_0AC7
+  0AC4  02 0B D1  LJMP loc_0BD1
+
+loc_0AC7:    ; xref 0AC1
+  0AC7  B4 6E 03  CJNE A,#6Eh,loc_0ACD
+  0ACA  02 0B FC  LJMP loc_0BFC
+
+loc_0ACD:    ; xref 0AC7
+  0ACD  B4 6F 03  CJNE A,#6Fh,loc_0AD3
+  0AD0  02 0C 2D  LJMP loc_0C2D
+
+loc_0AD3:    ; xref 0ACD
+  0AD3  B4 68 03  CJNE A,#68h,loc_0AD9
+  0AD6  02 0C 6D  LJMP loc_0C6D
+
+loc_0AD9:    ; xref 0AD3
+  0AD9  B4 69 03  CJNE A,#69h,loc_0ADF
+  0ADC  02 0C 84  LJMP loc_0C84
+
+loc_0ADF:    ; xref 0AD9
+  0ADF  B4 6A 03  CJNE A,#6Ah,loc_0AE5
+  0AE2  02 0C 99  LJMP loc_0C99
+
+loc_0AE5:    ; xref 0ADF
+  0AE5  B4 6B 03  CJNE A,#6Bh,loc_0AEB
+  0AE8  02 0C B2  LJMP loc_0CB2
+
+loc_0AEB:    ; xref 0AE5
+  0AEB  B4 6C 03  CJNE A,#6Ch,loc_0AF1
+  0AEE  02 0C C1  LJMP loc_0CC1
+
+loc_0AF1:    ; xref 0AEB
+  0AF1  B4 6D 03  CJNE A,#6Dh,loc_0AF7
+  0AF4  02 0C CA  LJMP loc_0CCA
+
+loc_0AF7:    ; xref 0AF1
+  0AF7  02 0A 07  LJMP loc_0A07
+
+loc_0AFA:    ; xref 054E
+  0AFA  E5 6B     MOV A,6Bh
+  0AFC  B4 00 09  CJNE A,#00h,loc_0B08
+  0AFF  AE 6C     MOV R6,6Ch
+  0B01  7F 00     MOV R7,#00h
+  0B03  12 07 0B  LCALL sub_070B
+  0B06  80 1B     SJMP loc_0B23
+
+loc_0B08:    ; xref 0AFC
+  0B08  B4 01 09  CJNE A,#01h,loc_0B14
+  0B0B  AE 6D     MOV R6,6Dh
+  0B0D  7F 00     MOV R7,#00h
+  0B0F  12 07 0B  LCALL sub_070B
+  0B12  80 0F     SJMP loc_0B23
+
+loc_0B14:    ; xref 0B08
+  0B14  B4 02 09  CJNE A,#02h,loc_0B20
+  0B17  AE 6E     MOV R6,6Eh
+  0B19  7F 00     MOV R7,#00h
+  0B1B  12 07 0B  LCALL sub_070B
+  0B1E  80 03     SJMP loc_0B23
+
+loc_0B20:    ; xref 0B14
+  0B20  02 0A 07  LJMP loc_0A07
+
+loc_0B23:    ; xref 0B06, 0B12, 0B1E
+  0B23  75 68 61  MOV 68h,#61h
+  0B26  75 69 61  MOV 69h,#61h
+  0B29  75 70 02  MOV 70h,#02h
+  0B2C  75 71 00  MOV 71h,#00h
+  0B2F  12 07 BB  LCALL sub_07BB
+  0B32  22        RET
+
+loc_0B33:    ; xref 0A55
+  0B33  22        RET
+
+loc_0B34:    ; xref 0AAC
+  0B34  75 69 61  MOV 69h,#61h
+  0B37  22        RET
+
+loc_0B38:    ; xref 0554
+  0B38  E5 6B     MOV A,6Bh
+  0B3A  B4 00 12  CJNE A,#00h,loc_0B4F
+  0B3D  75 6C 00  MOV 6Ch,#00h
+  0B40  90 FF BA  MOV DPTR,#FFBAh  ; URVLB
+  0B43  E0        MOVX A,@DPTR
+  0B44  B4 01 02  CJNE A,#01h,loc_0B49
+  0B47  80 19     SJMP loc_0B62
+
+loc_0B49:    ; xref 0B44
+  0B49  75 68 62  MOV 68h,#62h
+  0B4C  02 05 E0  LJMP loc_05E0
+
+loc_0B4F:    ; xref 0B3A
+  0B4F  B4 01 05  CJNE A,#01h,loc_0B57
+  0B52  75 6D 00  MOV 6Dh,#00h
+  0B55  80 0B     SJMP loc_0B62
+
+loc_0B57:    ; xref 0B4F
+  0B57  B4 02 05  CJNE A,#02h,loc_0B5F
+  0B5A  75 6E 00  MOV 6Eh,#00h
+  0B5D  80 03     SJMP loc_0B62
+
+loc_0B5F:    ; xref 0B57
+  0B5F  02 0A 07  LJMP loc_0A07
+
+loc_0B62:    ; xref 0B47, 0B55, 0B5D
+  0B62  75 68 62  MOV 68h,#62h
+  0B65  12 07 B8  LCALL sub_07B8
+  0B68  22        RET
+
+loc_0B69:    ; xref 0A5B
+  0B69  22        RET
+
+loc_0B6A:    ; xref 0AB2
+  0B6A  22        RET
+
+loc_0B6B:    ; xref 055A
+  0B6B  E5 6B     MOV A,6Bh
+  0B6D  B4 00 12  CJNE A,#00h,loc_0B82
+  0B70  75 6C 02  MOV 6Ch,#02h
+  0B73  90 FF BA  MOV DPTR,#FFBAh  ; URVLB
+  0B76  E0        MOVX A,@DPTR
+  0B77  B4 01 02  CJNE A,#01h,loc_0B7C
+  0B7A  80 19     SJMP loc_0B95
+
+loc_0B7C:    ; xref 0B77
+  0B7C  75 68 64  MOV 68h,#64h
+  0B7F  02 05 E0  LJMP loc_05E0
+
+loc_0B82:    ; xref 0B6D
+  0B82  B4 01 05  CJNE A,#01h,loc_0B8A
+  0B85  75 6D 00  MOV 6Dh,#00h
+  0B88  80 0B     SJMP loc_0B95
+
+loc_0B8A:    ; xref 0B82
+  0B8A  B4 02 05  CJNE A,#02h,loc_0B92
+  0B8D  75 6E 01  MOV 6Eh,#01h
+  0B90  80 03     SJMP loc_0B95
+
+loc_0B92:    ; xref 0B8A
+  0B92  02 0A 07  LJMP loc_0A07
+
+loc_0B95:    ; xref 0B7A, 0B88, 0B90
+  0B95  75 68 64  MOV 68h,#64h
+  0B98  12 07 B8  LCALL sub_07B8
+  0B9B  22        RET
+
+loc_0B9C:    ; xref 0A61
+  0B9C  22        RET
+
+loc_0B9D:    ; xref 0AB8
+  0B9D  22        RET
+
+loc_0B9E:    ; xref 0560
+  0B9E  90 FF BA  MOV DPTR,#FFBAh  ; URVLB
+  0BA1  E0        MOVX A,@DPTR
+  0BA2  F5 6A     MOV 6Ah,A
+  0BA4  75 68 66  MOV 68h,#66h
+  0BA7  12 07 B8  LCALL sub_07B8
+  0BAA  22        RET
+
+loc_0BAB:    ; xref 0A67
+  0BAB  E5 6A     MOV A,6Ah
+  0BAD  90 FF CB  MOV DPTR,#FFCBh  ; UDAR
+  0BB0  F0        MOVX @DPTR,A
+  0BB1  22        RET
+
+loc_0BB2:    ; xref 0ABE
+  0BB2  22        RET
+  0BB3  DB 75h,70h,02h,75h,71h,00h,75h,68h,75h,75h,69h,75h,75h,91h,00h,90h   ; data/unreached
+  0BC3  DB 3Fh,00h,E4h,F0h,A3h,F0h,75h,91h,01h,12h,07h,BBh,22h   ; data/unreached
+
+loc_0BD0:    ; xref 0A6D
+  0BD0  22        RET
+
+loc_0BD1:    ; xref 0AC4
+  0BD1  75 69 75  MOV 69h,#75h
+  0BD4  22        RET
+
+loc_0BD5:    ; xref 056D
+  0BD5  75 F0 12  MOV B,#12h
+  0BD8  90 FF BF  MOV DPTR,#FFBFh  ; URLHB
+  0BDB  E0        MOVX A,@DPTR
+  0BDC  70 09     JNZ loc_0BE7
+  0BDE  90 FF BE  MOV DPTR,#FFBEh  ; URLLB
+  0BE1  E0        MOVX A,@DPTR
+  0BE2  B5 F0 00  CJNE A,B,loc_0BE5
+
+loc_0BE5:    ; xref 0BE2
+  0BE5  40 02     JC loc_0BE9
+
+loc_0BE7:    ; xref 0BDC
+  0BE7  E5 F0     MOV A,B
+
+loc_0BE9:    ; xref 0512, 0BE5
+  0BE9  F5 70     MOV 70h,A
+  0BEB  75 71 80  MOV 71h,#80h
+  0BEE  75 68 6E  MOV 68h,#6Eh
+  0BF1  75 69 6E  MOV 69h,#6Eh
+  0BF4  12 0C CB  LCALL sub_0CCB
+  0BF7  12 07 BB  LCALL sub_07BB
+  0BFA  22        RET
+
+loc_0BFB:    ; xref 0A73
+  0BFB  22        RET
+
+loc_0BFC:    ; xref 0ACA
+  0BFC  75 69 6E  MOV 69h,#6Eh
+  0BFF  22        RET
+
+loc_0C00:    ; xref 0573
+  0C00  75 91 00  MOV SFR_91h,#00h
+  0C03  90 3F 94  MOV DPTR,#3F94h
+  0C06  E0        MOVX A,@DPTR
+  0C07  F5 F0     MOV B,A
+  0C09  75 91 01  MOV SFR_91h,#01h
+  0C0C  90 FF BF  MOV DPTR,#FFBFh  ; URLHB
+  0C0F  E0        MOVX A,@DPTR
+  0C10  70 09     JNZ loc_0C1B
+  0C12  90 FF BE  MOV DPTR,#FFBEh  ; URLLB
+  0C15  E0        MOVX A,@DPTR
+  0C16  B5 F0 00  CJNE A,B,loc_0C19
+
+loc_0C19:    ; xref 0C16
+  0C19  40 02     JC loc_0C1D
+
+loc_0C1B:    ; xref 0C10
+  0C1B  E5 F0     MOV A,B
+
+loc_0C1D:    ; xref 0C19
+  0C1D  F5 70     MOV 70h,A
+  0C1F  75 71 92  MOV 71h,#92h
+  0C22  75 68 6F  MOV 68h,#6Fh
+  0C25  75 69 6F  MOV 69h,#6Fh
+  0C28  12 07 BB  LCALL sub_07BB
+  0C2B  22        RET
+
+loc_0C2C:    ; xref 0A79
+  0C2C  22        RET
+
+loc_0C2D:    ; xref 0AD0
+  0C2D  75 69 6F  MOV 69h,#6Fh
+  0C30  22        RET
+
+loc_0C31:    ; xref 0579
+  0C31  90 FF BA  MOV DPTR,#FFBAh  ; URVLB
+  0C34  E0        MOVX A,@DPTR
+  0C35  B4 00 08  CJNE A,#00h,loc_0C40
+  0C38  75 71 B2  MOV 71h,#B2h
+  0C3B  75 F0 04  MOV B,#04h
+  0C3E  80 06     SJMP loc_0C46
+
+loc_0C40:    ; xref 0C35
+  0C40  75 71 B6  MOV 71h,#B6h
+  0C43  75 F0 26  MOV B,#26h
+
+loc_0C46:    ; xref 0C3E
+  0C46  90 FF BF  MOV DPTR,#FFBFh  ; URLHB
+  0C49  E0        MOVX A,@DPTR
+  0C4A  70 09     JNZ loc_0C55
+  0C4C  90 FF BE  MOV DPTR,#FFBEh  ; URLLB
+  0C4F  E0        MOVX A,@DPTR
+  0C50  B5 F0 00  CJNE A,B,loc_0C53
+
+loc_0C53:    ; xref 0C50
+  0C53  40 02     JC loc_0C57
+
+loc_0C55:    ; xref 0C4A
+  0C55  E5 F0     MOV A,B
+
+loc_0C57:    ; xref 0C53
+  0C57  F5 70     MOV 70h,A
+  0C59  75 68 70  MOV 68h,#70h
+  0C5C  12 07 BB  LCALL sub_07BB
+  0C5F  22        RET
+
+loc_0C60:    ; xref 0A7F
+  0C60  75 69 70  MOV 69h,#70h
+  0C63  22        RET
+  0C64  DB 22h   ; data/unreached
+
+loc_0C65:    ; xref 058E
+  0C65  75 68 68  MOV 68h,#68h
+  0C68  12 07 B8  LCALL sub_07B8
+  0C6B  22        RET
+
+loc_0C6C:    ; xref 0A85
+  0C6C  22        RET
+
+loc_0C6D:    ; xref 0AD6
+  0C6D  22        RET
+
+loc_0C6E:    ; xref 0594
+  0C6E  AE 6F     MOV R6,6Fh
+  0C70  12 07 0B  LCALL sub_070B
+  0C73  75 68 69  MOV 68h,#69h
+  0C76  75 69 69  MOV 69h,#69h
+  0C79  75 70 01  MOV 70h,#01h
+  0C7C  75 71 00  MOV 71h,#00h
+  0C7F  12 07 BB  LCALL sub_07BB
+  0C82  22        RET
+
+loc_0C83:    ; xref 0A8B
+  0C83  22        RET
+
+loc_0C84:    ; xref 0ADC
+  0C84  75 69 69  MOV 69h,#69h
+  0C87  22        RET
+
+loc_0C88:    ; xref 059A
+  0C88  90 FF BA  MOV DPTR,#FFBAh  ; URVLB
+  0C8B  E0        MOVX A,@DPTR
+  0C8C  F5 6F     MOV 6Fh,A
+  0C8E  75 6E 01  MOV 6Eh,#01h
+  0C91  75 68 6A  MOV 68h,#6Ah
+  0C94  12 07 B8  LCALL sub_07B8
+  0C97  22        RET
+
+loc_0C98:    ; xref 0A91
+  0C98  22        RET
+
+loc_0C99:    ; xref 0AE2
+  0C99  22        RET
+
+loc_0C9A:    ; xref 05A0
+  0C9A  AE 6D     MOV R6,6Dh
+  0C9C  7F 00     MOV R7,#00h
+  0C9E  12 07 0B  LCALL sub_070B
+  0CA1  75 68 6B  MOV 68h,#6Bh
+  0CA4  75 69 6B  MOV 69h,#6Bh
+  0CA7  75 70 01  MOV 70h,#01h
+  0CAA  75 71 00  MOV 71h,#00h
+  0CAD  12 07 BB  LCALL sub_07BB
+  0CB0  22        RET
+
+loc_0CB1:    ; xref 0A97
+  0CB1  22        RET
+
+loc_0CB2:    ; xref 0AE8
+  0CB2  75 69 6B  MOV 69h,#6Bh
+  0CB5  22        RET
+
+loc_0CB6:    ; xref 05A6
+  0CB6  75 6E 01  MOV 6Eh,#01h
+  0CB9  75 68 6C  MOV 68h,#6Ch
+  0CBC  12 07 B8  LCALL sub_07B8
+  0CBF  22        RET
+
+loc_0CC0:    ; xref 0A9D
+  0CC0  22        RET
+
+loc_0CC1:    ; xref 0AEE
+  0CC1  22        RET
+
+loc_0CC2:    ; xref 05A9
+  0CC2  75 68 6D  MOV 68h,#6Dh
+  0CC5  12 07 B8  LCALL sub_07B8
+  0CC8  22        RET
+
+loc_0CC9:    ; xref 0AA3
+  0CC9  22        RET
+
+loc_0CCA:    ; xref 0AF4
+  0CCA  22        RET
+
+sub_0CCB:    ; xref 0BF4
+  0CCB  7A 3F     MOV R2,#3Fh
+  0CCD  7B 80     MOV R3,#80h
+  0CCF  7C 0A     MOV R4,#0Ah
+  0CD1  7D 08     MOV R5,#08h
+  0CD3  78 4A     MOV R0,#4Ah
+  0CD5  75 91 00  MOV SFR_91h,#00h
+
+loc_0CD8:    ; xref 0CF5
+  0CD8  8C 83     MOV DPH,R4
+  0CDA  8D 82     MOV DPL,R5
+  0CDC  E4        CLR A
+  0CDD  93        MOVC A,@A+DPTR
+  0CDE  A3        INC DPTR
+  0CDF  AC 83     MOV R4,DPH
+  0CE1  AD 82     MOV R5,DPL
+  0CE3  8A 83     MOV DPH,R2
+  0CE5  8B 82     MOV DPL,R3
+  0CE7  F0        MOVX @DPTR,A
+  0CE8  A3        INC DPTR
+  0CE9  B8 13 00  CJNE R0,#13h,loc_0CEC
+
+loc_0CEC:    ; xref 0CE9
+  0CEC  50 03     JNC loc_0CF1
+  0CEE  E4        CLR A
+  0CEF  F0        MOVX @DPTR,A
+  0CF0  A3        INC DPTR
+
+loc_0CF1:    ; xref 0CEC
+  0CF1  AA 83     MOV R2,DPH
+  0CF3  AB 82     MOV R3,DPL
+  0CF5  D8 E1     DJNZ R0,loc_0CD8
+  0CF7  90 3F 88  MOV DPTR,#3F88h
+  0CFA  79 B7     MOV R1,#B7h
+  0CFC  7A 06     MOV R2,#06h
+
+loc_0CFE:    ; xref 0D02
+  0CFE  E7        MOV A,@R1
+  0CFF  F0        MOVX @DPTR,A
+  0D00  09        INC R1
+  0D01  A3        INC DPTR
+  0D02  DA FA     DJNZ R2,loc_0CFE
+  0D04  90 3F 8F  MOV DPTR,#3F8Fh
+  0D07  79 BD     MOV R1,#BDh
+  0D09  E7        MOV A,@R1
+  0D0A  F0        MOVX @DPTR,A
+  0D0B  90 3F 99  MOV DPTR,#3F99h
+  0D0E  79 BE     MOV R1,#BEh
+  0D10  E7        MOV A,@R1
+  0D11  54 E0     ANL A,#E0h
+  0D13  F0        MOVX @DPTR,A
+  0D14  A3        INC DPTR
+  0D15  09        INC R1
+  0D16  E7        MOV A,@R1
+  0D17  F0        MOVX @DPTR,A
+  0D18  75 91 01  MOV SFR_91h,#01h
+  0D1B  22        RET
+
+sub_0D1C:    ; xref 0EBF
+  0D1C  75 52 15  MOV 52h,#15h
+  0D1F  E5 53     MOV A,53h
+  0D21  04        INC A
+  0D22  B5 52 42  CJNE A,52h,loc_0D67
+  0D25  20 3B 20  JB 27h.3,loc_0D48
+  0D28  E5 77     MOV A,77h
+  0D2A  D2 E6     SETB ACC.6
+  0D2C  90 FF FF  MOV DPTR,#FFFFh
+  0D2F  F0        MOVX @DPTR,A
+  0D30  F5 77     MOV 77h,A
+  0D32  90 FF 94  MOV DPTR,#FF94h  ; GPIOCR
+  0D35  E0        MOVX A,@DPTR
+  0D36  D2 E0     SETB ACC.0
+  0D38  90 FF 94  MOV DPTR,#FF94h  ; GPIOCR
+  0D3B  F0        MOVX @DPTR,A
+  0D3C  90 FF 95  MOV DPTR,#FF95h  ; GPIODR
+  0D3F  E0        MOVX A,@DPTR
+  0D40  D2 E0     SETB ACC.0
+  0D42  90 FF 95  MOV DPTR,#FF95h  ; GPIODR
+  0D45  F0        MOVX @DPTR,A
+  0D46  80 1F     SJMP loc_0D67
+
+loc_0D48:    ; xref 0D25
+  0D48  E5 77     MOV A,77h
+  0D4A  D2 E6     SETB ACC.6
+  0D4C  90 FF FF  MOV DPTR,#FFFFh
+  0D4F  F0        MOVX @DPTR,A
+  0D50  F5 77     MOV 77h,A
+  0D52  90 FF 94  MOV DPTR,#FF94h  ; GPIOCR
+  0D55  E0        MOVX A,@DPTR
+  0D56  D2 E0     SETB ACC.0
+  0D58  90 FF 94  MOV DPTR,#FF94h  ; GPIOCR
+  0D5B  F0        MOVX @DPTR,A
+  0D5C  90 FF 95  MOV DPTR,#FF95h  ; GPIODR
+  0D5F  E0        MOVX A,@DPTR
+  0D60  B2 E0     CPL ACC.0
+  0D62  90 FF 95  MOV DPTR,#FF95h  ; GPIODR
+  0D65  F0        MOVX @DPTR,A
+  0D66  E4        CLR A
+
+loc_0D67:    ; xref 0D22, 0D46
+  0D67  F5 53     MOV 53h,A
+  0D69  22        RET
+
+sub_0D6A:    ; xref 0EC2
+  0D6A  30 24 02  JNB 24h.4,loc_0D6F
+  0D6D  80 03     SJMP loc_0D72
+
+loc_0D6F:    ; xref 0D6A
+  0D6F  30 32 0D  JNB 26h.2,loc_0D7F
+
+loc_0D72:    ; xref 0D6D
+  0D72  79 A8     MOV R1,#A8h
+  0D74  07        INC @R1
+  0D75  B7 00 07  CJNE @R1,#00h,loc_0D7F
+  0D78  09        INC R1
+  0D79  B7 FF 02  CJNE @R1,#FFh,loc_0D7E
+  0D7C  80 01     SJMP loc_0D7F
+
+loc_0D7E:    ; xref 0D79
+  0D7E  07        INC @R1
+
+loc_0D7F:    ; xref 0D6F, 0D75, 0D7C
+  0D7F  22        RET
+
+sub_0D80:    ; xref 0EC5
+  0D80  30 25 12  JNB 24h.5,loc_0D95
+  0D83  79 AA     MOV R1,#AAh
+  0D85  17        DEC @R1
+  0D86  B7 00 0C  CJNE @R1,#00h,loc_0D95
+  0D89  09        INC R1
+  0D8A  B7 00 07  CJNE @R1,#00h,loc_0D94
+  0D8D  C2 24     CLR 24h.4
+  0D8F  C2 32     CLR 26h.2
+  0D91  C2 25     CLR 24h.5
+  0D93  22        RET
+
+loc_0D94:    ; xref 0D8A
+  0D94  17        DEC @R1
+
+loc_0D95:    ; xref 0D80, 0D86
+  0D95  22        RET
+  0D96  DB 30h,3Eh,1Eh,79h,B1h,B7h,00h,18h,09h,B7h,00h,14h,D2h,09h,D2h,0Ah   ; data/unreached
+  0DA6  DB C2h,4Eh,90h,FFh,A2h,74h,00h,F0h,C2h,24h,C2h,3Eh,12h,14h,70h,22h   ; data/unreached
+  0DB6  DB 17h,22h   ; data/unreached
+
+loc_0DB8:    ; xref 0003
+  0DB8  90 FF AD  MOV DPTR,#FFADh  ; TIER
+  0DBB  E0        MOVX A,@DPTR
+  0DBC  C2 E7     CLR ACC.7
+  0DBE  F0        MOVX @DPTR,A
+  0DBF  90 FF AA  MOV DPTR,#FFAAh  ; TISR
+  0DC2  E0        MOVX A,@DPTR
+  0DC3  F5 F0     MOV B,A
+  0DC5  90 FF AD  MOV DPTR,#FFADh  ; TIER
+  0DC8  E0        MOVX A,@DPTR
+  0DC9  55 F0     ANL A,B
+  0DCB  20 E0 03  JB ACC.0,loc_0DD1
+  0DCE  02 0E D4  LJMP loc_0ED4
+
+loc_0DD1:    ; xref 0DCB
+  0DD1  12 03 28  LCALL sub_0328
+  0DD4  80 00     SJMP loc_0DD6
+
+loc_0DD6:    ; xref 0DD4
+  0DD6  20 00 08  JB 20h.0,loc_0DE1
+  0DD9  90 FF AD  MOV DPTR,#FFADh  ; TIER
+  0DDC  E0        MOVX A,@DPTR
+  0DDD  D2 E7     SETB ACC.7
+  0DDF  F0        MOVX @DPTR,A
+  0DE0  32        RETI
+
+loc_0DE1:    ; xref 0DD6
+  0DE1  C2 00     CLR 20h.0
+  0DE3  90 FF 96  MOV DPTR,#FF96h  ; WDTRR
+  0DE6  74 68     MOV A,#68h
+  0DE8  F0        MOVX @DPTR,A
+  0DE9  90 FF 96  MOV DPTR,#FF96h  ; WDTRR
+  0DEC  74 01     MOV A,#01h
+  0DEE  F0        MOVX @DPTR,A
+  0DEF  02 00 30  LJMP loc_0030
+
+loc_0DF2:    ; xref 0013
+  0DF2  90 FF AA  MOV DPTR,#FFAAh  ; TISR
+  0DF5  E0        MOVX A,@DPTR
+  0DF6  F5 F0     MOV B,A
+  0DF8  90 FF AD  MOV DPTR,#FFADh  ; TIER
+  0DFB  E0        MOVX A,@DPTR
+  0DFC  55 F0     ANL A,B
+  0DFE  20 E1 26  JB ACC.1,loc_0E27
+  0E01  20 E2 2B  JB ACC.2,loc_0E2F
+  0E04  20 E3 33  JB ACC.3,loc_0E3A
+  0E07  90 FF B0  MOV DPTR,#FFB0h  ; ISR
+  0E0A  E0        MOVX A,@DPTR
+  0E0B  D2 E7     SETB ACC.7
+  0E0D  F0        MOVX @DPTR,A
+  0E0E  90 FF AA  MOV DPTR,#FFAAh  ; TISR
+  0E11  E0        MOVX A,@DPTR
+  0E12  F5 F0     MOV B,A
+  0E14  90 FF AD  MOV DPTR,#FFADh  ; TIER
+  0E17  E0        MOVX A,@DPTR
+  0E18  55 F0     ANL A,B
+  0E1A  20 E0 25  JB ACC.0,loc_0E42
+  0E1D  90 FF B0  MOV DPTR,#FFB0h  ; ISR
+  0E20  E0        MOVX A,@DPTR
+  0E21  C2 E7     CLR ACC.7
+  0E23  F0        MOVX @DPTR,A
+  0E24  02 0E D7  LJMP loc_0ED7
+
+loc_0E27:    ; xref 0DFE
+  0E27  74 FD     MOV A,#FDh
+  0E29  90 FF AA  MOV DPTR,#FFAAh  ; TISR
+  0E2C  F0        MOVX @DPTR,A
+  0E2D  80 23     SJMP loc_0E52
+
+loc_0E2F:    ; xref 0E01
+  0E2F  74 FB     MOV A,#FBh
+  0E31  90 FF AA  MOV DPTR,#FFAAh  ; TISR
+  0E34  F0        MOVX @DPTR,A
+  0E35  12 17 1F  LCALL sub_171F
+  0E38  80 18     SJMP loc_0E52
+
+loc_0E3A:    ; xref 0E04
+  0E3A  74 F7     MOV A,#F7h
+  0E3C  90 FF AA  MOV DPTR,#FFAAh  ; TISR
+  0E3F  F0        MOVX @DPTR,A
+  0E40  80 10     SJMP loc_0E52
+
+loc_0E42:    ; xref 0E1A
+  0E42  90 FF AA  MOV DPTR,#FFAAh  ; TISR
+  0E45  74 FE     MOV A,#FEh
+  0E47  F0        MOVX @DPTR,A
+  0E48  90 FF B0  MOV DPTR,#FFB0h  ; ISR
+  0E4B  E0        MOVX A,@DPTR
+  0E4C  C2 E7     CLR ACC.7
+  0E4E  F0        MOVX @DPTR,A
+  0E4F  12 15 DE  LCALL sub_15DE
+
+loc_0E52:    ; xref 0E2D, 0E38, 0E40
+  0E52  32        RETI
+
+loc_0E53:    ; xref 000B
+  0E53  90 FF 96  MOV DPTR,#FF96h  ; WDTRR
+  0E56  74 68     MOV A,#68h
+  0E58  F0        MOVX @DPTR,A
+  0E59  90 FF 96  MOV DPTR,#FF96h  ; WDTRR
+  0E5C  74 01     MOV A,#01h
+  0E5E  F0        MOVX @DPTR,A
+  0E5F  20 52 3E  JB 2Ah.2,loc_0EA0
+  0E62  20 3B 3B  JB 27h.3,loc_0EA0
+  0E65  20 2F 05  JB 25h.7,loc_0E6D
+  0E68  D2 50     SETB 2Ah.0
+  0E6A  12 1F 79  LCALL sub_1F79
+
+loc_0E6D:    ; xref 0E65
+  0E6D  90 FF 95  MOV DPTR,#FF95h  ; GPIODR
+  0E70  E0        MOVX A,@DPTR
+  0E71  30 E5 2C  JNB ACC.5,loc_0EA0
+  0E74  20 42 0B  JB 28h.2,loc_0E82
+  0E77  C2 4E     CLR 29h.6
+  0E79  90 FF A2  MOV DPTR,#FFA2h  ; PPHDR
+  0E7C  74 00     MOV A,#00h
+  0E7E  F0        MOVX @DPTR,A
+  0E7F  12 1D F1  LCALL sub_1DF1
+
+loc_0E82:    ; xref 0E74
+  0E82  E5 77     MOV A,77h
+  0E84  D2 E6     SETB ACC.6
+  0E86  90 FF FF  MOV DPTR,#FFFFh
+  0E89  F0        MOVX @DPTR,A
+  0E8A  F5 77     MOV 77h,A
+  0E8C  90 FF 94  MOV DPTR,#FF94h  ; GPIOCR
+  0E8F  E0        MOVX A,@DPTR
+  0E90  D2 E0     SETB ACC.0
+  0E92  90 FF 94  MOV DPTR,#FF94h  ; GPIOCR
+  0E95  F0        MOVX @DPTR,A
+  0E96  90 FF 95  MOV DPTR,#FF95h  ; GPIODR
+  0E99  E0        MOVX A,@DPTR
+  0E9A  D2 E0     SETB ACC.0
+  0E9C  90 FF 95  MOV DPTR,#FF95h  ; GPIODR
+  0E9F  F0        MOVX @DPTR,A
+
+loc_0EA0:    ; xref 0E5F, 0E62, 0E71
+  0EA0  12 1C 47  LCALL sub_1C47
+  0EA3  30 34 19  JNB 26h.4,loc_0EBF
+  0EA6  05 4B     INC 4Bh
+  0EA8  E5 4B     MOV A,4Bh
+  0EAA  D3        SETB C
+  0EAB  94 63     SUBB A,#63h
+  0EAD  40 10     JC loc_0EBF
+  0EAF  05 4C     INC 4Ch
+  0EB1  E4        CLR A
+  0EB2  F5 4B     MOV 4Bh,A
+  0EB4  E5 4C     MOV A,4Ch
+  0EB6  D3        SETB C
+  0EB7  94 00     SUBB A,#00h
+  0EB9  40 04     JC loc_0EBF
+  0EBB  C2 34     CLR 26h.4
+  0EBD  D2 2F     SETB 25h.7
+
+loc_0EBF:    ; xref 0EA3, 0EAD, 0EB9
+  0EBF  12 0D 1C  LCALL sub_0D1C
+  0EC2  12 0D 6A  LCALL sub_0D6A
+  0EC5  12 0D 80  LCALL sub_0D80
+  0EC8  12 09 FA  LCALL sub_09FA
+  0ECB  32        RETI
+
+loc_0ECC:    ; xref 001B
+  0ECC  12 1C F2  LCALL sub_1CF2
+  0ECF  32        RETI
+
+loc_0ED0:    ; xref 002B
+  0ED0  32        RETI
+
+loc_0ED1:    ; xref 0023
+  0ED1  02 0A 07  LJMP loc_0A07
+
+loc_0ED4:    ; xref 0DCE
+  0ED4  02 0A 07  LJMP loc_0A07
+
+loc_0ED7:    ; xref 0E24
+  0ED7  02 0A 07  LJMP loc_0A07
+  0EDA  DB 02h,0Ah,07h,02h,0Ah,07h   ; data/unreached
+
+sub_0EE0:    ; xref 06BA
+  0EE0  E5 48     MOV A,48h
+  0EE2  B4 14 0A  CJNE A,#14h,loc_0EEF
+  0EE5  D2 31     SETB 26h.1
+  0EE7  C2 50     CLR 2Ah.0
+  0EE9  C2 55     CLR 2Ah.5
+  0EEB  12 1E D1  LCALL sub_1ED1
+  0EEE  22        RET
+
+loc_0EEF:    ; xref 0EE2
+  0EEF  B4 15 0A  CJNE A,#15h,loc_0EFC
+  0EF2  D2 31     SETB 26h.1
+  0EF4  D2 50     SETB 2Ah.0
+  0EF6  C2 55     CLR 2Ah.5
+  0EF8  12 1E D1  LCALL sub_1ED1
+  0EFB  22        RET
+
+loc_0EFC:    ; xref 0EEF
+  0EFC  B4 16 3E  CJNE A,#16h,loc_0F3D
+  0EFF  C2 8E     CLR TCON.6
+  0F01  C2 AB     CLR IE.3
+  0F03  C2 52     CLR 2Ah.2
+  0F05  12 07 3D  LCALL sub_073D
+  0F08  BA 00 09  CJNE R2,#00h,loc_0F14
+  0F0B  BB 00 06  CJNE R3,#00h,loc_0F14
+  0F0E  D2 4B     SETB 29h.3
+  0F10  C2 25     CLR 24h.5
+  0F12  D2 24     SETB 24h.4
+
+loc_0F14:    ; xref 0F08, 0F0B
+  0F14  78 AC     MOV R0,#ACh
+  0F16  EA        MOV A,R2
+  0F17  F6        MOV @R0,A
+  0F18  08        INC R0
+  0F19  EB        MOV A,R3
+  0F1A  F6        MOV @R0,A
+  0F1B  D2 4F     SETB 29h.7
+  0F1D  8C 7A     MOV 7Ah,R4
+  0F1F  8D 7B     MOV 7Bh,R5
+  0F21  D2 55     SETB 2Ah.5
+  0F23  EE        MOV A,R6
+  0F24  A2 E0     MOV C,ACC.0
+  0F26  92 31     MOV 26h.1,C
+  0F28  20 E3 08  JB ACC.3,loc_0F33
+  0F2B  90 FF 18  MOV DPTR,#FF18h  ; SHSRR
+  0F2E  74 00     MOV A,#00h
+  0F30  F0        MOVX @DPTR,A
+  0F31  80 06     SJMP loc_0F39
+
+loc_0F33:    ; xref 0F28
+  0F33  90 FF 18  MOV DPTR,#FF18h  ; SHSRR
+  0F36  74 80     MOV A,#80h
+  0F38  F0        MOVX @DPTR,A
+
+loc_0F39:    ; xref 0F31
+  0F39  12 1E 94  LCALL sub_1E94
+  0F3C  22        RET
+
+loc_0F3D:    ; xref 0EFC
+  0F3D  B4 17 37  CJNE A,#17h,loc_0F77
+  0F40  20 4E 04  JB 29h.6,loc_0F47
+  0F43  78 00     MOV R0,#00h
+  0F45  80 14     SJMP loc_0F5B
+
+loc_0F47:    ; xref 0F40
+  0F47  78 01     MOV R0,#01h
+  0F49  20 56 0B  JB 2Ah.6,loc_0F57
+  0F4C  79 00     MOV R1,#00h
+  0F4E  80 18     SJMP loc_0F68
+  0F50  DB 20h,50h,04h,79h,03h,80h,11h   ; data/unreached
+
+loc_0F57:    ; xref 0F49
+  0F57  79 01     MOV R1,#01h
+  0F59  80 0D     SJMP loc_0F68
+
+loc_0F5B:    ; xref 0F45
+  0F5B  90 FF 95  MOV DPTR,#FF95h  ; GPIODR
+  0F5E  E0        MOVX A,@DPTR
+  0F5F  20 E5 04  JB ACC.5,loc_0F66
+  0F62  79 02     MOV R1,#02h
+  0F64  80 02     SJMP loc_0F68
+
+loc_0F66:    ; xref 0F5F
+  0F66  79 00     MOV R1,#00h
+
+loc_0F68:    ; xref 0F4E, 0F59, 0F64
+  0F68  75 91 00  MOV SFR_91h,#00h
+  0F6B  90 3F 02  MOV DPTR,#3F02h
+  0F6E  E8        MOV A,R0
+  0F6F  F0        MOVX @DPTR,A
+  0F70  A3        INC DPTR
+  0F71  E9        MOV A,R1
+  0F72  F0        MOVX @DPTR,A
+  0F73  75 91 01  MOV SFR_91h,#01h
+  0F76  22        RET
+
+loc_0F77:    ; xref 0F3D
+  0F77  E5 48     MOV A,48h
+  0F79  B4 23 04  CJNE A,#23h,loc_0F80
+  0F7C  12 12 DD  LCALL sub_12DD
+  0F7F  22        RET
+
+loc_0F80:    ; xref 0F79
+  0F80  E5 48     MOV A,48h
+  0F82  B4 28 42  CJNE A,#28h,loc_0FC7
+  0F85  78 A8     MOV R0,#A8h
+  0F87  20 32 0B  JB 26h.2,loc_0F95
+  0F8A  20 24 04  JB 24h.4,loc_0F91
+  0F8D  7A 00     MOV R2,#00h
+  0F8F  80 0D     SJMP loc_0F9E
+
+loc_0F91:    ; xref 0F8A
+  0F91  7A 01     MOV R2,#01h
+  0F93  80 09     SJMP loc_0F9E
+
+loc_0F95:    ; xref 0F87
+  0F95  20 24 04  JB 24h.4,loc_0F9C
+  0F98  7A 10     MOV R2,#10h
+  0F9A  80 02     SJMP loc_0F9E
+
+loc_0F9C:    ; xref 0F95
+  0F9C  7A 11     MOV R2,#11h
+
+loc_0F9E:    ; xref 0F8F, 0F93, 0F9A
+  0F9E  C2 33     CLR 26h.3
+  0FA0  30 33 04  JNB 26h.3,loc_0FA7
+  0FA3  7B 01     MOV R3,#01h
+  0FA5  80 02     SJMP loc_0FA9
+
+loc_0FA7:    ; xref 0FA0
+  0FA7  7B 00     MOV R3,#00h
+
+loc_0FA9:    ; xref 0FA5
+  0FA9  E4        CLR A
+  0FAA  30 24 02  JNB 24h.4,loc_0FAF
+  0FAD  D2 E0     SETB ACC.0
+
+loc_0FAF:    ; xref 0FAA
+  0FAF  75 91 00  MOV SFR_91h,#00h
+  0FB2  90 3F 02  MOV DPTR,#3F02h
+  0FB5  F0        MOVX @DPTR,A
+  0FB6  A3        INC DPTR
+  0FB7  EA        MOV A,R2
+  0FB8  F0        MOVX @DPTR,A
+  0FB9  A3        INC DPTR
+  0FBA  E6        MOV A,@R0
+  0FBB  F0        MOVX @DPTR,A
+  0FBC  A3        INC DPTR
+  0FBD  08        INC R0
+  0FBE  E6        MOV A,@R0
+  0FBF  F0        MOVX @DPTR,A
+  0FC0  A3        INC DPTR
+  0FC1  EB        MOV A,R3
+  0FC2  F0        MOVX @DPTR,A
+  0FC3  75 91 01  MOV SFR_91h,#01h
+  0FC6  22        RET
+
+loc_0FC7:    ; xref 0F82
+  0FC7  E5 48     MOV A,48h
+  0FC9  B4 29 01  CJNE A,#29h,loc_0FCD
+  0FCC  22        RET
+
+loc_0FCD:    ; xref 0FC9
+  0FCD  E5 48     MOV A,48h
+  0FCF  B4 2A 04  CJNE A,#2Ah,loc_0FD6
+  0FD2  12 13 12  LCALL sub_1312
+  0FD5  22        RET
+
+loc_0FD6:    ; xref 0FCF
+  0FD6  E5 48     MOV A,48h
+  0FD8  B4 2B 04  CJNE A,#2Bh,loc_0FDF
+  0FDB  12 13 1C  LCALL sub_131C
+  0FDE  22        RET
+
+loc_0FDF:    ; xref 0FD8
+  0FDF  E5 48     MOV A,48h
+  0FE1  B4 2C 04  CJNE A,#2Ch,loc_0FE8
+  0FE4  12 13 33  LCALL sub_1333
+  0FE7  22        RET
+
+loc_0FE8:    ; xref 0FE1
+  0FE8  E5 48     MOV A,48h
+  0FEA  B4 2D 04  CJNE A,#2Dh,loc_0FF1
+  0FED  12 13 3B  LCALL sub_133B
+  0FF0  22        RET
+
+loc_0FF1:    ; xref 0FEA
+  0FF1  E5 48     MOV A,48h
+  0FF3  B4 2E 04  CJNE A,#2Eh,loc_0FFA
+  0FF6  12 1B 11  LCALL sub_1B11
+  0FF9  22        RET
+
+loc_0FFA:    ; xref 0FF3
+  0FFA  E5 48     MOV A,48h
+  0FFC  B4 35 0B  CJNE A,#35h,loc_100A
+  0FFF  30 01 03  JNB 20h.1,loc_1005
+  1002  30 56 04  JNB 2Ah.6,loc_1009
+
+loc_1005:    ; xref 0FFF
+  1005  75 72 35  MOV 72h,#35h
+  1008  22        RET
+
+loc_1009:    ; xref 1002
+  1009  22        RET
+
+loc_100A:    ; xref 0FFC
+  100A  E5 48     MOV A,48h
+  100C  B4 3F 10  CJNE A,#3Fh,loc_101F
+  100F  30 26 02  JNB 24h.6,loc_1014
+  1012  D2 E0     SETB ACC.0
+
+loc_1014:    ; xref 100F
+  1014  75 91 00  MOV SFR_91h,#00h
+  1017  90 3F 02  MOV DPTR,#3F02h
+  101A  F0        MOVX @DPTR,A
+  101B  75 91 01  MOV SFR_91h,#01h
+  101E  22        RET
+
+loc_101F:    ; xref 100C
+  101F  B4 49 01  CJNE A,#49h,loc_1023
+  1022  22        RET
+
+loc_1023:    ; xref 101F
+  1023  B4 59 1E  CJNE A,#59h,loc_1044
+  1026  90 FF 95  MOV DPTR,#FF95h  ; GPIODR
+  1029  E0        MOVX A,@DPTR
+  102A  30 E5 04  JNB ACC.5,loc_1031
+  102D  78 00     MOV R0,#00h
+  102F  80 02     SJMP loc_1033
+
+loc_1031:    ; xref 102A
+  1031  78 01     MOV R0,#01h
+
+loc_1033:    ; xref 102F
+  1033  75 91 00  MOV SFR_91h,#00h
+  1036  90 3F 02  MOV DPTR,#3F02h
+  1039  E8        MOV A,R0
+  103A  F0        MOVX @DPTR,A
+  103B  E4        CLR A
+  103C  A3        INC DPTR
+  103D  F0        MOVX @DPTR,A
+  103E  A3        INC DPTR
+  103F  F0        MOVX @DPTR,A
+  1040  75 91 01  MOV SFR_91h,#01h
+  1043  22        RET
+
+loc_1044:    ; xref 1023
+  1044  E5 48     MOV A,48h
+  1046  B4 69 04  CJNE A,#69h,loc_104D
+  1049  12 07 88  LCALL sub_0788
+  104C  22        RET
+
+loc_104D:    ; xref 1046
+  104D  E5 48     MOV A,48h
+  104F  B4 82 0A  CJNE A,#82h,loc_105C
+  1052  C2 31     CLR 26h.1
+  1054  C2 50     CLR 2Ah.0
+  1056  C2 55     CLR 2Ah.5
+  1058  12 1E D1  LCALL sub_1ED1
+  105B  22        RET
+
+loc_105C:    ; xref 104F
+  105C  E5 48     MOV A,48h
+  105E  B4 83 12  CJNE A,#83h,loc_1073
+  1061  C2 50     CLR 2Ah.0
+  1063  C2 31     CLR 26h.1
+  1065  D2 43     SETB 28h.3
+  1067  D2 4E     SETB 29h.6
+  1069  90 FF A2  MOV DPTR,#FFA2h  ; PPHDR
+  106C  74 00     MOV A,#00h
+  106E  F0        MOVX @DPTR,A
+  106F  12 1F 79  LCALL sub_1F79
+  1072  22        RET
+
+loc_1073:    ; xref 105E
+  1073  E5 48     MOV A,48h
+  1075  B4 84 0D  CJNE A,#84h,loc_1085
+  1078  C2 56     CLR 2Ah.6
+  107A  C2 42     CLR 28h.2
+  107C  C2 4E     CLR 29h.6
+  107E  90 FF A2  MOV DPTR,#FFA2h  ; PPHDR
+  1081  74 00     MOV A,#00h
+  1083  F0        MOVX @DPTR,A
+  1084  22        RET
+
+loc_1085:    ; xref 1075
+  1085  22        RET
+
+sub_1086:    ; xref 06D7
+  1086  E5 48     MOV A,48h
+  1088  B4 10 27  CJNE A,#10h,loc_10B2
+  108B  D2 26     SETB 24h.6
+  108D  90 FF 16  MOV DPTR,#FF16h  ; SHRRR
+  1090  74 80     MOV A,#80h
+  1092  F0        MOVX @DPTR,A
+  1093  E5 77     MOV A,77h
+  1095  D2 E6     SETB ACC.6
+  1097  90 FF FF  MOV DPTR,#FFFFh
+  109A  F0        MOVX @DPTR,A
+  109B  F5 77     MOV 77h,A
+  109D  90 FF 94  MOV DPTR,#FF94h  ; GPIOCR
+  10A0  E0        MOVX A,@DPTR
+  10A1  D2 E0     SETB ACC.0
+  10A3  90 FF 94  MOV DPTR,#FF94h  ; GPIOCR
+  10A6  F0        MOVX @DPTR,A
+  10A7  90 FF 95  MOV DPTR,#FF95h  ; GPIODR
+  10AA  E0        MOVX A,@DPTR
+  10AB  C2 E0     CLR ACC.0
+  10AD  90 FF 95  MOV DPTR,#FF95h  ; GPIODR
+  10B0  F0        MOVX @DPTR,A
+  10B1  22        RET
+
+loc_10B2:    ; xref 1088
+  10B2  B4 11 09  CJNE A,#11h,loc_10BE
+  10B5  C2 26     CLR 24h.6
+  10B7  90 FF 16  MOV DPTR,#FF16h  ; SHRRR
+  10BA  74 00     MOV A,#00h
+  10BC  F0        MOVX @DPTR,A
+  10BD  22        RET
+
+loc_10BE:    ; xref 10B2
+  10BE  B4 12 09  CJNE A,#12h,loc_10CA
+  10C1  D2 4E     SETB 29h.6
+  10C3  90 FF A2  MOV DPTR,#FFA2h  ; PPHDR
+  10C6  74 00     MOV A,#00h
+  10C8  F0        MOVX @DPTR,A
+  10C9  22        RET
+
+loc_10CA:    ; xref 10BE
+  10CA  B4 20 06  CJNE A,#20h,loc_10D3
+  10CD  C2 56     CLR 2Ah.6
+  10CF  12 14 37  LCALL sub_1437
+  10D2  22        RET
+
+loc_10D3:    ; xref 10CA
+  10D3  B4 22 04  CJNE A,#22h,loc_10DA
+  10D6  12 02 B4  LCALL sub_02B4
+  10D9  22        RET
+
+loc_10DA:    ; xref 10D3
+  10DA  B4 24 18  CJNE A,#24h,loc_10F5
+  10DD  C2 63     CLR 2Ch.3
+  10DF  C2 50     CLR 2Ah.0
+  10E1  D2 43     SETB 28h.3
+  10E3  90 FF 18  MOV DPTR,#FF18h  ; SHSRR
+  10E6  74 00     MOV A,#00h
+  10E8  F0        MOVX @DPTR,A
+  10E9  D2 4E     SETB 29h.6
+  10EB  90 FF A2  MOV DPTR,#FFA2h  ; PPHDR
+  10EE  74 00     MOV A,#00h
+  10F0  F0        MOVX @DPTR,A
+  10F1  12 1F 79  LCALL sub_1F79
+  10F4  22        RET
+
+loc_10F5:    ; xref 10DA
+  10F5  B4 25 18  CJNE A,#25h,loc_1110
+  10F8  12 07 3D  LCALL sub_073D
+  10FB  EA        MOV A,R2
+  10FC  B4 00 06  CJNE A,#00h,loc_1105
+  10FF  C2 24     CLR 24h.4
+  1101  C2 32     CLR 26h.2
+  1103  80 23     SJMP loc_1128
+
+loc_1105:    ; xref 10FC
+  1105  B4 01 0A  CJNE A,#01h,loc_1112
+  1108  C2 25     CLR 24h.5
+  110A  D2 24     SETB 24h.4
+  110C  C2 32     CLR 26h.2
+  110E  80 18     SJMP loc_1128
+
+loc_1110:    ; xref 10F5
+  1110  80 17     SJMP loc_1129
+
+loc_1112:    ; xref 1105
+  1112  B4 02 08  CJNE A,#02h,loc_111D
+  1115  C2 24     CLR 24h.4
+  1117  C2 25     CLR 24h.5
+  1119  D2 32     SETB 26h.2
+  111B  80 0B     SJMP loc_1128
+
+loc_111D:    ; xref 1112
+  111D  B4 03 08  CJNE A,#03h,loc_1128
+  1120  C2 25     CLR 24h.5
+  1122  D2 24     SETB 24h.4
+  1124  C2 25     CLR 24h.5
+  1126  D2 32     SETB 26h.2
+
+loc_1128:    ; xref 1103, 110E, 111B, 111D
+  1128  22        RET
+
+loc_1129:    ; xref 1110
+  1129  B4 27 16  CJNE A,#27h,loc_1142
+  112C  12 07 3D  LCALL sub_073D
+  112F  78 AA     MOV R0,#AAh
+  1131  BA 00 06  CJNE R2,#00h,loc_113A
+  1134  BB 00 03  CJNE R3,#00h,loc_113A
+  1137  C2 25     CLR 24h.5
+  1139  22        RET
+
+loc_113A:    ; xref 1131, 1134
+  113A  EA        MOV A,R2
+  113B  F6        MOV @R0,A
+  113C  08        INC R0
+  113D  EB        MOV A,R3
+  113E  F6        MOV @R0,A
+  113F  D2 25     SETB 24h.5
+  1141  22        RET
+
+loc_1142:    ; xref 1129
+  1142  B4 2F 0A  CJNE A,#2Fh,loc_114F
+  1145  12 07 3D  LCALL sub_073D
+  1148  8A 7A     MOV 7Ah,R2
+  114A  8B 7B     MOV 7Bh,R3
+  114C  D2 55     SETB 2Ah.5
+  114E  22        RET
+
+loc_114F:    ; xref 1142
+  114F  B4 30 16  CJNE A,#30h,loc_1168
+  1152  D2 50     SETB 2Ah.0
+  1154  D2 31     SETB 26h.1
+  1156  90 FF 18  MOV DPTR,#FF18h  ; SHSRR
+  1159  74 00     MOV A,#00h
+  115B  F0        MOVX @DPTR,A
+  115C  D2 4E     SETB 29h.6
+  115E  90 FF A2  MOV DPTR,#FFA2h  ; PPHDR
+  1161  74 00     MOV A,#00h
+  1163  F0        MOVX @DPTR,A
+  1164  12 1F 79  LCALL sub_1F79
+  1167  22        RET
+
+loc_1168:    ; xref 114F
+  1168  B4 31 16  CJNE A,#31h,loc_1181
+  116B  90 FF 18  MOV DPTR,#FF18h  ; SHSRR
+  116E  74 00     MOV A,#00h
+  1170  F0        MOVX @DPTR,A
+  1171  C2 50     CLR 2Ah.0
+  1173  D2 31     SETB 26h.1
+  1175  D2 4E     SETB 29h.6
+  1177  90 FF A2  MOV DPTR,#FFA2h  ; PPHDR
+  117A  74 00     MOV A,#00h
+  117C  F0        MOVX @DPTR,A
+  117D  12 1F 79  LCALL sub_1F79
+  1180  22        RET
+
+loc_1181:    ; xref 1168
+  1181  B4 32 15  CJNE A,#32h,loc_1199
+  1184  C2 4E     CLR 29h.6
+  1186  90 FF A2  MOV DPTR,#FFA2h  ; PPHDR
+  1189  74 00     MOV A,#00h
+  118B  F0        MOVX @DPTR,A
+  118C  C2 4B     CLR 29h.3
+  118E  C2 4F     CLR 29h.7
+  1190  C2 50     CLR 2Ah.0
+  1192  C2 AB     CLR IE.3
+  1194  C2 8E     CLR TCON.6
+  1196  C2 56     CLR 2Ah.6
+  1198  22        RET
+
+loc_1199:    ; xref 1181
+  1199  B4 35 2E  CJNE A,#35h,loc_11CA
+  119C  C2 3A     CLR 27h.2
+  119E  12 19 59  LCALL sub_1959
+  11A1  90 FF 80  MOV DPTR,#FF80h  ; DCR
+  11A4  E0        MOVX A,@DPTR
+  11A5  D2 E2     SETB ACC.2
+  11A7  F0        MOVX @DPTR,A
+  11A8  90 FF 80  MOV DPTR,#FF80h  ; DCR
+  11AB  E0        MOVX A,@DPTR
+  11AC  D2 E6     SETB ACC.6
+  11AE  F0        MOVX @DPTR,A
+  11AF  90 FF 80  MOV DPTR,#FF80h  ; DCR
+  11B2  E0        MOVX A,@DPTR
+  11B3  D2 E1     SETB ACC.1
+  11B5  F0        MOVX @DPTR,A
+  11B6  D2 39     SETB 27h.1
+  11B8  90 FF C0  MOV DPTR,#FFC0h  ; UEIR
+  11BB  74 01     MOV A,#01h
+  11BD  F0        MOVX @DPTR,A
+  11BE  90 FF C8  MOV DPTR,#FFC8h  ; UECR
+  11C1  74 0D     MOV A,#0Dh
+  11C3  F0        MOVX @DPTR,A
+  11C4  D2 3B     SETB 27h.3
+  11C6  75 53 04  MOV 53h,#04h
+  11C9  22        RET
+
+loc_11CA:    ; xref 1199
+  11CA  B4 42 1D  CJNE A,#42h,loc_11EA
+  11CD  D2 09     SETB 21h.1
+  11CF  20 28 03  JB 25h.0,loc_11D5
+  11D2  12 18 E5  LCALL sub_18E5
+
+loc_11D5:    ; xref 11CF
+  11D5  C2 06     CLR 20h.6
+  11D7  90 FF B2  MOV DPTR,#FFB2h  ; DBCARCR
+  11DA  74 0C     MOV A,#0Ch
+  11DC  F0        MOVX @DPTR,A
+  11DD  90 FF B2  MOV DPTR,#FFB2h  ; DBCARCR
+  11E0  74 00     MOV A,#00h
+  11E2  F0        MOVX @DPTR,A
+  11E3  78 00     MOV R0,#00h
+  11E5  A9 48     MOV R1,48h
+  11E7  C2 28     CLR 25h.0
+  11E9  22        RET
+
+loc_11EA:    ; xref 11CA
+  11EA  B4 43 04  CJNE A,#43h,loc_11F1
+  11ED  12 17 D7  LCALL sub_17D7
+  11F0  22        RET
+
+loc_11F1:    ; xref 11EA
+  11F1  B4 50 08  CJNE A,#50h,loc_11FC
+  11F4  90 FF 95  MOV DPTR,#FF95h  ; GPIODR
+  11F7  E0        MOVX A,@DPTR
+  11F8  D2 E0     SETB ACC.0
+  11FA  F0        MOVX @DPTR,A
+  11FB  22        RET
+
+loc_11FC:    ; xref 11F1
+  11FC  B4 51 08  CJNE A,#51h,loc_1207
+  11FF  90 FF 95  MOV DPTR,#FF95h  ; GPIODR
+  1202  E0        MOVX A,@DPTR
+  1203  C2 E0     CLR ACC.0
+  1205  F0        MOVX @DPTR,A
+  1206  22        RET
+
+loc_1207:    ; xref 11FC
+  1207  B4 52 1F  CJNE A,#52h,loc_1229
+  120A  E5 77     MOV A,77h
+  120C  D2 E6     SETB ACC.6
+  120E  90 FF FF  MOV DPTR,#FFFFh
+  1211  F0        MOVX @DPTR,A
+  1212  F5 77     MOV 77h,A
+  1214  90 FF 94  MOV DPTR,#FF94h  ; GPIOCR
+  1217  E0        MOVX A,@DPTR
+  1218  D2 E0     SETB ACC.0
+  121A  90 FF 94  MOV DPTR,#FF94h  ; GPIOCR
+  121D  F0        MOVX @DPTR,A
+  121E  90 FF 95  MOV DPTR,#FF95h  ; GPIODR
+  1221  E0        MOVX A,@DPTR
+  1222  D2 E0     SETB ACC.0
+  1224  90 FF 95  MOV DPTR,#FF95h  ; GPIODR
+  1227  F0        MOVX @DPTR,A
+  1228  22        RET
+
+loc_1229:    ; xref 1207
+  1229  B4 53 1F  CJNE A,#53h,loc_124B
+  122C  E5 77     MOV A,77h
+  122E  D2 E6     SETB ACC.6
+  1230  90 FF FF  MOV DPTR,#FFFFh
+  1233  F0        MOVX @DPTR,A
+  1234  F5 77     MOV 77h,A
+  1236  90 FF 94  MOV DPTR,#FF94h  ; GPIOCR
+  1239  E0        MOVX A,@DPTR
+  123A  D2 E0     SETB ACC.0
+  123C  90 FF 94  MOV DPTR,#FF94h  ; GPIOCR
+  123F  F0        MOVX @DPTR,A
+  1240  90 FF 95  MOV DPTR,#FF95h  ; GPIODR
+  1243  E0        MOVX A,@DPTR
+  1244  C2 E0     CLR ACC.0
+  1246  90 FF 95  MOV DPTR,#FF95h  ; GPIODR
+  1249  F0        MOVX @DPTR,A
+  124A  22        RET
+
+loc_124B:    ; xref 1229
+  124B  B4 69 04  CJNE A,#69h,loc_1252
+  124E  12 14 70  LCALL sub_1470
+  1251  22        RET
+
+loc_1252:    ; xref 124B
+  1252  B4 6A 01  CJNE A,#6Ah,loc_1256
+  1255  22        RET
+
+loc_1256:    ; xref 1252
+  1256  B4 70 20  CJNE A,#70h,loc_1279
+  1259  90 FF 10  MOV DPTR,#FF10h  ; LEDCR
+  125C  74 01     MOV A,#01h
+  125E  F0        MOVX @DPTR,A
+
+sub_125F:    ; xref 0252, 170F
+  125F  E4        CLR A
+  1260  90 FF 44  MOV DPTR,#FF44h  ; OFFM0RR
+  1263  F0        MOVX @DPTR,A
+  1264  90 FF 48  MOV DPTR,#FF48h  ; PGAM0RR
+  1267  F0        MOVX @DPTR,A
+  1268  90 FF 4C  MOV DPTR,#FF4Ch  ; GAINM0RR
+  126B  F0        MOVX @DPTR,A
+  126C  90 FF 46  MOV DPTR,#FF46h  ; OFFM1RR
+  126F  F0        MOVX @DPTR,A
+  1270  90 FF 4A  MOV DPTR,#FF4Ah  ; PGAM1RR
+  1273  F0        MOVX @DPTR,A
+  1274  90 FF 4E  MOV DPTR,#FF4Eh  ; GAINM1RR
+  1277  F0        MOVX @DPTR,A
+  1278  22        RET
+
+loc_1279:    ; xref 1256
+  1279  B4 71 22  CJNE A,#71h,loc_129E
+  127C  90 FF 10  MOV DPTR,#FF10h  ; LEDCR
+  127F  74 04     MOV A,#04h
+  1281  F0        MOVX @DPTR,A
+
+sub_1282:    ; xref 0238, 16E8
+  1282  74 80     MOV A,#80h
+  1284  90 FF 44  MOV DPTR,#FF44h  ; OFFM0RR
+  1287  F0        MOVX @DPTR,A
+  1288  90 FF 48  MOV DPTR,#FF48h  ; PGAM0RR
+  128B  F0        MOVX @DPTR,A
+  128C  90 FF 4C  MOV DPTR,#FF4Ch  ; GAINM0RR
+  128F  F0        MOVX @DPTR,A
+  1290  E4        CLR A
+  1291  90 FF 46  MOV DPTR,#FF46h  ; OFFM1RR
+  1294  F0        MOVX @DPTR,A
+  1295  90 FF 4A  MOV DPTR,#FF4Ah  ; PGAM1RR
+  1298  F0        MOVX @DPTR,A
+  1299  90 FF 4E  MOV DPTR,#FF4Eh  ; GAINM1RR
+  129C  F0        MOVX @DPTR,A
+  129D  22        RET
+
+loc_129E:    ; xref 1279
+  129E  B4 72 22  CJNE A,#72h,loc_12C3
+  12A1  90 FF 10  MOV DPTR,#FF10h  ; LEDCR
+  12A4  74 10     MOV A,#10h
+  12A6  F0        MOVX @DPTR,A
+
+sub_12A7:    ; xref 0226, 16FD
+  12A7  E4        CLR A
+  12A8  90 FF 44  MOV DPTR,#FF44h  ; OFFM0RR
+  12AB  F0        MOVX @DPTR,A
+  12AC  90 FF 48  MOV DPTR,#FF48h  ; PGAM0RR
+  12AF  F0        MOVX @DPTR,A
+  12B0  90 FF 4C  MOV DPTR,#FF4Ch  ; GAINM0RR
+  12B3  F0        MOVX @DPTR,A
+  12B4  74 80     MOV A,#80h
+  12B6  90 FF 46  MOV DPTR,#FF46h  ; OFFM1RR
+  12B9  F0        MOVX @DPTR,A
+  12BA  90 FF 4A  MOV DPTR,#FF4Ah  ; PGAM1RR
+  12BD  F0        MOVX @DPTR,A
+  12BE  90 FF 4E  MOV DPTR,#FF4Eh  ; GAINM1RR
+  12C1  F0        MOVX @DPTR,A
+  12C2  22        RET
+
+loc_12C3:    ; xref 129E
+  12C3  B4 73 09  CJNE A,#73h,loc_12CF
+  12C6  90 FF 10  MOV DPTR,#FF10h  ; LEDCR
+  12C9  74 00     MOV A,#00h
+  12CB  F0        MOVX @DPTR,A
+  12CC  D2 60     SETB 2Ch.0
+  12CE  22        RET
+
+loc_12CF:    ; xref 12C3
+  12CF  B4 76 04  CJNE A,#76h,loc_12D6
+  12D2  12 1A AE  LCALL sub_1AAE
+  12D5  22        RET
+
+loc_12D6:    ; xref 12CF
+  12D6  B4 79 03  CJNE A,#79h,loc_12DC
+  12D9  C2 55     CLR 2Ah.5
+  12DB  22        RET
+
+loc_12DC:    ; xref 12D6
+  12DC  22        RET
+
+sub_12DD:    ; xref 0F7C
+  12DD  75 91 00  MOV SFR_91h,#00h
+  12E0  79 3E     MOV R1,#3Eh
+  12E2  7A 02     MOV R2,#02h
+  12E4  7B 3F     MOV R3,#3Fh
+  12E6  7C E8     MOV R4,#E8h
+  12E8  7D 02     MOV R5,#02h
+
+loc_12EA:    ; xref 12FF
+  12EA  8C 82     MOV DPL,R4
+  12EC  8D 83     MOV DPH,R5
+  12EE  E4        CLR A
+  12EF  93        MOVC A,@A+DPTR
+  12F0  A3        INC DPTR
+  12F1  AC 82     MOV R4,DPL
+  12F3  AD 83     MOV R5,DPH
+  12F5  8A 82     MOV DPL,R2
+  12F7  8B 83     MOV DPH,R3
+  12F9  F0        MOVX @DPTR,A
+  12FA  A3        INC DPTR
+  12FB  AA 82     MOV R2,DPL
+  12FD  AB 83     MOV R3,DPH
+  12FF  D9 E9     DJNZ R1,loc_12EA
+  1301  75 91 01  MOV SFR_91h,#01h
+  1304  78 02     MOV R0,#02h
+  1306  75 91 00  MOV SFR_91h,#00h
+  1309  90 3F 13  MOV DPTR,#3F13h
+  130C  E8        MOV A,R0
+  130D  F0        MOVX @DPTR,A
+  130E  75 91 01  MOV SFR_91h,#01h
+  1311  22        RET
+
+sub_1312:    ; xref 0FD2
+  1312  12 07 3D  LCALL sub_073D
+  1315  8A 82     MOV DPL,R2
+  1317  8B 83     MOV DPH,R3
+  1319  EC        MOV A,R4
+  131A  F0        MOVX @DPTR,A
+  131B  22        RET
+
+sub_131C:    ; xref 0FDB
+  131C  12 07 3D  LCALL sub_073D
+  131F  8A 82     MOV DPL,R2
+  1321  8B 83     MOV DPH,R3
+  1323  E0        MOVX A,@DPTR
+  1324  75 91 00  MOV SFR_91h,#00h
+  1327  90 3F 02  MOV DPTR,#3F02h
+  132A  F0        MOVX @DPTR,A
+  132B  A3        INC DPTR
+  132C  74 00     MOV A,#00h
+  132E  F0        MOVX @DPTR,A
+  132F  75 91 01  MOV SFR_91h,#01h
+  1332  22        RET
+
+sub_1333:    ; xref 0FE4
+  1333  12 07 3D  LCALL sub_073D
+  1336  EA        MOV A,R2
+  1337  F8        MOV R0,A
+  1338  EC        MOV A,R4
+  1339  F6        MOV @R0,A
+  133A  22        RET
+
+sub_133B:    ; xref 0FED
+  133B  12 07 3D  LCALL sub_073D
+  133E  EA        MOV A,R2
+  133F  F8        MOV R0,A
+  1340  E6        MOV A,@R0
+  1341  75 91 00  MOV SFR_91h,#00h
+  1344  90 3F 02  MOV DPTR,#3F02h
+  1347  F0        MOVX @DPTR,A
+  1348  75 91 01  MOV SFR_91h,#01h
+  134B  22        RET
+  134C  DB 75h,91h,00h,78h,40h,90h,3Fh,00h,E4h,F0h,A3h,D8h,FCh,75h,91h,01h   ; data/unreached
+  135C  DB 22h   ; data/unreached
+
+sub_135D:    ; xref 06EF
+  135D  E5 48     MOV A,48h
+  135F  B4 2E 12  CJNE A,#2Eh,loc_1374
+  1362  79 B7     MOV R1,#B7h
+  1364  E7        MOV A,@R1
+  1365  FA        MOV R2,A
+  1366  09        INC R1
+  1367  E7        MOV A,@R1
+  1368  FB        MOV R3,A
+  1369  09        INC R1
+  136A  E7        MOV A,@R1
+  136B  FC        MOV R4,A
+  136C  09        INC R1
+  136D  E7        MOV A,@R1
+  136E  FD        MOV R5,A
+  136F  78 00     MOV R0,#00h
+  1371  A9 48     MOV R1,48h
+  1373  22        RET
+
+loc_1374:    ; xref 135F
+  1374  B4 41 27  CJNE A,#41h,loc_139E
+  1377  D2 09     SETB 21h.1
+  1379  20 28 03  JB 25h.0,loc_137F
+  137C  12 18 E5  LCALL sub_18E5
+
+loc_137F:    ; xref 1379
+  137F  C2 06     CLR 20h.6
+  1381  90 FF B2  MOV DPTR,#FFB2h  ; DBCARCR
+  1384  74 0C     MOV A,#0Ch
+  1386  F0        MOVX @DPTR,A
+  1387  90 FF B2  MOV DPTR,#FFB2h  ; DBCARCR
+  138A  74 00     MOV A,#00h
+  138C  F0        MOVX @DPTR,A
+  138D  78 00     MOV R0,#00h
+  138F  A9 48     MOV R1,48h
+  1391  C2 28     CLR 25h.0
+  1393  90 FF 10  MOV DPTR,#FF10h  ; LEDCR
+  1396  74 00     MOV A,#00h
+  1398  F0        MOVX @DPTR,A
+  1399  22        RET
+  139A  DB B4h,50h,0Bh,22h   ; data/unreached
+
+loc_139E:    ; xref 1374
+  139E  B4 70 1D  CJNE A,#70h,loc_13BE
+  13A1  78 00     MOV R0,#00h
+  13A3  A9 48     MOV R1,48h
+  13A5  7A FF     MOV R2,#FFh
+  13A7  22        RET
+  13A8  DB B4h,72h,13h,78h,00h,A9h,48h,D2h,09h,D2h,0Ah,C2h,4Eh,90h,FFh,A2h   ; data/unreached
+  13B8  DB 74h,00h,F0h,C2h,24h,22h   ; data/unreached
+
+loc_13BE:    ; xref 139E
+  13BE  B4 73 1B  CJNE A,#73h,loc_13DC
+  13C1  79 B7     MOV R1,#B7h
+  13C3  E7        MOV A,@R1
+  13C4  FC        MOV R4,A
+  13C5  09        INC R1
+  13C6  E7        MOV A,@R1
+  13C7  FD        MOV R5,A
+  13C8  09        INC R1
+  13C9  E7        MOV A,@R1
+  13CA  FE        MOV R6,A
+  13CB  09        INC R1
+  13CC  E7        MOV A,@R1
+  13CD  FF        MOV R7,A
+  13CE  09        INC R1
+  13CF  E7        MOV A,@R1
+  13D0  FA        MOV R2,A
+  13D1  09        INC R1
+  13D2  E7        MOV A,@R1
+  13D3  44 80     ORL A,#80h
+  13D5  F7        MOV @R1,A
+  13D6  FB        MOV R3,A
+  13D7  78 00     MOV R0,#00h
+  13D9  A9 48     MOV R1,48h
+  13DB  22        RET
+
+loc_13DC:    ; xref 13BE
+  13DC  B4 81 11  CJNE A,#81h,loc_13F0
+  13DF  7A 00     MOV R2,#00h
+  13E1  7B 00     MOV R3,#00h
+  13E3  7C 03     MOV R4,#03h
+  13E5  7D 00     MOV R5,#00h
+  13E7  7E 00     MOV R6,#00h
+  13E9  7F 00     MOV R7,#00h
+  13EB  78 00     MOV R0,#00h
+  13ED  A9 48     MOV R1,48h
+  13EF  22        RET
+
+loc_13F0:    ; xref 13DC
+  13F0  B4 85 10  CJNE A,#85h,loc_1403
+  13F3  90 FF 95  MOV DPTR,#FF95h  ; GPIODR
+  13F6  E0        MOVX A,@DPTR
+  13F7  30 E5 04  JNB ACC.5,loc_13FE
+  13FA  7A 00     MOV R2,#00h
+  13FC  80 02     SJMP loc_1400
+
+loc_13FE:    ; xref 13F7
+  13FE  7A 01     MOV R2,#01h
+
+loc_1400:    ; xref 13FC
+  1400  A9 48     MOV R1,48h
+  1402  22        RET
+
+loc_1403:    ; xref 13F0
+  1403  B4 74 0B  CJNE A,#74h,loc_1411
+  1406  78 00     MOV R0,#00h
+  1408  E5 48     MOV A,48h
+  140A  F9        MOV R1,A
+  140B  AA 56     MOV R2,56h
+  140D  E4        CLR A
+  140E  F5 56     MOV 56h,A
+  1410  22        RET
+
+loc_1411:    ; xref 1403
+  1411  22        RET
+
+sub_1412:    ; xref 0707
+  1412  E5 48     MOV A,48h
+  1414  B4 41 1F  CJNE A,#41h,loc_1436
+  1417  22        RET
+  1418  DB B4h,72h,1Bh,C2h,06h,90h,FFh,B2h,74h,0Ch,F0h,90h,FFh,B2h,74h,00h   ; data/unreached
+  1428  DB F0h,C2h,4Eh,90h,FFh,A2h,74h,00h,F0h,C2h,24h,12h,14h,70h   ; data/unreached
+
+loc_1436:    ; xref 1414
+  1436  22        RET
+
+sub_1437:    ; xref 10CF
+  1437  75 91 00  MOV SFR_91h,#00h
+  143A  78 17     MOV R0,#17h
+  143C  79 30     MOV R1,#30h
+  143E  90 3F 42  MOV DPTR,#3F42h
+
+loc_1441:    ; xref 1445
+  1441  E0        MOVX A,@DPTR
+  1442  F7        MOV @R1,A
+  1443  A3        INC DPTR
+  1444  09        INC R1
+  1445  D8 FA     DJNZ R0,loc_1441
+  1447  75 91 01  MOV SFR_91h,#01h
+  144A  22        RET
+
+sub_144B:    ; xref 1587
+  144B  90 FF 92  MOV DPTR,#FF92h  ; MBLHR
+  144E  74 00     MOV A,#00h
+  1450  F0        MOVX @DPTR,A
+  1451  90 FF 93  MOV DPTR,#FF93h  ; MBLLR
+  1454  74 80     MOV A,#80h
+  1456  F0        MOVX @DPTR,A
+  1457  90 FF C6  MOV DPTR,#FFC6h  ; DUTPC1R
+  145A  74 FF     MOV A,#FFh
+  145C  F0        MOVX @DPTR,A
+  145D  90 FF C5  MOV DPTR,#FFC5h  ; DUTPC2R
+  1460  74 FF     MOV A,#FFh
+  1462  F0        MOVX @DPTR,A
+  1463  90 FF C4  MOV DPTR,#FFC4h  ; DUTPS1R
+  1466  74 40     MOV A,#40h
+  1468  F0        MOVX @DPTR,A
+  1469  90 FF C3  MOV DPTR,#FFC3h  ; DUTPS2R
+  146C  74 00     MOV A,#00h
+  146E  F0        MOVX @DPTR,A
+  146F  22        RET
+
+sub_1470:    ; xref 003C, 124E
+  1470  75 C8 01  MOV SFR_C8h,#01h
+  1473  C2 8E     CLR TCON.6
+  1475  C2 AB     CLR IE.3
+  1477  90 FF C0  MOV DPTR,#FFC0h  ; UEIR
+  147A  74 01     MOV A,#01h
+  147C  F0        MOVX @DPTR,A
+  147D  90 FF C8  MOV DPTR,#FFC8h  ; UECR
+  1480  74 0F     MOV A,#0Fh
+  1482  F0        MOVX @DPTR,A
+  1483  90 FF C0  MOV DPTR,#FFC0h  ; UEIR
+  1486  74 02     MOV A,#02h
+  1488  F0        MOVX @DPTR,A
+  1489  90 FF C8  MOV DPTR,#FFC8h  ; UECR
+  148C  74 0F     MOV A,#0Fh
+  148E  F0        MOVX @DPTR,A
+  148F  90 FF C0  MOV DPTR,#FFC0h  ; UEIR
+  1492  74 00     MOV A,#00h
+  1494  F0        MOVX @DPTR,A
+  1495  90 FF C8  MOV DPTR,#FFC8h  ; UECR
+  1498  74 2F     MOV A,#2Fh
+  149A  F0        MOVX @DPTR,A
+  149B  90 FF AE  MOV DPTR,#FFAEh  ; UIE2R
+  149E  74 14     MOV A,#14h
+  14A0  F0        MOVX @DPTR,A
+  14A1  90 FF B0  MOV DPTR,#FFB0h  ; ISR
+  14A4  E0        MOVX A,@DPTR
+  14A5  D2 E7     SETB ACC.7
+  14A7  F0        MOVX @DPTR,A
+  14A8  90 FF AF  MOV DPTR,#FFAFh  ; UIE1R
+  14AB  74 4C     MOV A,#4Ch
+  14AD  F0        MOVX @DPTR,A
+  14AE  90 FF C7  MOV DPTR,#FFC7h  ; DURPSR
+  14B1  74 E0     MOV A,#E0h
+  14B3  F0        MOVX @DPTR,A
+  14B4  90 FF C3  MOV DPTR,#FFC3h  ; DUTPS2R
+  14B7  74 80     MOV A,#80h
+  14B9  F0        MOVX @DPTR,A
+  14BA  90 FF C4  MOV DPTR,#FFC4h  ; DUTPS1R
+  14BD  74 44     MOV A,#44h
+  14BF  F0        MOVX @DPTR,A
+  14C0  90 FF AD  MOV DPTR,#FFADh  ; TIER
+  14C3  74 03     MOV A,#03h
+  14C5  F0        MOVX @DPTR,A
+  14C6  90 FF B0  MOV DPTR,#FFB0h  ; ISR
+  14C9  E0        MOVX A,@DPTR
+  14CA  C2 E7     CLR ACC.7
+  14CC  F0        MOVX @DPTR,A
+  14CD  90 FF 00  MOV DPTR,#FF00h  ; TGCR
+  14D0  E0        MOVX A,@DPTR
+  14D1  D2 E2     SETB ACC.2
+  14D3  F0        MOVX @DPTR,A
+  14D4  90 FF 00  MOV DPTR,#FF00h  ; TGCR
+  14D7  E0        MOVX A,@DPTR
+  14D8  C2 E0     CLR ACC.0
+  14DA  F0        MOVX @DPTR,A
+  14DB  E5 77     MOV A,77h
+  14DD  D2 E6     SETB ACC.6
+  14DF  90 FF FF  MOV DPTR,#FFFFh
+  14E2  F0        MOVX @DPTR,A
+  14E3  F5 77     MOV 77h,A
+  14E5  90 FF 94  MOV DPTR,#FF94h  ; GPIOCR
+  14E8  E0        MOVX A,@DPTR
+  14E9  D2 E0     SETB ACC.0
+  14EB  90 FF 94  MOV DPTR,#FF94h  ; GPIOCR
+  14EE  F0        MOVX @DPTR,A
+  14EF  90 FF 95  MOV DPTR,#FF95h  ; GPIODR
+  14F2  E0        MOVX A,@DPTR
+  14F3  C2 E0     CLR ACC.0
+  14F5  90 FF 95  MOV DPTR,#FF95h  ; GPIODR
+  14F8  F0        MOVX @DPTR,A
+  14F9  12 01 16  LCALL sub_0116
+  14FC  12 00 8B  LCALL sub_008B
+  14FF  12 1A F4  LCALL sub_1AF4
+  1502  C2 4E     CLR 29h.6
+  1504  90 FF A2  MOV DPTR,#FFA2h  ; PPHDR
+  1507  74 00     MOV A,#00h
+  1509  F0        MOVX @DPTR,A
+  150A  90 FF A2  MOV DPTR,#FFA2h  ; PPHDR
+  150D  74 F8     MOV A,#F8h
+  150F  F0        MOVX @DPTR,A
+  1510  90 FF A3  MOV DPTR,#FFA3h  ; PPDSR
+  1513  74 80     MOV A,#80h
+  1515  F0        MOVX @DPTR,A
+  1516  90 FF A1  MOV DPTR,#FFA1h  ; PPHSR
+  1519  74 00     MOV A,#00h
+  151B  F0        MOVX @DPTR,A
+  151C  75 90 FF  MOV P1,#FFh
+  151F  90 FF 94  MOV DPTR,#FF94h  ; GPIOCR
+  1522  74 0F     MOV A,#0Fh
+  1524  F0        MOVX @DPTR,A
+  1525  90 FF 95  MOV DPTR,#FF95h  ; GPIODR
+  1528  74 FF     MOV A,#FFh
+  152A  F0        MOVX @DPTR,A
+  152B  C2 4E     CLR 29h.6
+  152D  90 FF A2  MOV DPTR,#FFA2h  ; PPHDR
+  1530  74 00     MOV A,#00h
+  1532  F0        MOVX @DPTR,A
+  1533  C2 26     CLR 24h.6
+  1535  90 FF 16  MOV DPTR,#FF16h  ; SHRRR
+  1538  74 00     MOV A,#00h
+  153A  F0        MOVX @DPTR,A
+  153B  90 FF AD  MOV DPTR,#FFADh  ; TIER
+  153E  E0        MOVX A,@DPTR
+  153F  D2 E7     SETB ACC.7
+  1541  F0        MOVX @DPTR,A
+  1542  12 1C 8B  LCALL sub_1C8B
+  1545  12 1D E7  LCALL sub_1DE7
+  1548  D2 2F     SETB 25h.7
+  154A  7C 00     MOV R4,#00h
+  154C  7D 00     MOV R5,#00h
+  154E  90 FF 12  MOV DPTR,#FF12h  ; RS1RR
+  1551  74 80     MOV A,#80h
+  1553  F0        MOVX @DPTR,A
+  1554  E5 77     MOV A,77h
+  1556  D2 E6     SETB ACC.6
+  1558  90 FF FF  MOV DPTR,#FFFFh
+  155B  F0        MOVX @DPTR,A
+  155C  F5 77     MOV 77h,A
+  155E  90 FF 94  MOV DPTR,#FF94h  ; GPIOCR
+  1561  E0        MOVX A,@DPTR
+  1562  D2 E0     SETB ACC.0
+  1564  90 FF 94  MOV DPTR,#FF94h  ; GPIOCR
+  1567  F0        MOVX @DPTR,A
+  1568  90 FF 95  MOV DPTR,#FF95h  ; GPIODR
+  156B  E0        MOVX A,@DPTR
+  156C  D2 E0     SETB ACC.0
+  156E  90 FF 95  MOV DPTR,#FF95h  ; GPIODR
+  1571  F0        MOVX @DPTR,A
+  1572  C2 49     CLR 29h.1
+  1574  22        RET
+  1575  DB E4h,90h,FFh,A6h,F0h,90h,FFh,A5h,F0h,22h   ; data/unreached
+
+sub_157F:    ; xref 03E1
+  157F  22        RET
+
+sub_1580:    ; xref 173B
+  1580  90 FF 80  MOV DPTR,#FF80h  ; DCR
+  1583  E0        MOVX A,@DPTR
+  1584  C2 E7     CLR ACC.7
+  1586  F0        MOVX @DPTR,A
+  1587  12 14 4B  LCALL sub_144B
+  158A  D2 06     SETB 20h.6
+  158C  90 FF B2  MOV DPTR,#FFB2h  ; DBCARCR
+  158F  E0        MOVX A,@DPTR
+  1590  D2 E1     SETB ACC.1
+  1592  F0        MOVX @DPTR,A
+  1593  90 FF A9  MOV DPTR,#FFA9h  ; EDCR
+  1596  74 E2     MOV A,#E2h
+  1598  F0        MOVX @DPTR,A
+  1599  22        RET
+
+sub_159A:    ; xref 0401
+  159A  90 FF C0  MOV DPTR,#FFC0h  ; UEIR
+  159D  74 01     MOV A,#01h
+  159F  F0        MOVX @DPTR,A
+  15A0  12 15 C7  LCALL sub_15C7
+  15A3  90 FF C0  MOV DPTR,#FFC0h  ; UEIR
+  15A6  74 02     MOV A,#02h
+  15A8  F0        MOVX @DPTR,A
+  15A9  12 15 C7  LCALL sub_15C7
+  15AC  90 FF B2  MOV DPTR,#FFB2h  ; DBCARCR
+  15AF  E0        MOVX A,@DPTR
+  15B0  D2 E2     SETB ACC.2
+  15B2  D2 E3     SETB ACC.3
+  15B4  C2 E1     CLR ACC.1
+  15B6  90 FF B2  MOV DPTR,#FFB2h  ; DBCARCR
+  15B9  F0        MOVX @DPTR,A
+  15BA  C2 E2     CLR ACC.2
+  15BC  C2 E3     CLR ACC.3
+  15BE  90 FF B2  MOV DPTR,#FFB2h  ; DBCARCR
+  15C1  F0        MOVX @DPTR,A
+  15C2  D2 09     SETB 21h.1
+  15C4  D2 28     SETB 25h.0
+  15C6  22        RET
+
+sub_15C7:    ; xref 15A0, 15A9
+  15C7  90 FF C9  MOV DPTR,#FFC9h  ; UETSR
+  15CA  E0        MOVX A,@DPTR
+  15CB  D2 E3     SETB ACC.3
+  15CD  90 FF C9  MOV DPTR,#FFC9h  ; UETSR
+  15D0  F0        MOVX @DPTR,A
+  15D1  C2 E7     CLR ACC.7
+  15D3  90 FF C9  MOV DPTR,#FFC9h  ; UETSR
+  15D6  F0        MOVX @DPTR,A
+  15D7  C2 E3     CLR ACC.3
+  15D9  90 FF C9  MOV DPTR,#FFC9h  ; UETSR
+  15DC  F0        MOVX @DPTR,A
+  15DD  22        RET
+
+sub_15DE:    ; xref 0E4F
+  15DE  20 62 28  JB 2Ch.2,loc_1609
+  15E1  30 20 25  JNB 24h.0,loc_1609
+  15E4  20 09 22  JB 21h.1,loc_1609
+  15E7  30 3A 1F  JNB 27h.2,loc_1609
+  15EA  20 21 1C  JB 24h.1,loc_1609
+  15ED  20 2B 19  JB 25h.3,loc_1609
+  15F0  E5 49     MOV A,49h
+  15F2  54 03     ANL A,#03h
+  15F4  B4 01 04  CJNE A,#01h,loc_15FB
+  15F7  12 1A D3  LCALL sub_1AD3
+  15FA  22        RET
+
+loc_15FB:    ; xref 15F4
+  15FB  B4 02 04  CJNE A,#02h,loc_1602
+  15FE  12 1A D9  LCALL sub_1AD9
+  1601  22        RET
+
+loc_1602:    ; xref 15FB
+  1602  B4 00 04  CJNE A,#00h,loc_1609
+  1605  12 1A DF  LCALL sub_1ADF
+  1608  22        RET
+
+loc_1609:    ; xref 15DE, 15E1, 15E4, 15E7, 15EA, 15ED, 1602
+  1609  22        RET
+
+sub_160A:    ; xref 181E
+  160A  E5 38     MOV A,38h
+  160C  A2 E2     MOV C,ACC.2
+  160E  92 20     MOV 24h.0,C
+  1610  30 E6 15  JNB ACC.6,loc_1628
+  1613  30 E3 09  JNB ACC.3,loc_161F
+  1616  90 FF 91  MOV DPTR,#FF91h  ; CCR
+  1619  74 20     MOV A,#20h
+  161B  F0        MOVX @DPTR,A
+  161C  02 16 A7  LJMP loc_16A7
+
+loc_161F:    ; xref 1613
+  161F  90 FF 91  MOV DPTR,#FF91h  ; CCR
+  1622  74 28     MOV A,#28h
+  1624  F0        MOVX @DPTR,A
+  1625  02 16 A7  LJMP loc_16A7
+
+loc_1628:    ; xref 1610
+  1628  90 FF 91  MOV DPTR,#FF91h  ; CCR
+  162B  74 00     MOV A,#00h
+  162D  F0        MOVX @DPTR,A
+  162E  E5 38     MOV A,38h
+  1630  20 E5 1B  JB ACC.5,loc_164E
+  1633  20 E4 13  JB ACC.4,loc_1649
+  1636  20 E3 47  JB ACC.3,loc_1680
+  1639  90 FF 91  MOV DPTR,#FF91h  ; CCR
+  163C  E0        MOVX A,@DPTR
+  163D  D2 E0     SETB ACC.0
+  163F  F0        MOVX @DPTR,A
+  1640  90 FF 91  MOV DPTR,#FF91h  ; CCR
+  1643  E0        MOVX A,@DPTR
+  1644  C2 E1     CLR ACC.1
+  1646  F0        MOVX @DPTR,A
+  1647  80 4A     SJMP loc_1693
+
+loc_1649:    ; xref 1633
+  1649  20 E3 14  JB ACC.3,loc_1660
+  164C  80 22     SJMP loc_1670
+
+loc_164E:    ; xref 1630
+  164E  D2 3D     SETB 27h.5
+  1650  90 FF 91  MOV DPTR,#FF91h  ; CCR
+  1653  E0        MOVX A,@DPTR
+  1654  D2 E0     SETB ACC.0
+  1656  F0        MOVX @DPTR,A
+  1657  90 FF 91  MOV DPTR,#FF91h  ; CCR
+  165A  E0        MOVX A,@DPTR
+  165B  D2 E1     SETB ACC.1
+  165D  F0        MOVX @DPTR,A
+  165E  80 3E     SJMP loc_169E
+
+loc_1660:    ; xref 1649
+  1660  90 FF 91  MOV DPTR,#FF91h  ; CCR
+  1663  E0        MOVX A,@DPTR
+  1664  D2 E0     SETB ACC.0
+  1666  F0        MOVX @DPTR,A
+  1667  90 FF 91  MOV DPTR,#FF91h  ; CCR
+  166A  E0        MOVX A,@DPTR
+  166B  C2 E1     CLR ACC.1
+  166D  F0        MOVX @DPTR,A
+  166E  80 2E     SJMP loc_169E
+
+loc_1670:    ; xref 164C
+  1670  90 FF 91  MOV DPTR,#FF91h  ; CCR
+  1673  E0        MOVX A,@DPTR
+  1674  C2 E0     CLR ACC.0
+  1676  F0        MOVX @DPTR,A
+  1677  90 FF 91  MOV DPTR,#FF91h  ; CCR
+  167A  E0        MOVX A,@DPTR
+  167B  C2 E1     CLR ACC.1
+  167D  F0        MOVX @DPTR,A
+  167E  80 0E     SJMP loc_168E
+
+loc_1680:    ; xref 1636
+  1680  90 FF 91  MOV DPTR,#FF91h  ; CCR
+  1683  E0        MOVX A,@DPTR
+  1684  C2 E0     CLR ACC.0
+  1686  F0        MOVX @DPTR,A
+  1687  90 FF 91  MOV DPTR,#FF91h  ; CCR
+  168A  E0        MOVX A,@DPTR
+  168B  D2 E1     SETB ACC.1
+  168D  F0        MOVX @DPTR,A
+
+loc_168E:    ; xref 167E
+  168E  E5 38     MOV A,38h
+  1690  30 E7 0B  JNB ACC.7,loc_169E
+
+loc_1693:    ; xref 1647
+  1693  90 FF FF  MOV DPTR,#FFFFh
+  1696  74 60     MOV A,#60h
+  1698  F0        MOVX @DPTR,A
+  1699  F9        MOV R1,A
+  169A  F5 77     MOV 77h,A
+  169C  80 09     SJMP loc_16A7
+
+loc_169E:    ; xref 165E, 166E, 1690
+  169E  90 FF FF  MOV DPTR,#FFFFh
+  16A1  74 61     MOV A,#61h
+  16A3  F0        MOVX @DPTR,A
+  16A4  F9        MOV R1,A
+  16A5  F5 77     MOV 77h,A
+
+loc_16A7:    ; xref 161C, 1625, 169C
+  16A7  E5 39     MOV A,39h
+  16A9  D2 E2     SETB ACC.2
+  16AB  30 E2 09  JNB ACC.2,loc_16B7
+  16AE  90 FF 91  MOV DPTR,#FF91h  ; CCR
+  16B1  E0        MOVX A,@DPTR
+  16B2  D2 E6     SETB ACC.6
+  16B4  F0        MOVX @DPTR,A
+  16B5  80 07     SJMP loc_16BE
+
+loc_16B7:    ; xref 16AB
+  16B7  90 FF 91  MOV DPTR,#FF91h  ; CCR
+  16BA  E0        MOVX A,@DPTR
+  16BB  C2 E6     CLR ACC.6
+  16BD  F0        MOVX @DPTR,A
+
+loc_16BE:    ; xref 16B5
+  16BE  E5 39     MOV A,39h
+  16C0  F8        MOV R0,A
+  16C1  30 E0 0B  JNB ACC.0,loc_16CF
+  16C4  E9        MOV A,R1
+  16C5  44 62     ORL A,#62h
+  16C7  F5 77     MOV 77h,A
+  16C9  90 FF FF  MOV DPTR,#FFFFh
+  16CC  F0        MOVX @DPTR,A
+  16CD  80 09     SJMP loc_16D8
+
+loc_16CF:    ; xref 16C1
+  16CF  E9        MOV A,R1
+  16D0  54 FD     ANL A,#FDh
+  16D2  F5 77     MOV 77h,A
+  16D4  90 FF FF  MOV DPTR,#FFFFh
+  16D7  F0        MOVX @DPTR,A
+
+loc_16D8:    ; xref 16CD
+  16D8  80 00     SJMP loc_16DA
+
+loc_16DA:    ; xref 16D8
+  16DA  E5 42     MOV A,42h
+  16DC  F5 2B     MOV 2Bh,A
+  16DE  E5 43     MOV A,43h
+  16E0  F5 2C     MOV 2Ch,A
+  16E2  22        RET
+
+sub_16E3:    ; xref 1846
+  16E3  E5 38     MOV A,38h
+  16E5  20 E0 12  JB ACC.0,loc_16FA
+  16E8  12 12 82  LCALL sub_1282
+  16EB  20 60 09  JB 2Ch.0,loc_16F7
+  16EE  12 1A D3  LCALL sub_1AD3
+  16F1  90 FF 10  MOV DPTR,#FF10h  ; LEDCR
+  16F4  74 04     MOV A,#04h
+  16F6  F0        MOVX @DPTR,A
+
+loc_16F7:    ; xref 16EB
+  16F7  02 17 1E  LJMP loc_171E
+
+loc_16FA:    ; xref 16E5
+  16FA  20 E1 12  JB ACC.1,loc_170F
+  16FD  12 12 A7  LCALL sub_12A7
+  1700  20 60 09  JB 2Ch.0,loc_170C
+  1703  12 1A DF  LCALL sub_1ADF
+  1706  90 FF 10  MOV DPTR,#FF10h  ; LEDCR
+  1709  74 10     MOV A,#10h
+  170B  F0        MOVX @DPTR,A
+
+loc_170C:    ; xref 1700
+  170C  02 17 1E  LJMP loc_171E
+
+loc_170F:    ; xref 16FA
+  170F  12 12 5F  LCALL sub_125F
+  1712  20 60 09  JB 2Ch.0,loc_171E
+  1715  12 1A D9  LCALL sub_1AD9
+  1718  90 FF 10  MOV DPTR,#FF10h  ; LEDCR
+  171B  74 01     MOV A,#01h
+  171D  F0        MOVX @DPTR,A
+
+loc_171E:    ; xref 16F7, 170C, 1712
+  171E  22        RET
+
+sub_171F:    ; xref 0E35
+  171F  12 19 2C  LCALL sub_192C
+  1722  20 09 0A  JB 21h.1,loc_172F
+  1725  30 28 0A  JNB 25h.0,loc_1732
+  1728  C2 3B     CLR 27h.3
+  172A  12 18 E5  LCALL sub_18E5
+  172D  80 03     SJMP loc_1732
+
+loc_172F:    ; xref 1722
+  172F  D2 42     SETB 28h.2
+  1731  22        RET
+
+loc_1732:    ; xref 1725, 172D
+  1732  30 39 0B  JNB 27h.1,loc_1740
+  1735  90 FF 88  MOV DPTR,#FF88h  ; D2BCHR
+  1738  E0        MOVX A,@DPTR
+  1739  60 05     JZ loc_1740
+  173B  12 15 80  LCALL sub_1580
+  173E  C2 39     CLR 27h.1
+
+loc_1740:    ; xref 1732, 1739
+  1740  90 FF C0  MOV DPTR,#FFC0h  ; UEIR
+  1743  74 01     MOV A,#01h
+  1745  F0        MOVX @DPTR,A
+  1746  90 FF C8  MOV DPTR,#FFC8h  ; UECR
+  1749  74 0F     MOV A,#0Fh
+  174B  F0        MOVX @DPTR,A
+  174C  30 09 03  JNB 21h.1,loc_1752
+  174F  02 17 A9  LJMP loc_17A9
+
+loc_1752:    ; xref 174C
+  1752  E5 7E     MOV A,7Eh
+  1754  15 7E     DEC 7Eh
+  1756  70 0D     JNZ loc_1765
+  1758  30 3D 05  JNB 27h.5,loc_1760
+  175B  85 59 7E  MOV 7Eh,59h
+  175E  80 0A     SJMP loc_176A
+
+loc_1760:    ; xref 1758
+  1760  85 58 7E  MOV 7Eh,58h
+  1763  80 05     SJMP loc_176A
+
+loc_1765:    ; xref 1756
+  1765  C2 3A     CLR 27h.2
+  1767  02 17 A9  LJMP loc_17A9
+
+loc_176A:    ; xref 175E, 1763
+  176A  12 17 BC  LCALL sub_17BC
+  176D  30 21 24  JNB 24h.1,loc_1794
+  1770  C2 3A     CLR 27h.2
+  1772  20 09 28  JB 21h.1,loc_179D
+  1775  20 5B 02  JB 2Bh.3,loc_177A
+  1778  80 23     SJMP loc_179D
+
+loc_177A:    ; xref 1775
+  177A  20 2B 05  JB 25h.3,loc_1782
+  177D  79 7F     MOV R1,#7Fh
+  177F  E5 49     MOV A,49h
+  1781  F7        MOV @R1,A
+
+loc_1782:    ; xref 177A
+  1782  D2 2B     SETB 25h.3
+  1784  E5 75     MOV A,75h
+  1786  60 0C     JZ loc_1794
+  1788  15 75     DEC 75h
+  178A  D2 4E     SETB 29h.6
+  178C  90 FF A2  MOV DPTR,#FFA2h  ; PPHDR
+  178F  74 00     MOV A,#00h
+  1791  F0        MOVX @DPTR,A
+  1792  80 15     SJMP loc_17A9
+
+loc_1794:    ; xref 176D, 1786
+  1794  20 21 03  JB 24h.1,loc_179A
+  1797  75 75 0A  MOV 75h,#0Ah
+
+loc_179A:    ; xref 1794
+  179A  12 01 D1  LCALL sub_01D1
+
+loc_179D:    ; xref 1772, 1778
+  179D  30 3A 09  JNB 27h.2,loc_17A9
+  17A0  90 FF 80  MOV DPTR,#FF80h  ; DCR
+  17A3  E0        MOVX A,@DPTR
+  17A4  C2 E6     CLR ACC.6
+  17A6  F0        MOVX @DPTR,A
+  17A7  80 07     SJMP loc_17B0
+
+loc_17A9:    ; xref 174F, 1767, 1792, 179D
+  17A9  90 FF 80  MOV DPTR,#FF80h  ; DCR
+  17AC  E0        MOVX A,@DPTR
+  17AD  D2 E6     SETB ACC.6
+  17AF  F0        MOVX @DPTR,A
+
+loc_17B0:    ; xref 17A7
+  17B0  30 28 01  JNB 25h.0,loc_17B4
+  17B3  22        RET
+
+loc_17B4:    ; xref 17B0
+  17B4  90 FF 80  MOV DPTR,#FF80h  ; DCR
+  17B7  E0        MOVX A,@DPTR
+  17B8  D2 E1     SETB ACC.1
+  17BA  F0        MOVX @DPTR,A
+  17BB  22        RET
+
+sub_17BC:    ; xref 176A
+  17BC  90 FF 88  MOV DPTR,#FF88h  ; D2BCHR
+  17BF  E0        MOVX A,@DPTR
+  17C0  FE        MOV R6,A
+  17C1  90 FF 89  MOV DPTR,#FF89h  ; D2BCLR
+  17C4  E0        MOVX A,@DPTR
+  17C5  FA        MOV R2,A
+  17C6  EA        MOV A,R2
+  17C7  25 3E     ADD A,3Eh
+  17C9  EE        MOV A,R6
+  17CA  35 3F     ADDC A,3Fh
+  17CC  C3        CLR C
+  17CD  94 40     SUBB A,#40h
+  17CF  50 03     JNC loc_17D4
+  17D1  C2 21     CLR 24h.1
+  17D3  22        RET
+
+loc_17D4:    ; xref 17CF
+  17D4  D2 21     SETB 24h.1
+  17D6  22        RET
+
+sub_17D7:    ; xref 11ED
+  17D7  E4        CLR A
+  17D8  F5 79     MOV 79h,A
+  17DA  F5 78     MOV 78h,A
+  17DC  F5 49     MOV 49h,A
+  17DE  F5 2B     MOV 2Bh,A
+  17E0  F5 2C     MOV 2Ch,A
+  17E2  F5 7E     MOV 7Eh,A
+  17E4  F5 4D     MOV 4Dh,A
+  17E6  C2 25     CLR 24h.5
+  17E8  C2 3E     CLR 27h.6
+  17EA  C2 57     CLR 2Ah.7
+  17EC  D2 31     SETB 26h.1
+  17EE  C2 01     CLR 20h.1
+  17F0  C2 52     CLR 2Ah.2
+  17F2  C2 50     CLR 2Ah.0
+  17F4  C2 28     CLR 25h.0
+  17F6  C2 4A     CLR 29h.2
+  17F8  C2 2E     CLR 25h.6
+  17FA  C2 29     CLR 25h.1
+  17FC  C2 2A     CLR 25h.2
+  17FE  C2 2B     CLR 25h.3
+  1800  C2 2C     CLR 25h.4
+  1802  D2 2D     SETB 25h.5
+  1804  C2 09     CLR 21h.1
+  1806  C2 27     CLR 24h.7
+  1808  C2 3D     CLR 27h.5
+  180A  C2 3C     CLR 27h.4
+  180C  C2 55     CLR 2Ah.5
+  180E  C2 35     CLR 26h.5
+  1810  D2 5B     SETB 2Bh.3
+  1812  C2 49     CLR 29h.1
+  1814  C2 43     CLR 28h.3
+  1816  C2 42     CLR 28h.2
+  1818  90 FF 87  MOV DPTR,#FF87h  ; ASR
+  181B  74 00     MOV A,#00h
+  181D  F0        MOVX @DPTR,A
+  181E  12 16 0A  LCALL sub_160A
+  1821  30 31 00  JNB 26h.1,loc_1824
+
+loc_1824:    ; xref 1821
+  1824  C2 25     CLR 24h.5
+  1826  D2 24     SETB 24h.4
+  1828  12 18 39  LCALL sub_1839
+  182B  90 FF 18  MOV DPTR,#FF18h  ; SHSRR
+  182E  74 00     MOV A,#00h
+  1830  F0        MOVX @DPTR,A
+  1831  30 60 02  JNB 2Ch.0,loc_1836
+  1834  C2 24     CLR 24h.4
+
+loc_1836:    ; xref 1831
+  1836  D2 01     SETB 20h.1
+  1838  22        RET
+
+sub_1839:    ; xref 1828
+  1839  20 62 40  JB 2Ch.2,loc_187C
+  183C  90 FF 91  MOV DPTR,#FF91h  ; CCR
+  183F  E0        MOVX A,@DPTR
+  1840  C2 E4     CLR ACC.4
+  1842  F0        MOVX @DPTR,A
+  1843  20 20 0B  JB 24h.0,loc_1851
+  1846  12 16 E3  LCALL sub_16E3
+  1849  12 19 85  LCALL sub_1985
+  184C  12 1B 3B  LCALL sub_1B3B
+  184F  80 19     SJMP loc_186A
+
+loc_1851:    ; xref 1843
+  1851  12 19 85  LCALL sub_1985
+  1854  12 1B 3B  LCALL sub_1B3B
+  1857  E5 40     MOV A,40h
+  1859  75 F0 03  MOV B,#03h
+  185C  A4        MUL AB
+  185D  F5 40     MOV 40h,A
+  185F  A9 F0     MOV R1,B
+  1861  75 F0 03  MOV B,#03h
+  1864  E5 41     MOV A,41h
+  1866  A4        MUL AB
+  1867  29        ADD A,R1
+  1868  F5 41     MOV 41h,A
+
+loc_186A:    ; xref 184F
+  186A  90 FF 8C  MOV DPTR,#FF8Ch  ; D2TLR
+  186D  E5 36     MOV A,36h
+  186F  F0        MOVX @DPTR,A
+  1870  90 FF 8B  MOV DPTR,#FF8Bh  ; D2THR
+  1873  E5 37     MOV A,37h
+  1875  F0        MOVX @DPTR,A
+  1876  75 7D 46  MOV 7Dh,#46h
+  1879  02 18 C1  LJMP loc_18C1
+
+loc_187C:    ; xref 1839
+  187C  90 FF 91  MOV DPTR,#FF91h  ; CCR
+  187F  E0        MOVX A,@DPTR
+  1880  D2 E4     SETB ACC.4
+  1882  F0        MOVX @DPTR,A
+  1883  90 FF 01  MOV DPTR,#FF01h  ; MOD6DR
+  1886  74 0F     MOV A,#0Fh
+  1888  F0        MOVX @DPTR,A
+  1889  12 19 85  LCALL sub_1985
+  188C  E5 36     MOV A,36h
+  188E  75 F0 03  MOV B,#03h
+  1891  A4        MUL AB
+  1892  F5 36     MOV 36h,A
+  1894  A9 F0     MOV R1,B
+  1896  75 F0 03  MOV B,#03h
+  1899  E5 37     MOV A,37h
+  189B  A4        MUL AB
+  189C  29        ADD A,R1
+  189D  F5 37     MOV 37h,A
+  189F  90 FF 8C  MOV DPTR,#FF8Ch  ; D2TLR
+  18A2  E5 36     MOV A,36h
+  18A4  F0        MOVX @DPTR,A
+  18A5  90 FF 8B  MOV DPTR,#FF8Bh  ; D2THR
+  18A8  E5 37     MOV A,37h
+  18AA  F0        MOVX @DPTR,A
+  18AB  E5 34     MOV A,34h
+  18AD  75 F0 03  MOV B,#03h
+  18B0  A4        MUL AB
+  18B1  F5 34     MOV 34h,A
+  18B3  A9 F0     MOV R1,B
+  18B5  75 F0 03  MOV B,#03h
+  18B8  E5 35     MOV A,35h
+  18BA  A4        MUL AB
+  18BB  29        ADD A,R1
+  18BC  F5 35     MOV 35h,A
+  18BE  75 7D 02  MOV 7Dh,#02h
+
+loc_18C1:    ; xref 1879
+  18C1  E5 34     MOV A,34h
+  18C3  25 7D     ADD A,7Dh
+  18C5  F5 34     MOV 34h,A
+  18C7  E4        CLR A
+  18C8  35 35     ADDC A,35h
+  18CA  F5 35     MOV 35h,A
+  18CC  90 FF 8E  MOV DPTR,#FF8Eh  ; D2SLR
+  18CF  E5 34     MOV A,34h
+  18D1  F0        MOVX @DPTR,A
+  18D2  90 FF 8D  MOV DPTR,#FF8Dh  ; D2SHR
+  18D5  E5 35     MOV A,35h
+  18D7  F0        MOVX @DPTR,A
+  18D8  90 FF 90  MOV DPTR,#FF90h  ; RLR
+  18DB  E5 3A     MOV A,3Ah
+  18DD  F0        MOVX @DPTR,A
+  18DE  90 FF 8F  MOV DPTR,#FF8Fh  ; RHR
+  18E1  E5 3B     MOV A,3Bh
+  18E3  F0        MOVX @DPTR,A
+  18E4  22        RET
+
+sub_18E5:    ; xref 11D2, 137C, 172A
+  18E5  C2 AB     CLR IE.3
+  18E7  C2 8E     CLR TCON.6
+  18E9  90 FF 87  MOV DPTR,#FF87h  ; ASR
+  18EC  74 3F     MOV A,#3Fh
+  18EE  F0        MOVX @DPTR,A
+  18EF  C2 4E     CLR 29h.6
+  18F1  90 FF A2  MOV DPTR,#FFA2h  ; PPHDR
+  18F4  74 00     MOV A,#00h
+  18F6  F0        MOVX @DPTR,A
+  18F7  90 FF 95  MOV DPTR,#FF95h  ; GPIODR
+  18FA  E0        MOVX A,@DPTR
+  18FB  C2 E0     CLR ACC.0
+  18FD  F0        MOVX @DPTR,A
+  18FE  90 FF 10  MOV DPTR,#FF10h  ; LEDCR
+  1901  74 00     MOV A,#00h
+  1903  F0        MOVX @DPTR,A
+  1904  C2 3B     CLR 27h.3
+  1906  C2 31     CLR 26h.1
+  1908  90 FF 18  MOV DPTR,#FF18h  ; SHSRR
+  190B  74 00     MOV A,#00h
+  190D  F0        MOVX @DPTR,A
+  190E  90 FF 80  MOV DPTR,#FF80h  ; DCR
+  1911  E0        MOVX A,@DPTR
+  1912  C2 E2     CLR ACC.2
+  1914  F0        MOVX @DPTR,A
+  1915  C2 23     CLR 24h.3
+  1917  C2 4A     CLR 29h.2
+  1919  C2 5A     CLR 2Bh.2
+  191B  C2 01     CLR 20h.1
+  191D  20 63 02  JB 2Ch.3,loc_1922
+  1920  D2 43     SETB 28h.3
+
+loc_1922:    ; xref 191D
+  1922  90 FF 80  MOV DPTR,#FF80h  ; DCR
+  1925  E0        MOVX A,@DPTR
+  1926  C2 E1     CLR ACC.1
+  1928  F0        MOVX @DPTR,A
+  1929  C2 56     CLR 2Ah.6
+  192B  22        RET
+
+sub_192C:    ; xref 171F
+  192C  30 3A 29  JNB 27h.2,loc_1958
+  192F  05 79     INC 79h
+  1931  E5 79     MOV A,79h
+  1933  70 02     JNZ loc_1937
+  1935  05 78     INC 78h
+
+loc_1937:    ; xref 1933
+  1937  E5 78     MOV A,78h
+  1939  B5 41 1C  CJNE A,41h,loc_1958
+  193C  E5 79     MOV A,79h
+  193E  B5 40 17  CJNE A,40h,loc_1958
+  1941  D2 28     SETB 25h.0
+  1943  90 FF 80  MOV DPTR,#FF80h  ; DCR
+  1946  E0        MOVX A,@DPTR
+  1947  D2 E7     SETB ACC.7
+  1949  F0        MOVX @DPTR,A
+  194A  C2 4E     CLR 29h.6
+  194C  90 FF A2  MOV DPTR,#FFA2h  ; PPHDR
+  194F  74 00     MOV A,#00h
+  1951  F0        MOVX @DPTR,A
+  1952  90 FF 87  MOV DPTR,#FF87h  ; ASR
+  1955  74 3F     MOV A,#3Fh
+  1957  F0        MOVX @DPTR,A
+
+loc_1958:    ; xref 192C, 1939, 193E
+  1958  22        RET
+
+sub_1959:    ; xref 119E
+  1959  E4        CLR A
+  195A  90 FF A5  MOV DPTR,#FFA5h  ; EDHSAR
+  195D  F0        MOVX @DPTR,A
+  195E  90 FF A6  MOV DPTR,#FFA6h  ; EDLSAR
+  1961  F0        MOVX @DPTR,A
+  1962  E4        CLR A
+  1963  90 FF 85  MOV DPTR,#FF85h  ; M2SAHR
+  1966  F0        MOVX @DPTR,A
+  1967  90 FF 86  MOV DPTR,#FF86h  ; M2SALR
+  196A  F0        MOVX @DPTR,A
+  196B  90 FF 88  MOV DPTR,#FF88h  ; D2BCHR
+  196E  F0        MOVX @DPTR,A
+  196F  90 FF 89  MOV DPTR,#FF89h  ; D2BCLR
+  1972  F0        MOVX @DPTR,A
+  1973  22        RET
+
+sub_1974:    ; xref 06B7
+  1974  75 91 00  MOV SFR_91h,#00h
+  1977  78 40     MOV R0,#40h
+  1979  E4        CLR A
+  197A  90 3F 00  MOV DPTR,#3F00h
+
+loc_197D:    ; xref 197F
+  197D  F0        MOVX @DPTR,A
+  197E  A3        INC DPTR
+  197F  D8 FC     DJNZ R0,loc_197D
+  1981  75 91 01  MOV SFR_91h,#01h
+  1984  22        RET
+
+sub_1985:    ; xref 1849, 1851, 1889
+  1985  E5 44     MOV A,44h
+  1987  B4 32 09  CJNE A,#32h,loc_1993
+  198A  C2 31     CLR 26h.1
+  198C  7B 01     MOV R3,#01h
+  198E  75 46 10  MOV 46h,#10h
+  1991  80 4E     SJMP loc_19E1
+
+loc_1993:    ; xref 1987
+  1993  B4 4B 06  CJNE A,#4Bh,loc_199C
+  1996  C2 31     CLR 26h.1
+  1998  7B 02     MOV R3,#02h
+  199A  80 45     SJMP loc_19E1
+
+loc_199C:    ; xref 1993
+  199C  B4 64 06  CJNE A,#64h,loc_19A5
+  199F  D2 31     SETB 26h.1
+  19A1  7B 03     MOV R3,#03h
+  19A3  80 3C     SJMP loc_19E1
+
+loc_19A5:    ; xref 199C
+  19A5  B4 96 06  CJNE A,#96h,loc_19AE
+  19A8  D2 31     SETB 26h.1
+  19AA  7B 04     MOV R3,#04h
+  19AC  80 33     SJMP loc_19E1
+
+loc_19AE:    ; xref 19A5
+  19AE  B4 C8 06  CJNE A,#C8h,loc_19B7
+  19B1  C2 31     CLR 26h.1
+  19B3  7B 05     MOV R3,#05h
+  19B5  80 2A     SJMP loc_19E1
+
+loc_19B7:    ; xref 19AE
+  19B7  B4 2C 06  CJNE A,#2Ch,loc_19C0
+  19BA  D2 31     SETB 26h.1
+  19BC  7B 06     MOV R3,#06h
+  19BE  80 21     SJMP loc_19E1
+
+loc_19C0:    ; xref 19B7
+  19C0  B4 90 08  CJNE A,#90h,loc_19CB
+  19C3  D2 35     SETB 26h.5
+  19C5  D2 31     SETB 26h.1
+  19C7  7B 07     MOV R3,#07h
+  19C9  80 16     SJMP loc_19E1
+
+loc_19CB:    ; xref 19C0
+  19CB  B4 58 06  CJNE A,#58h,loc_19D4
+  19CE  D2 31     SETB 26h.1
+  19D0  7B 08     MOV R3,#08h
+  19D2  80 0D     SJMP loc_19E1
+
+loc_19D4:    ; xref 19CB
+  19D4  C2 5B     CLR 2Bh.3
+  19D6  D2 35     SETB 26h.5
+  19D8  D2 31     SETB 26h.1
+  19DA  D2 36     SETB 26h.6
+  19DC  7B 09     MOV R3,#09h
+  19DE  75 46 04  MOV 46h,#04h
+
+loc_19E1:    ; xref 1991, 199A, 19A3, 19AC, 19B5, 19BE, 19C9, 19D2
+  19E1  20 62 0D  JB 2Ch.2,loc_19F1
+  19E4  20 20 05  JB 24h.0,loc_19EC
+  19E7  90 1C 1A  MOV DPTR,#1C1Ah
+  19EA  80 08     SJMP loc_19F4
+
+loc_19EC:    ; xref 19E4
+  19EC  90 1B 9C  MOV DPTR,#1B9Ch
+  19EF  80 03     SJMP loc_19F4
+
+loc_19F1:    ; xref 19E1
+  19F1  90 1C 47  MOV DPTR,#1C47h
+
+loc_19F4:    ; xref 19EA, 19EF, 19FF
+  19F4  79 61     MOV R1,#61h
+  19F6  7A 05     MOV R2,#05h
+
+loc_19F8:    ; xref 19FD
+  19F8  E4        CLR A
+  19F9  93        MOVC A,@A+DPTR
+  19FA  F7        MOV @R1,A
+  19FB  A3        INC DPTR
+  19FC  09        INC R1
+  19FD  DA F9     DJNZ R2,loc_19F8
+  19FF  DB F3     DJNZ R3,loc_19F4
+  1A01  E5 3A     MOV A,3Ah
+  1A03  B4 32 07  CJNE A,#32h,loc_1A0D
+  1A06  75 4A 0C  MOV 4Ah,#0Ch
+  1A09  7B 01     MOV R3,#01h
+  1A0B  80 49     SJMP loc_1A56
+
+loc_1A0D:    ; xref 1A03
+  1A0D  B4 64 05  CJNE A,#64h,loc_1A15
+  1A10  75 4A 08  MOV 4Ah,#08h
+  1A13  7B 02     MOV R3,#02h
+
+loc_1A15:    ; xref 1A0D
+  1A15  B4 64 07  CJNE A,#64h,loc_1A1F
+  1A18  75 4A 06  MOV 4Ah,#06h
+  1A1B  7B 03     MOV R3,#03h
+  1A1D  80 37     SJMP loc_1A56
+
+loc_1A1F:    ; xref 1A15
+  1A1F  B4 96 07  CJNE A,#96h,loc_1A29
+  1A22  75 4A 04  MOV 4Ah,#04h
+  1A25  7B 04     MOV R3,#04h
+  1A27  80 2D     SJMP loc_1A56
+
+loc_1A29:    ; xref 1A1F
+  1A29  B4 C8 07  CJNE A,#C8h,loc_1A33
+  1A2C  75 4A 02  MOV 4Ah,#02h
+  1A2F  7B 05     MOV R3,#05h
+  1A31  80 23     SJMP loc_1A56
+
+loc_1A33:    ; xref 1A29
+  1A33  B4 2C 07  CJNE A,#2Ch,loc_1A3D
+  1A36  75 4A 02  MOV 4Ah,#02h
+  1A39  7B 06     MOV R3,#06h
+  1A3B  80 19     SJMP loc_1A56
+
+loc_1A3D:    ; xref 1A33
+  1A3D  B4 90 07  CJNE A,#90h,loc_1A47
+  1A40  75 4A 01  MOV 4Ah,#01h
+  1A43  7B 07     MOV R3,#07h
+  1A45  80 0F     SJMP loc_1A56
+
+loc_1A47:    ; xref 1A3D
+  1A47  B4 58 07  CJNE A,#58h,loc_1A51
+  1A4A  75 4A 01  MOV 4Ah,#01h
+  1A4D  7B 08     MOV R3,#08h
+  1A4F  80 05     SJMP loc_1A56
+
+loc_1A51:    ; xref 1A47
+  1A51  7B 09     MOV R3,#09h
+  1A53  75 4A 01  MOV 4Ah,#01h
+
+loc_1A56:    ; xref 1A0B, 1A1D, 1A27, 1A31, 1A3B, 1A45, 1A4F
+  1A56  20 62 0D  JB 2Ch.2,loc_1A66
+  1A59  20 20 05  JB 24h.0,loc_1A61
+  1A5C  90 1B C9  MOV DPTR,#1BC9h
+  1A5F  80 08     SJMP loc_1A69
+
+loc_1A61:    ; xref 1A59
+  1A61  90 1B 4B  MOV DPTR,#1B4Bh
+  1A64  80 03     SJMP loc_1A69
+
+loc_1A66:    ; xref 1A56
+  1A66  90 1C 47  MOV DPTR,#1C47h
+
+loc_1A69:    ; xref 1A5F, 1A64, 1A74
+  1A69  79 58     MOV R1,#58h
+  1A6B  7A 09     MOV R2,#09h
+
+loc_1A6D:    ; xref 1A72
+  1A6D  E4        CLR A
+  1A6E  93        MOVC A,@A+DPTR
+  1A6F  F7        MOV @R1,A
+  1A70  A3        INC DPTR
+  1A71  09        INC R1
+  1A72  DA F9     DJNZ R2,loc_1A6D
+  1A74  DB F3     DJNZ R3,loc_1A69
+  1A76  90 FF 02  MOV DPTR,#FF02h  ; MOD6PR
+  1A79  E5 5A     MOV A,5Ah
+  1A7B  F0        MOVX @DPTR,A
+  1A7C  A3        INC DPTR
+  1A7D  E5 5C     MOV A,5Ch
+  1A7F  F0        MOVX @DPTR,A
+  1A80  A3        INC DPTR
+  1A81  E5 5B     MOV A,5Bh
+  1A83  F0        MOVX @DPTR,A
+  1A84  30 3D 17  JNB 27h.5,loc_1A9E
+  1A87  30 3C 0D  JNB 27h.4,loc_1A97
+  1A8A  90 FF 18  MOV DPTR,#FF18h  ; SHSRR
+  1A8D  74 80     MOV A,#80h
+  1A8F  F0        MOVX @DPTR,A
+  1A90  85 5F 62  MOV 62h,5Fh
+  1A93  85 60 63  MOV 63h,60h
+  1A96  22        RET
+
+loc_1A97:    ; xref 1A87
+  1A97  85 64 62  MOV 62h,64h
+  1A9A  85 65 63  MOV 63h,65h
+  1A9D  22        RET
+
+loc_1A9E:    ; xref 1A84
+  1A9E  30 3C 0C  JNB 27h.4,loc_1AAD
+  1AA1  90 FF 18  MOV DPTR,#FF18h  ; SHSRR
+  1AA4  74 80     MOV A,#80h
+  1AA6  F0        MOVX @DPTR,A
+  1AA7  85 5D 62  MOV 62h,5Dh
+  1AAA  85 5E 63  MOV 63h,5Eh
+
+loc_1AAD:    ; xref 1A9E
+  1AAD  22        RET
+
+sub_1AAE:    ; xref 12D2
+  1AAE  7A 0C     MOV R2,#0Ch
+  1AB0  79 90     MOV R1,#90h
+  1AB2  90 3F 42  MOV DPTR,#3F42h
+
+loc_1AB5:    ; xref 1ABC
+  1AB5  75 91 00  MOV SFR_91h,#00h
+  1AB8  E0        MOVX A,@DPTR
+  1AB9  F7        MOV @R1,A
+  1ABA  A3        INC DPTR
+  1ABB  09        INC R1
+  1ABC  DA F7     DJNZ R2,loc_1AB5
+  1ABE  75 91 01  MOV SFR_91h,#01h
+  1AC1  78 90     MOV R0,#90h
+  1AC3  79 91     MOV R1,#91h
+  1AC5  7A 06     MOV R2,#06h
+
+loc_1AC7:    ; xref 1ACE
+  1AC7  E6        MOV A,@R0
+  1AC8  C7        XCH A,@R1
+  1AC9  C6        XCH A,@R0
+  1ACA  08        INC R0
+  1ACB  08        INC R0
+  1ACC  09        INC R1
+  1ACD  09        INC R1
+  1ACE  DA F7     DJNZ R2,loc_1AC7
+  1AD0  D2 23     SETB 24h.3
+  1AD2  22        RET
+
+sub_1AD3:    ; xref 15F7, 16EE
+  1AD3  79 94     MOV R1,#94h
+  1AD5  12 1A E5  LCALL sub_1AE5
+  1AD8  22        RET
+
+sub_1AD9:    ; xref 15FE, 1715
+  1AD9  79 90     MOV R1,#90h
+  1ADB  12 1A E5  LCALL sub_1AE5
+  1ADE  22        RET
+
+sub_1ADF:    ; xref 1605, 1703
+  1ADF  79 98     MOV R1,#98h
+  1AE1  12 1A E5  LCALL sub_1AE5
+  1AE4  22        RET
+
+sub_1AE5:    ; xref 1AD5, 1ADB, 1AE1
+  1AE5  30 23 0B  JNB 24h.3,loc_1AF3
+  1AE8  90 FF 0C  MOV DPTR,#FF0Ch  ; LEDRHR
+  1AEB  7A 04     MOV R2,#04h
+
+loc_1AED:    ; xref 1AF1
+  1AED  E7        MOV A,@R1
+  1AEE  F0        MOVX @DPTR,A
+  1AEF  A3        INC DPTR
+  1AF0  09        INC R1
+  1AF1  DA FA     DJNZ R2,loc_1AED
+
+loc_1AF3:    ; xref 1AE5
+  1AF3  22        RET
+
+sub_1AF4:    ; xref 14FF
+  1AF4  D2 23     SETB 24h.3
+  1AF6  79 90     MOV R1,#90h
+  1AF8  7A 0C     MOV R2,#0Ch
+  1AFA  90 1B 05  MOV DPTR,#1B05h
+
+loc_1AFD:    ; xref 1B02
+  1AFD  E4        CLR A
+  1AFE  93        MOVC A,@A+DPTR
+  1AFF  F7        MOV @R1,A
+  1B00  A3        INC DPTR
+  1B01  09        INC R1
+  1B02  DA F9     DJNZ R2,loc_1AFD
+  1B04  22        RET
+  1B05  DB 00h,04h,00h,E0h,00h,04h,00h,E0h,00h,04h,00h,E0h   ; data/unreached
+
+sub_1B11:    ; xref 0FF6
+  1B11  75 91 00  MOV SFR_91h,#00h
+  1B14  90 3F 02  MOV DPTR,#3F02h
+  1B17  74 12     MOV A,#12h
+  1B19  F0        MOVX @DPTR,A
+  1B1A  A3        INC DPTR
+  1B1B  74 04     MOV A,#04h
+  1B1D  F0        MOVX @DPTR,A
+  1B1E  A3        INC DPTR
+  1B1F  74 B3     MOV A,#B3h
+  1B21  F0        MOVX @DPTR,A
+  1B22  A3        INC DPTR
+  1B23  74 07     MOV A,#07h
+  1B25  F0        MOVX @DPTR,A
+  1B26  A3        INC DPTR
+  1B27  74 05     MOV A,#05h
+  1B29  F0        MOVX @DPTR,A
+  1B2A  A3        INC DPTR
+  1B2B  74 00     MOV A,#00h
+  1B2D  F0        MOVX @DPTR,A
+  1B2E  A3        INC DPTR
+  1B2F  74 00     MOV A,#00h
+  1B31  F0        MOVX @DPTR,A
+  1B32  A3        INC DPTR
+  1B33  74 04     MOV A,#04h
+  1B35  F0        MOVX @DPTR,A
+  1B36  A3        INC DPTR
+  1B37  75 91 01  MOV SFR_91h,#01h
+  1B3A  22        RET
+
+sub_1B3B:    ; xref 184C, 1854
+  1B3B  AB 4A     MOV R3,4Ah
+  1B3D  1B        DEC R3
+  1B3E  C3        CLR C
+  1B3F  E5 36     MOV A,36h
+  1B41  9B        SUBB A,R3
+  1B42  F5 36     MOV 36h,A
+  1B44  E5 37     MOV A,37h
+  1B46  94 00     SUBB A,#00h
+  1B48  F5 37     MOV 37h,A
+  1B4A  22        RET
+  1B4B  DB 01h,01h,17h,7Bh,15h,8Fh,E8h,8Fh,E8h,00h,00h,17h,7Bh,15h,8Fh,E8h   ; data/unreached
+  1B5B  DB 8Fh,E8h,00h,03h,17h,B8h,22h,1Fh,D1h,70h,17h,00h,02h,17h,25h,17h   ; data/unreached
+  1B6B  DB C5h,F0h,C5h,F0h,00h,02h,17h,7Bh,15h,1Fh,D1h,70h,17h,00h,00h,17h   ; data/unreached
+  1B7B  DB B3h,14h,89h,E1h,89h,E1h,00h,02h,17h,7Bh,15h,2Fh,DFh,70h,17h,00h   ; data/unreached
+  1B8B  DB 00h,17h,57h,1Bh,C6h,CEh,6Fh,17h,02h,02h,2Fh,7Bh,15h,3Fh,A2h,7Fh   ; data/unreached
+  1B9B  DB 44h,18h,98h,EAh,98h,EAh,10h,98h,EAh,98h,EAh,0Ch,A3h,EEh,98h,EAh   ; data/unreached
+  1BAB  DB 08h,77h,F0h,C5h,F0h,06h,1Fh,D1h,1Fh,D1h,04h,EEh,E0h,89h,E1h,03h   ; data/unreached
+  1BBB  DB 2Fh,DFh,70h,17h,02h,60h,8Bh,60h,8Bh,01h,8Ch,9Dh,6Fh,17h,00h,00h   ; data/unreached
+  1BCB  DB 17h,50h,46h,1Fh,D1h,1Fh,D1h,00h,00h,17h,E0h,2Eh,1Fh,D1h,1Fh,D1h   ; data/unreached
+  1BDB  DB 03h,00h,17h,4Bh,1Dh,1Fh,D1h,8Fh,E8h,02h,00h,17h,0Ah,1Ah,1Fh,D1h   ; data/unreached
+  1BEB  DB 8Fh,E8h,00h,00h,17h,7Bh,15h,8Fh,E8h,8Fh,E8h,00h,00h,17h,10h,27h   ; data/unreached
+  1BFB  DB 00h,F6h,00h,F6h,00h,00h,17h,7Bh,15h,ADh,E9h,ADh,E9h,00h,00h,17h   ; data/unreached
+  1C0B  DB B3h,14h,07h,D9h,07h,D9h,00h,00h,2Fh,7Bh,15h,1Fh,D1h,AFh,B9h,18h   ; data/unreached
+  1C1B  DB EFh,D0h,EFh,D0h,10h,98h,EAh,98h,EAh,0Ch,77h,ECh,FBh,F3h,08h,77h   ; data/unreached
+  1C2B  DB ECh,FAh,F2h,06h,FBh,F3h,FBh,F3h,04h,77h,ECh,00h,F6h,03h,59h,D3h   ; data/unreached
+  1C3B  DB 59h,D3h,02h,07h,D9h,07h,D9h,01h,7Fh,44h,FFh,00h   ; data/unreached
+
+sub_1C47:    ; xref 0EA0
+  1C47  20 53 08  JB 2Ah.3,loc_1C52
+  1C4A  12 1C 74  LCALL sub_1C74
+  1C4D  8F 54     MOV 54h,R7
+  1C4F  D2 53     SETB 2Ah.3
+  1C51  22        RET
+
+loc_1C52:    ; xref 1C47
+  1C52  12 1C 74  LCALL sub_1C74
+  1C55  EF        MOV A,R7
+  1C56  52 54     ANL 54h,A
+  1C58  C2 53     CLR 2Ah.3
+  1C5A  20 54 09  JB 2Ah.4,loc_1C66
+  1C5D  E5 54     MOV A,54h
+  1C5F  60 12     JZ loc_1C73
+  1C61  F5 55     MOV 55h,A
+  1C63  D2 54     SETB 2Ah.4
+  1C65  22        RET
+
+loc_1C66:    ; xref 1C5A
+  1C66  E5 54     MOV A,54h
+  1C68  70 06     JNZ loc_1C70
+  1C6A  85 55 56  MOV 56h,55h
+  1C6D  C2 54     CLR 2Ah.4
+  1C6F  22        RET
+
+loc_1C70:    ; xref 1C68
+  1C70  85 54 55  MOV 55h,54h
+
+loc_1C73:    ; xref 1C5F
+  1C73  22        RET
+
+sub_1C74:    ; xref 1C4A, 1C52
+  1C74  90 FF 87  MOV DPTR,#FF87h  ; ASR
+  1C77  E0        MOVX A,@DPTR
+  1C78  30 E7 0D  JNB ACC.7,loc_1C88
+  1C7B  90 FF 95  MOV DPTR,#FF95h  ; GPIODR
+  1C7E  E0        MOVX A,@DPTR
+  1C7F  30 E6 03  JNB ACC.6,loc_1C85
+  1C82  7F 88     MOV R7,#88h
+  1C84  22        RET
+
+loc_1C85:    ; xref 1C7F
+  1C85  7F 02     MOV R7,#02h
+  1C87  22        RET
+
+loc_1C88:    ; xref 1C78
+  1C88  7F 00     MOV R7,#00h
+  1C8A  22        RET
+
+sub_1C8B:    ; xref 1542
+  1C8B  C2 53     CLR 2Ah.3
+  1C8D  C2 54     CLR 2Ah.4
+  1C8F  E4        CLR A
+  1C90  F5 54     MOV 54h,A
+  1C92  F5 55     MOV 55h,A
+  1C94  F5 56     MOV 56h,A
+  1C96  22        RET
+  1C97  DB C2h,CAh,C2h,ADh,05h,70h,E5h,70h,B4h,0Fh,39h,E5h,77h,D2h,E6h,90h   ; data/unreached
+  1CA7  DB FFh,FFh,F0h,F5h,77h,90h,FFh,95h,E0h,B2h,E0h,90h,FFh,95h,F0h,E4h   ; data/unreached
+  1CB7  DB F5h,70h,20h,45h,19h,E5h,69h,70h,0Ah,75h,CDh,FBh,75h,CCh,50h,15h   ; data/unreached
+  1CC7  DB 69h,80h,06h,75h,CDh,00h,75h,CCh,00h,D2h,ADh,D2h,CAh,22h,75h,CDh   ; data/unreached
+  1CD7  DB FBh,75h,CCh,50h,D2h,ADh,D2h,CAh,22h,75h,67h,FAh,75h,68h,FAh,00h   ; data/unreached
+  1CE7  DB 00h,00h,00h,00h,D5h,68h,F8h,D5h,67h,F2h,22h   ; data/unreached
+
+sub_1CF2:    ; xref 0ECC
+  1CF2  30 4A 1B  JNB 29h.2,loc_1D10
+  1CF5  C2 8E     CLR TCON.6
+  1CF7  C2 AB     CLR IE.3
+  1CF9  15 7C     DEC 7Ch
+  1CFB  E5 7C     MOV A,7Ch
+  1CFD  70 03     JNZ loc_1D02
+  1CFF  C2 4A     CLR 29h.2
+  1D01  22        RET
+
+loc_1D02:    ; xref 1CFD
+  1D02  12 1E 61  LCALL sub_1E61
+  1D05  85 63 8D  MOV TH1,63h
+  1D08  85 62 8B  MOV TL1,62h
+  1D0B  D2 AB     SETB IE.3
+  1D0D  D2 8E     SETB TCON.6
+  1D0F  22        RET
+
+loc_1D10:    ; xref 1CF2
+  1D10  30 52 03  JNB 2Ah.2,loc_1D16
+  1D13  02 1E A2  LJMP loc_1EA2
+
+loc_1D16:    ; xref 1D10
+  1D16  20 50 15  JB 2Ah.0,loc_1D2E
+  1D19  12 1E 61  LCALL sub_1E61
+  1D1C  30 30 03  JNB 26h.0,loc_1D22
+  1D1F  02 1E 3A  LJMP loc_1E3A
+
+loc_1D22:    ; xref 1D1C
+  1D22  30 43 07  JNB 28h.3,loc_1D2C
+  1D25  90 FF 95  MOV DPTR,#FF95h  ; GPIODR
+  1D28  E0        MOVX A,@DPTR
+  1D29  20 E5 39  JB ACC.5,loc_1D65
+
+loc_1D2C:    ; xref 1D22
+  1D2C  80 49     SJMP loc_1D77
+
+loc_1D2E:    ; xref 1D16
+  1D2E  90 FF 95  MOV DPTR,#FF95h  ; GPIODR
+  1D31  E0        MOVX A,@DPTR
+  1D32  30 E5 03  JNB ACC.5,loc_1D38
+  1D35  02 1D 77  LJMP loc_1D77
+
+loc_1D38:    ; xref 1D32
+  1D38  C2 50     CLR 2Ah.0
+  1D3A  C2 8E     CLR TCON.6
+  1D3C  C2 AB     CLR IE.3
+  1D3E  C2 56     CLR 2Ah.6
+  1D40  C2 4E     CLR 29h.6
+  1D42  90 FF A2  MOV DPTR,#FFA2h  ; PPHDR
+  1D45  74 00     MOV A,#00h
+  1D47  F0        MOVX @DPTR,A
+  1D48  D2 34     SETB 26h.4
+  1D4A  20 2F 06  JB 25h.7,loc_1D53
+  1D4D  D2 50     SETB 2Ah.0
+  1D4F  12 1F 79  LCALL sub_1F79
+  1D52  22        RET
+
+loc_1D53:    ; xref 1D4A
+  1D53  C2 50     CLR 2Ah.0
+  1D55  75 51 4B  MOV 51h,#4Bh
+  1D58  75 50 00  MOV 50h,#00h
+  1D5B  12 1E DC  LCALL sub_1EDC
+  1D5E  30 4F 03  JNB 29h.7,loc_1D64
+  1D61  12 1D A5  LCALL sub_1DA5
+
+loc_1D64:    ; xref 1D5E
+  1D64  22        RET
+
+loc_1D65:    ; xref 1D29
+  1D65  C2 43     CLR 28h.3
+  1D67  C2 8E     CLR TCON.6
+  1D69  C2 AB     CLR IE.3
+  1D6B  C2 56     CLR 2Ah.6
+  1D6D  75 51 2C  MOV 51h,#2Ch
+  1D70  75 50 03  MOV 50h,#03h
+  1D73  12 1E DC  LCALL sub_1EDC
+  1D76  22        RET
+
+loc_1D77:    ; xref 1D2C, 1D35, 1ECE
+  1D77  C2 8E     CLR TCON.6
+  1D79  30 55 0D  JNB 2Ah.5,loc_1D89
+  1D7C  E5 7A     MOV A,7Ah
+  1D7E  F4        CPL A
+  1D7F  F5 8B     MOV TL1,A
+  1D81  E5 7B     MOV A,7Bh
+  1D83  F4        CPL A
+  1D84  F5 8D     MOV TH1,A
+  1D86  D2 8E     SETB TCON.6
+  1D88  22        RET
+
+loc_1D89:    ; xref 1D79
+  1D89  12 1F 79  LCALL sub_1F79
+  1D8C  22        RET
+  1D8D  DB 30h,55h,0Fh,C2h,8Eh,E5h,7Ah,F4h,F5h,8Bh,E5h,7Bh,F4h,F5h,8Dh,D2h   ; data/unreached
+  1D9D  DB 8Eh,22h,D2h,31h,12h,1Fh,79h,22h   ; data/unreached
+
+sub_1DA5:    ; xref 1D61
+  1DA5  20 4B 18  JB 29h.3,loc_1DC0
+  1DA8  78 AC     MOV R0,#ACh
+  1DAA  16        DEC @R0
+  1DAB  B6 00 1D  CJNE @R0,#00h,loc_1DCB
+  1DAE  08        INC R0
+  1DAF  B6 00 0B  CJNE @R0,#00h,loc_1DBD
+  1DB2  C2 4F     CLR 29h.7
+  1DB4  C2 4E     CLR 29h.6
+  1DB6  90 FF A2  MOV DPTR,#FFA2h  ; PPHDR
+  1DB9  74 00     MOV A,#00h
+  1DBB  F0        MOVX @DPTR,A
+  1DBC  22        RET
+
+loc_1DBD:    ; xref 1DAF
+  1DBD  16        DEC @R0
+  1DBE  80 0B     SJMP loc_1DCB
+
+loc_1DC0:    ; xref 1DA5
+  1DC0  D2 34     SETB 26h.4
+  1DC2  20 2F 06  JB 25h.7,loc_1DCB
+  1DC5  D2 50     SETB 2Ah.0
+  1DC7  12 1F 79  LCALL sub_1F79
+  1DCA  22        RET
+
+loc_1DCB:    ; xref 1DAB, 1DBE, 1DC2
+  1DCB  D2 4E     SETB 29h.6
+  1DCD  90 FF A2  MOV DPTR,#FFA2h  ; PPHDR
+  1DD0  74 00     MOV A,#00h
+  1DD2  F0        MOVX @DPTR,A
+  1DD3  12 1D E7  LCALL sub_1DE7
+  1DD6  20 31 06  JB 26h.1,loc_1DDF
+  1DD9  78 6C     MOV R0,#6Ch
+  1DDB  79 1B     MOV R1,#1Bh
+  1DDD  80 04     SJMP loc_1DE3
+
+loc_1DDF:    ; xref 1DD6
+  1DDF  78 D8     MOV R0,#D8h
+  1DE1  79 36     MOV R1,#36h
+
+loc_1DE3:    ; xref 1DDD
+  1DE3  12 1E DC  LCALL sub_1EDC
+  1DE6  22        RET
+
+sub_1DE7:    ; xref 1545, 1DD3
+  1DE7  C2 34     CLR 26h.4
+  1DE9  C2 2F     CLR 25h.7
+  1DEB  E4        CLR A
+  1DEC  F5 4C     MOV 4Ch,A
+  1DEE  F5 4B     MOV 4Bh,A
+  1DF0  22        RET
+
+sub_1DF1:    ; xref 0E7F
+  1DF1  C2 34     CLR 26h.4
+  1DF3  C2 2F     CLR 25h.7
+  1DF5  E4        CLR A
+  1DF6  F5 4C     MOV 4Ch,A
+  1DF8  F5 4B     MOV 4Bh,A
+  1DFA  22        RET
+  1DFB  DB 20h,5Ah,1Dh,30h,31h,0Dh,C3h,E5h,30h,33h,F5h,51h,E5h,31h,33h,F5h   ; data/unreached
+  1E0B  DB 50h,80h,06h,85h,31h,50h,85h,30h,51h,E4h,B5h,51h,12h,B5h,50h,0Fh   ; data/unreached
+  1E1B  DB C2h,8Eh,C2h,ABh,D2h,01h,D2h,4Eh,90h,FFh,A2h,74h,00h,F0h,22h,D2h   ; data/unreached
+  1E2B  DB 30h,C2h,50h,D2h,4Eh,90h,FFh,A2h,74h,00h,F0h,12h,1Fh,79h,22h   ; data/unreached
+
+loc_1E3A:    ; xref 1D1F
+  1E3A  AE 51     MOV R6,51h
+  1E3C  AF 50     MOV R7,50h
+  1E3E  BE 00 17  CJNE R6,#00h,loc_1E58
+  1E41  BF 00 13  CJNE R7,#00h,loc_1E57
+  1E44  C2 30     CLR 26h.0
+  1E46  C2 8E     CLR TCON.6
+  1E48  C2 AB     CLR IE.3
+  1E4A  C2 56     CLR 2Ah.6
+  1E4C  D2 4E     SETB 29h.6
+  1E4E  90 FF A2  MOV DPTR,#FFA2h  ; PPHDR
+  1E51  74 00     MOV A,#00h
+  1E53  F0        MOVX @DPTR,A
+  1E54  D2 01     SETB 20h.1
+  1E56  22        RET
+
+loc_1E57:    ; xref 1E41
+  1E57  1F        DEC R7
+
+loc_1E58:    ; xref 1E3E
+  1E58  1E        DEC R6
+  1E59  8E 51     MOV 51h,R6
+  1E5B  8F 50     MOV 50h,R7
+  1E5D  12 1F 79  LCALL sub_1F79
+  1E60  22        RET
+
+sub_1E61:    ; xref 0274, 02A5, 1D02, 1D19, 1EA2
+  1E61  30 5A 01  JNB 2Bh.2,loc_1E65
+  1E64  22        RET
+
+loc_1E65:    ; xref 1E61
+  1E65  E5 4F     MOV A,4Fh
+  1E67  20 50 03  JB 2Ah.0,loc_1E6D
+  1E6A  14        DEC A
+  1E6B  80 01     SJMP loc_1E6E
+
+loc_1E6D:    ; xref 1E67
+  1E6D  04        INC A
+
+loc_1E6E:    ; xref 1E6B
+  1E6E  30 31 04  JNB 26h.1,loc_1E75
+  1E71  54 07     ANL A,#07h
+  1E73  80 02     SJMP loc_1E77
+
+loc_1E75:    ; xref 1E6E
+  1E75  54 03     ANL A,#03h
+
+loc_1E77:    ; xref 1E73
+  1E77  F5 4F     MOV 4Fh,A
+  1E79  30 31 06  JNB 26h.1,loc_1E82
+  1E7C  90 1F 71  MOV DPTR,#1F71h
+  1E7F  93        MOVC A,@A+DPTR
+  1E80  80 04     SJMP loc_1E86
+
+loc_1E82:    ; xref 1E79
+  1E82  90 1F 6D  MOV DPTR,#1F6Dh
+  1E85  93        MOVC A,@A+DPTR
+
+loc_1E86:    ; xref 1E80
+  1E86  54 0F     ANL A,#0Fh
+  1E88  F5 F0     MOV B,A
+  1E8A  90 FF A2  MOV DPTR,#FFA2h  ; PPHDR
+  1E8D  E0        MOVX A,@DPTR
+  1E8E  54 F0     ANL A,#F0h
+  1E90  45 F0     ORL A,B
+  1E92  F0        MOVX @DPTR,A
+  1E93  22        RET
+
+sub_1E94:    ; xref 0F39, 1EC4
+  1E94  D2 50     SETB 2Ah.0
+  1E96  D2 4E     SETB 29h.6
+  1E98  90 FF A2  MOV DPTR,#FFA2h  ; PPHDR
+  1E9B  74 00     MOV A,#00h
+  1E9D  F0        MOVX @DPTR,A
+  1E9E  12 1F 79  LCALL sub_1F79
+  1EA1  22        RET
+
+loc_1EA2:    ; xref 1D13
+  1EA2  12 1E 61  LCALL sub_1E61
+  1EA5  AE 51     MOV R6,51h
+  1EA7  AF 50     MOV R7,50h
+  1EA9  BE 00 1D  CJNE R6,#00h,loc_1EC9
+  1EAC  BF 00 19  CJNE R7,#00h,loc_1EC8
+  1EAF  C2 52     CLR 2Ah.2
+  1EB1  C2 8E     CLR TCON.6
+  1EB3  C2 AB     CLR IE.3
+  1EB5  C2 56     CLR 2Ah.6
+  1EB7  C2 42     CLR 28h.2
+  1EB9  C2 4E     CLR 29h.6
+  1EBB  90 FF A2  MOV DPTR,#FFA2h  ; PPHDR
+  1EBE  74 00     MOV A,#00h
+  1EC0  F0        MOVX @DPTR,A
+  1EC1  30 4F 03  JNB 29h.7,loc_1EC7
+  1EC4  12 1E 94  LCALL sub_1E94
+
+loc_1EC7:    ; xref 1EC1
+  1EC7  22        RET
+
+loc_1EC8:    ; xref 1EAC
+  1EC8  1F        DEC R7
+
+loc_1EC9:    ; xref 1EA9
+  1EC9  1E        DEC R6
+  1ECA  8E 51     MOV 51h,R6
+  1ECC  8F 50     MOV 50h,R7
+  1ECE  02 1D 77  LJMP loc_1D77
+
+sub_1ED1:    ; xref 0EEB, 0EF8, 1058
+  1ED1  12 07 3D  LCALL sub_073D
+  1ED4  EA        MOV A,R2
+  1ED5  F8        MOV R0,A
+  1ED6  EB        MOV A,R3
+  1ED7  F9        MOV R1,A
+  1ED8  88 51     MOV 51h,R0
+  1EDA  89 50     MOV 50h,R1
+
+sub_1EDC:    ; xref 1D5B, 1D73, 1DE3
+  1EDC  E4        CLR A
+  1EDD  B5 51 10  CJNE A,51h,loc_1EF0
+  1EE0  B5 50 0D  CJNE A,50h,loc_1EF0
+  1EE3  C2 56     CLR 2Ah.6
+  1EE5  C2 42     CLR 28h.2
+  1EE7  C2 4E     CLR 29h.6
+  1EE9  90 FF A2  MOV DPTR,#FFA2h  ; PPHDR
+  1EEC  74 00     MOV A,#00h
+  1EEE  F0        MOVX @DPTR,A
+  1EEF  22        RET
+
+loc_1EF0:    ; xref 1EDD, 1EE0
+  1EF0  D2 52     SETB 2Ah.2
+  1EF2  D2 4E     SETB 29h.6
+  1EF4  90 FF A2  MOV DPTR,#FFA2h  ; PPHDR
+  1EF7  74 00     MOV A,#00h
+  1EF9  F0        MOVX @DPTR,A
+  1EFA  12 1F 79  LCALL sub_1F79
+  1EFD  22        RET
+  1EFE  DB E5h,4Dh,B4h,18h,03h,D2h,36h,22h,05h,4Dh,90h,1Fh,22h,ABh,4Dh,E4h   ; data/unreached
+  1F0E  DB 80h,00h,93h,F5h,61h,E4h,A3h,93h,F5h,63h,E4h,A3h,93h,F5h,62h,E4h   ; data/unreached
+  1F1E  DB A3h,DBh,EFh,22h,01h,B9h,AFh,01h,B9h,AFh,02h,D1h,1Fh,02h,D1h,1Fh   ; data/unreached
+  1F2E  DB 02h,D1h,1Fh,03h,E0h,BFh,04h,E8h,8Fh,05h,EDh,3Fh,06h,F0h,5Fh,07h   ; data/unreached
+  1F3E  DB F2h,98h,07h,F2h,98h,08h,F4h,47h,08h,F4h,47h,09h,F5h,94h,09h,F5h   ; data/unreached
+  1F4E  DB 94h,09h,F5h,94h,0Ah,F6h,9Fh,0Ah,F6h,9Fh,0Ah,F6h,9Fh,0Bh,F7h,79h   ; data/unreached
+  1F5E  DB 0Bh,F7h,79h,0Bh,F7h,79h,0Bh,F7h,79h,0Ch,F8h,2Fh,0Ch,F8h,2Fh,0Fh   ; data/unreached
+  1F6E  DB 0Bh,0Ah,0Eh,0Fh,03h,0Bh,08h,0Ah,02h,0Eh,0Ch   ; data/unreached
+
+sub_1F79:    ; xref 0E6A, 106F, 10F1, 1164, 117D, 1D4F, 1D89, 1DC7
+  1F79  D2 56     SETB 2Ah.6
+  1F7B  C2 8E     CLR TCON.6
+  1F7D  75 8D D3  MOV TH1,#D3h
+  1F80  75 8B 59  MOV TL1,#59h
+  1F83  D2 AB     SETB IE.3
+  1F85  D2 8E     SETB TCON.6
+  1F87  22        RET
+  1F88  DB D2h,56h,C2h,8Eh,75h,8Dh,63h,75h,8Bh,C0h,D2h,ABh,D2h,8Eh,22h   ; data/unreached
+
+sub_1F97:    ; xref 02A8
+  1F97  D2 56     SETB 2Ah.6
+  1F99  85 61 7C  MOV 7Ch,61h
+  1F9C  C2 8E     CLR TCON.6
+  1F9E  85 63 8D  MOV TH1,63h
+  1FA1  85 62 8B  MOV TL1,62h
+  1FA4  D2 AB     SETB IE.3
+  1FA6  D2 8E     SETB TCON.6
+  1FA8  22        RET
+  1FA9  DB D2h,56h,C2h,8Eh,85h,63h,8Dh,85h,62h,8Bh,D2h,ABh,D2h,8Eh,22h,FFh   ; data/unreached
+  1FB9  DB FFh,FFh,FFh,FFh,FFh,FFh,FFh,FFh,FFh,FFh,FFh,FFh,FFh,FFh,FFh,FFh   ; data/unreached
+  1FC9  DB FFh,FFh,FFh,FFh,FFh,FFh,FFh,FFh,FFh,FFh,FFh,FFh,FFh,FFh,FFh,FFh   ; data/unreached
+  1FD9  DB FFh,FFh,FFh,FFh,FFh,FFh,FFh,FFh,FFh,FFh,FFh,FFh,FFh,FFh,FFh,FFh   ; data/unreached
+  1FE9  DB FFh,FFh,FFh,FFh,FFh,FFh,FFh,FFh,FFh,FFh,FFh,FFh,FFh,FFh,FFh,FFh   ; data/unreached
+  1FF9  DB FFh,FFh,FFh,FFh,FFh,68h,16h   ; data/unreached

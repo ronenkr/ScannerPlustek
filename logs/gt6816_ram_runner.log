@@ -1,0 +1,9 @@
+2026-10-15 14:07:55,741 INFO dry-run
+2026-10-15 14:07:55,741 INFO parsed firmware/usb_marker.ihx: 171 bytes, 192 transferred
+2026-10-15 14:07:55,741 INFO would back up 8192 bytes, upload 192 bytes, boot with 69 01 00c0, then read EP1
+2026-10-15 14:07:57,409 INFO dry-run
+2026-10-15 14:07:57,409 INFO parsed firmware/usb_marker.c: 1372 bytes, 1408 transferred
+2026-10-15 14:07:57,410 INFO would back up 8192 bytes, upload 1408 bytes, boot with 69 01 0580, then read EP1
+2026-10-15 14:22:25,673 INFO dry-run
+2026-10-15 14:22:25,674 INFO parsed firmware/srom_zero_probe.ihx: 247 bytes, 256 transferred
+2026-10-15 14:22:25,674 INFO would back up 8192 bytes, upload 256 bytes, boot with 69 01 0100, then read EP1

@@ -1,0 +1,9 @@
+2026-10-15 14:11:24,010 ERROR FAILED: [Errno 2] No such file or directory: 'firmware/usb_marker.ihx'
+2026-10-15 14:11:24,010 ERROR Recovery path: unplug/replug the scanner to return to the ROM USB bootstrap; restore saved RAM only through a separately verified RAM upload
+2026-10-15 14:11:34,370 INFO LIVE EXECUTION
+2026-10-15 14:11:34,370 INFO parsed firmware/usb_marker.ihx: 184 bytes, 192 transferred
+2026-10-15 14:11:34,384 INFO image=184 bytes transfer_size=192 sha256=f23e1ecbafc4c1b80b0a3f3cf37dc38d2516d85bc700ee8e7539bc3c3b52188b
+2026-10-15 14:11:34,406 INFO saved volatile 8 KiB M1 RAM backup to gt6816_m1_pre_marker.bin
+2026-10-15 14:11:34,406 INFO recovery path: unplug/replug the scanner to restore the ROM USB bootstrap; the saved RAM image is available for a separate restore operation
+2026-10-15 14:11:37,408 WARNING boot response unavailable ([Errno 110] Operation timed out); continuing to EP1
+2026-10-15 14:11:37,458 INFO EP1 marker verified

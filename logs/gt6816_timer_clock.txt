@@ -1,0 +1,1 @@
+3997226 timer counts/s (from 40 steps x 400000 counts in 4.02s)

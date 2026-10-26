@@ -1,0 +1,162 @@
+[17:22:00.599105] [sanei_debug] Setting debug level of gt68xx to 5.
+[17:22:00.599146] [gt68xx] sane_init: debug options are enabled, handle with care
+[17:22:00.599155] [gt68xx] SANE GT68xx backend version 1.0 build 84 from sane-backends 1.1.1-debian
+[17:22:00.599160] [gt68xx] sane_init: authorize != null
+[17:22:00.602204] [gt68xx] sane_init: little endian machine
+[17:22:00.602218] [gt68xx] sane_init: reading config file `gt68xx.conf'
+[17:22:00.602241] [gt68xx] sane_init: config file line 3: trying to attach `usb 0x07b3 0x0465'
+[17:22:00.602247] [gt68xx] attach: start: devp != NULL, may_wait = 0
+[17:22:00.602251] [gt68xx] attach: trying to open device `libusb:001:116'
+[17:22:00.602283] [gt68xx] gt68xx_device_identify: unknown USB device (vendor 0x07b3, product 0x0465)
+[17:22:00.602290] [gt68xx] attach: device `libusb:001:116' successfully opened
+[17:22:00.602296] [gt68xx] attach: Warning: device `libusb:001:116' is not listed in device table
+[17:22:00.602300] [gt68xx] attach: If you have manually added it, use override in gt68xx.conf
+[17:22:00.602305] [gt68xx] attach: found unknown manufacturer flatbed scanner unknown device -- use override to select at libusb:001:116
+[17:22:00.602317] [gt68xx] attach: exit
+[17:22:00.602324] [gt68xx] sane_init: new model set to plustek-opticslim-m12
+[17:22:00.602328] [gt68xx] sane_init: device plustek-opticslim-m12: firmware will be loaded from /media/user/data/ScannerPlustek/vendor/windows_s400/extracted/Data/74RU/cism603.fw
+[17:22:00.602334] [gt68xx] sane_init: exit
+[17:22:00.602339] [gt68xx] sane_open: start (devicename = `libusb:001:116')
+[17:22:00.602343] [gt68xx] sane_open: found `plustek-opticslim-m12' in devlist
+[17:22:00.602363] [gt68xx] WARNING: You have manually added the ids of your scanner 
+[17:22:00.602369] [gt68xx]          to gt68xx.conf. Please use an appropriate override 
+[17:22:00.602374] [gt68xx]          for your scanner. Use extreme care and switch off 
+[17:22:00.602378] [gt68xx]          the scanner immediately if you hear unusual noise. 
+[17:22:00.602382] [gt68xx]          Please report any success to 
+[17:22:00.602386] [gt68xx]          sane-devel@alioth-lists.debian.net. Please provide as many
+[17:22:00.602391] [gt68xx]          details as possible, e.g. the exact name of your
+[17:22:00.602395] [gt68xx]          scanner, ids, settings etc.
+[17:22:00.602403] [gt68xx] download_firmware: trying /media/user/data/ScannerPlustek/vendor/windows_s400/extracted/Data/74RU/cism603.fw
+[17:22:00.602419] [gt68xx] firmware size: 8192
+[17:22:00.644235] [gt68xx] get_id: vendor id=0x0412, product id=0x07B3, DID=0x04000005, FID=0x0000
+[17:22:00.644615] [gt68xx] sane_open: power ok
+[17:22:00.644962] [gt68xx] init_options: start
+[17:22:00.645306] [gt68xx] calc_parameters: start
+[17:22:00.645316] [gt68xx] calc_parameters: exit
+[17:22:00.645321] [gt68xx] init_options: exit
+[17:22:00.645326] [gt68xx] gt68xx_calibration_file: using >/home/user/.sane/gt68xx-plustek-opticslim-m12.cal< for calibration file name
+[17:22:00.645377] [gt68xx] gt68xx_read_calibration: failed to open calibration file for reading No such file or directory
+[17:22:00.645382] [gt68xx] sane_open: exit
+[17:22:00.645388] [gt68xx] sane_get_option_descriptor: option =  (0)
+[17:22:00.645392] [gt68xx] sane_control_option: start: action = get, option =  (0)
+[17:22:00.645397] [gt68xx] sane_control_option: exit
+[17:22:00.645401] [gt68xx] sane_get_option_descriptor: option =  (0)
+[17:22:00.645406] [gt68xx] sane_control_option: start: action = get, option =  (0)
+[17:22:00.645410] [gt68xx] sane_control_option: exit
+[17:22:00.645414] [gt68xx] sane_get_option_descriptor: option = (null) (1)
+[17:22:00.645418] [gt68xx] sane_get_option_descriptor: option = mode (2)
+[17:22:00.645422] [gt68xx] sane_get_option_descriptor: option = gray-mode-color (3)
+[17:22:00.645426] [gt68xx] sane_get_option_descriptor: option = source (4)
+[17:22:00.645430] [gt68xx] sane_get_option_descriptor: option = preview (5)
+[17:22:00.645434] [gt68xx] sane_get_option_descriptor: option = depth (6)
+[17:22:00.645438] [gt68xx] sane_get_option_descriptor: option = resolution (7)
+[17:22:00.645450] [gt68xx] sane_get_option_descriptor: option = lamp-off-at-exit (8)
+[17:22:00.645454] [gt68xx] sane_get_option_descriptor: option = backtrack (9)
+[17:22:00.645458] [gt68xx] sane_get_option_descriptor: option = (null) (10)
+[17:22:00.645462] [gt68xx] sane_get_option_descriptor: option = auto-warmup (11)
+[17:22:00.645466] [gt68xx] sane_get_option_descriptor: option = full-scan (12)
+[17:22:00.645470] [gt68xx] sane_get_option_descriptor: option = coarse-calibration (13)
+[17:22:00.645474] [gt68xx] sane_get_option_descriptor: option = coarse-calibration-once (14)
+[17:22:00.645478] [gt68xx] sane_get_option_descriptor: option = quality-cal (15)
+[17:22:00.645482] [gt68xx] sane_get_option_descriptor: option = backtrack-lines (16)
+[17:22:00.645486] [gt68xx] sane_get_option_descriptor: option = (null) (17)
+[17:22:00.645491] [gt68xx] sane_get_option_descriptor: option = gamma-value (18)
+[17:22:00.645495] [gt68xx] sane_get_option_descriptor: option = threshold (19)
+[17:22:00.645499] [gt68xx] sane_get_option_descriptor: option = (null) (20)
+[17:22:00.645503] [gt68xx] sane_get_option_descriptor: option = tl-x (21)
+[17:22:00.645507] [gt68xx] sane_get_option_descriptor: option = tl-y (22)
+[17:22:00.645511] [gt68xx] sane_get_option_descriptor: option = br-x (23)
+[17:22:00.645514] [gt68xx] sane_get_option_descriptor: option = br-y (24)
+[17:22:00.645519] [gt68xx] sane_get_option_descriptor: option = sensors (25)
+[17:22:00.645522] [gt68xx] sane_get_option_descriptor: option = need-calibration (26)
+[17:22:00.645526] [gt68xx] sane_get_option_descriptor: option = page-loaded (27)
+[17:22:00.645530] [gt68xx] sane_get_option_descriptor: option = Buttons (28)
+[17:22:00.645535] [gt68xx] sane_get_option_descriptor: option = calibrate (29)
+[17:22:00.645538] [gt68xx] sane_get_option_descriptor: option = clear (30)
+[17:22:00.645543] [gt68xx] sane_control_option: start: action = get, option = br-x (23)
+[17:22:00.645546] [gt68xx] sane_control_option: exit
+[17:22:00.645550] [gt68xx] sane_control_option: start: action = get, option = tl-x (21)
+[17:22:00.645554] [gt68xx] sane_control_option: exit
+[17:22:00.645558] [gt68xx] sane_control_option: start: action = get, option = br-y (24)
+[17:22:00.645562] [gt68xx] sane_control_option: exit
+[17:22:00.645566] [gt68xx] sane_control_option: start: action = get, option = tl-y (22)
+[17:22:00.645570] [gt68xx] sane_control_option: exit
+[17:22:00.645581] [gt68xx] sane_get_option_descriptor: option = mode (2)
+[17:22:00.645586] [gt68xx] sane_get_option_descriptor: option = mode (2)
+[17:22:00.645590] [gt68xx] sane_control_option: start: action = set, option = mode (2)
+[17:22:00.645595] [gt68xx] calc_parameters: start
+[17:22:00.645618] [gt68xx] calc_parameters: exit
+[17:22:00.645623] [gt68xx] sane_control_option: exit
+[17:22:00.645627] [gt68xx] sane_get_option_descriptor: option =  (0)
+[17:22:00.645632] [gt68xx] sane_control_option: start: action = get, option =  (0)
+[17:22:00.645636] [gt68xx] sane_control_option: exit
+[17:22:00.645640] [gt68xx] sane_get_option_descriptor: option = (null) (1)
+[17:22:00.645645] [gt68xx] sane_get_option_descriptor: option = mode (2)
+[17:22:00.645649] [gt68xx] sane_get_option_descriptor: option = gray-mode-color (3)
+[17:22:00.645667] [gt68xx] sane_get_option_descriptor: option = source (4)
+[17:22:00.645671] [gt68xx] sane_get_option_descriptor: option = preview (5)
+[17:22:00.645675] [gt68xx] sane_get_option_descriptor: option = depth (6)
+[17:22:00.645679] [gt68xx] sane_get_option_descriptor: option = resolution (7)
+[17:22:00.645683] [gt68xx] sane_get_option_descriptor: option = lamp-off-at-exit (8)
+[17:22:00.645688] [gt68xx] sane_get_option_descriptor: option = backtrack (9)
+[17:22:00.645691] [gt68xx] sane_get_option_descriptor: option = (null) (10)
+[17:22:00.645695] [gt68xx] sane_get_option_descriptor: option = auto-warmup (11)
+[17:22:00.645699] [gt68xx] sane_get_option_descriptor: option = full-scan (12)
+[17:22:00.645703] [gt68xx] sane_get_option_descriptor: option = coarse-calibration (13)
+[17:22:00.645707] [gt68xx] sane_get_option_descriptor: option = coarse-calibration-once (14)
+[17:22:00.645713] [gt68xx] sane_get_option_descriptor: option = quality-cal (15)
+[17:22:00.645717] [gt68xx] sane_get_option_descriptor: option = backtrack-lines (16)
+[17:22:00.645721] [gt68xx] sane_get_option_descriptor: option = (null) (17)
+[17:22:00.645725] [gt68xx] sane_get_option_descriptor: option = gamma-value (18)
+[17:22:00.645729] [gt68xx] sane_get_option_descriptor: option = threshold (19)
+[17:22:00.645733] [gt68xx] sane_get_option_descriptor: option = (null) (20)
+[17:22:00.645737] [gt68xx] sane_get_option_descriptor: option = tl-x (21)
+[17:22:00.645741] [gt68xx] sane_get_option_descriptor: option = tl-y (22)
+[17:22:00.645745] [gt68xx] sane_get_option_descriptor: option = br-x (23)
+[17:22:00.645749] [gt68xx] sane_get_option_descriptor: option = br-y (24)
+[17:22:00.645753] [gt68xx] sane_get_option_descriptor: option = sensors (25)
+[17:22:00.645757] [gt68xx] sane_get_option_descriptor: option = need-calibration (26)
+[17:22:00.645761] [gt68xx] sane_get_option_descriptor: option = page-loaded (27)
+[17:22:00.645765] [gt68xx] sane_get_option_descriptor: option = Buttons (28)
+[17:22:00.645768] [gt68xx] sane_get_option_descriptor: option = calibrate (29)
+[17:22:00.645772] [gt68xx] sane_get_option_descriptor: option = clear (30)
+[17:22:00.645776] [gt68xx] sane_control_option: start: action = get, option = br-x (23)
+[17:22:00.645780] [gt68xx] sane_control_option: exit
+[17:22:00.645784] [gt68xx] sane_control_option: start: action = get, option = tl-x (21)
+[17:22:00.645788] [gt68xx] sane_control_option: exit
+[17:22:00.645792] [gt68xx] sane_control_option: start: action = get, option = br-y (24)
+[17:22:00.645796] [gt68xx] sane_control_option: exit
+[17:22:00.645800] [gt68xx] sane_control_option: start: action = get, option = tl-y (22)
+[17:22:00.645804] [gt68xx] sane_control_option: exit
+[17:22:00.645808] [gt68xx] sane_get_option_descriptor: option = resolution (7)
+[17:22:00.645812] [gt68xx] sane_get_option_descriptor: option = resolution (7)
+[17:22:00.645816] [gt68xx] sane_control_option: start: action = set, option = resolution (7)
+[17:22:00.645820] [gt68xx] calc_parameters: start
+[17:22:00.645825] [gt68xx] calc_parameters: exit
+[17:22:00.645829] [gt68xx] sane_control_option: exit
+[17:22:00.645835] [gt68xx] sane_control_option: start: action = get, option = tl-x (21)
+[17:22:00.645839] [gt68xx] sane_control_option: exit
+[17:22:00.645842] [gt68xx] sane_get_option_descriptor: option = br-x (23)
+[17:22:00.645847] [gt68xx] sane_control_option: start: action = set, option = br-x (23)
+[17:22:00.645851] [gt68xx] calc_parameters: start
+[17:22:00.645855] [gt68xx] calc_parameters: exit
+[17:22:00.645859] [gt68xx] sane_control_option: exit
+[17:22:00.645863] [gt68xx] sane_control_option: start: action = get, option = tl-y (22)
+[17:22:00.645867] [gt68xx] sane_control_option: exit
+[17:22:00.645871] [gt68xx] sane_get_option_descriptor: option = br-y (24)
+[17:22:00.645875] [gt68xx] sane_control_option: start: action = set, option = br-y (24)
+[17:22:00.645878] [gt68xx] calc_parameters: start
+[17:22:00.645882] [gt68xx] calc_parameters: exit
+[17:22:00.645886] [gt68xx] sane_control_option: exit
+[17:22:00.645895] [gt68xx] sane_start: start
+[17:22:00.645900] [gt68xx] calc_parameters: start
+[17:22:00.645904] [gt68xx] calc_parameters: exit
+[17:22:05.750401] [gt68xx] sane_start: no document detected after 5 s
+scanimage: sane_start: Document feeder out of documents
+[17:22:05.750450] [gt68xx] sane_cancel: start
+[17:22:05.750457] [gt68xx] sane_cancel: scan has not been initiated yet, or it is already aborted
+[17:22:05.750462] [gt68xx] sane_cancel: exit
+[17:22:05.750467] [gt68xx] sane_close: start
+[17:22:05.751253] [gt68xx] sane_close: exit
+[17:22:05.751300] [gt68xx] sane_exit: start
+[17:22:05.751492] [gt68xx] sane_exit: exit
